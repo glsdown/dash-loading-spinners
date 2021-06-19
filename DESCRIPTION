@@ -1,0 +1,13 @@
+Package: dashLoadingSpinners
+Title: Fun and funky loading spinners for your Dash apps
+Version: 0.0.1
+Description: Fun and funky loading spinners for your Dash apps
+Depends: R (>= 3.0.2)
+Imports: 
+Suggests: 
+License: MIT + file LICENSE
+URL: https://github.com/glsdown/dash-loading-spinners
+BugReports: https://github.com/glsdown/dash-loading-spinners/issues
+Encoding: UTF-8
+LazyData: true
+KeepSource: true
