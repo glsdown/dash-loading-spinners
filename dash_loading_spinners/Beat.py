@@ -3,8 +3,8 @@
 from dash.development.base_component import Component, _explicitize_args
 
 
-class Loader(Component):
-    """A Loader component.
+class Beat(Component):
+    """A Beat component.
 
 
 Keyword arguments:
@@ -42,26 +42,15 @@ Keyword arguments:
 - fullscreen_style (dict; optional):
     Defines CSS styles for the container when fullscreen=True.
 
-- height (number; optional):
-    The spinner height (in px) - only applicable for loaders of type:
-    - bar - fade - scale.
-
 - margin (number; optional):
-    The spinner margin (in px) - only applicable for loaders of type:
-    - beat - dot - fade - hash - moon - pacman - pulse - ring - rise -
-    rotate - scale - sync.
-
-- radius (number; optional):
-    The spinner radius (in px) - only applicable for loaders of type:
-    - fade - scale.
+    The spinner margin (in px).
 
 - show_initially (boolean; default True):
     Whether the Spinner should show on app start-up before the loading
     state has been determined. Default True.
 
 - size (number; optional):
-    The spinner size (in px) - not applicable for loaders of type: -
-    bar - fade - scale.
+    The spinner size (in px).
 
 - speedMultiplier (number; default 1):
     The relative speed of the spinner.
@@ -69,24 +58,14 @@ Keyword arguments:
 - spinnerCSS (dict; optional):
     Defines additional CSS styles for the spinner itself. It's based
     on the emotion css styles here:
-    https://emotion.sh/docs/introduction.
-
-- type (string; default 'default'):
-    The type of spinner. Options are: - bar - beat - bounce - circle -
-    climbingBox - clip - clock - dot - fade - grid - hash - moon -
-    pacman - propagate - puff - pulse - ring - rise - rotate - scale -
-    sync.
-
-- width (number; optional):
-    The spinner width (in px) - only applicable for loaders of type: -
-    bar - fade - scale."""
+    https://emotion.sh/docs/introduction."""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, cover_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, coverClassName=Component.UNDEFINED, color=Component.UNDEFINED, spinnerCSS=Component.UNDEFINED, type=Component.UNDEFINED, speedMultiplier=Component.UNDEFINED, size=Component.UNDEFINED, height=Component.UNDEFINED, width=Component.UNDEFINED, radius=Component.UNDEFINED, margin=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'color', 'coverClassName', 'cover_style', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'margin', 'radius', 'show_initially', 'size', 'speedMultiplier', 'spinnerCSS', 'type', 'width']
-        self._type = 'Loader'
+    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, cover_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, coverClassName=Component.UNDEFINED, color=Component.UNDEFINED, speedMultiplier=Component.UNDEFINED, size=Component.UNDEFINED, margin=Component.UNDEFINED, spinnerCSS=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'color', 'coverClassName', 'cover_style', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'margin', 'show_initially', 'size', 'speedMultiplier', 'spinnerCSS']
+        self._type = 'Beat'
         self._namespace = 'dash_loading_spinners'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'color', 'coverClassName', 'cover_style', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'margin', 'radius', 'show_initially', 'size', 'speedMultiplier', 'spinnerCSS', 'type', 'width']
+        self.available_properties = ['children', 'id', 'color', 'coverClassName', 'cover_style', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'margin', 'show_initially', 'size', 'speedMultiplier', 'spinnerCSS']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -96,4 +75,4 @@ Keyword arguments:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(Loader, self).__init__(children=children, **args)
+        super(Beat, self).__init__(children=children, **args)

@@ -24,6 +24,7 @@ import {
     ScaleLoader,
     SyncLoader,
 } from 'react-spinners';
+import CoveringContainer from '../private/CoveringContainer.react';
 
 // Spinner options
 function getSpinner(spinnerType) {
@@ -82,8 +83,8 @@ const Loader = (props) => {
         type,
         loading_state,
         spinnerCSS,
-        spinner_style,
-        spinnerClassName,
+        coverClassName,
+        cover_style,
         fullscreen,
         fullscreenClassName,
         fullscreen_style,
@@ -95,7 +96,6 @@ const Loader = (props) => {
         radius,
         margin,
         speedMultiplier,
-        ...otherProps
     } = props;
 
     // Loading options
@@ -165,89 +165,27 @@ const Loader = (props) => {
         !isNil(size) ? (spinner_size.size = size) : null;
     }
 
-    const SpinnerDiv = ({style}) => (
-        <div
-            className={spinnerClassName}
-            style={{
-                display: 'flex',
-                width: '100%',
-                height: '100%',
-                justifyContent: 'center',
-                alignItems: 'center',
-                ...style,
-            }}
-        >
-            <Spinner
-                color={color}
-                {...spinner_size}
-                css={spinnerCSS}
-                speedMultiplier={speedMultiplier}
-            />
-        </div>
+    const SpinnerDiv = () => (
+        <Spinner
+            color={color}
+            {...spinner_size}
+            css={spinnerCSS}
+            speedMultiplier={speedMultiplier}
+        />
     );
 
-    // Fullscreen
-    const fullscreenStyle = {
-        position: 'fixed',
-        width: '100vw',
-        height: '100vh',
-        top: 0,
-        left: 0,
-        backgroundColor: 'white',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 99,
-        visibility: 'visible',
-        ...fullscreen_style,
-    };
-
-    if (children) {
-        const coveringStyle = {
-            visibility: 'visible',
-            position: 'absolute',
-            top: 0,
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-        };
-
-        const hiddenStyle = {
-            visibility: 'hidden',
-            position: 'relative',
-        };
-
-        const spinnerStyle = {
-            margin: '1rem auto',
-            ...spinner_style,
-        };
-
-        return (
-            <div style={showSpinner ? hiddenStyle : {}}>
-                {children}
-                {showSpinner && (
-                    <div
-                        style={fullscreen ? fullscreenStyle : coveringStyle}
-                        className={fullscreen && fullscreenClassName}
-                    >
-                        <SpinnerDiv style={spinnerStyle} />
-                    </div>
-                )}
-            </div>
-        );
-    }
-
-    if (fullscreen) {
-        return (
-            <div className={fullscreenClassName} style={fullscreenStyle}>
-                <SpinnerDiv style={spinner_style} />
-            </div>
-        );
-    }
-
-    return <SpinnerDiv style={spinner_style} />;
+    return (
+        <CoveringContainer
+            children={children}
+            coverClassName={coverClassName}
+            cover_style={cover_style}
+            fullscreen={fullscreen}
+            fullscreenClassName={fullscreenClassName}
+            fullscreen_style={fullscreen_style}
+            SpinnerDiv={SpinnerDiv}
+            showSpinner={showSpinner}
+        />
+    );
 };
 
 Loader._dashprivate_isLoadingComponent = true;
@@ -281,7 +219,7 @@ Loader.propTypes = {
     /**
      * Defines CSS styles for the container when fullscreen=False.
      */
-    spinner_style: PropTypes.object,
+    cover_style: PropTypes.object,
 
     /**
      * Often used with CSS to style elements with common properties.
@@ -291,7 +229,7 @@ Loader.propTypes = {
     /**
      * CSS class names to apply to the container when fullscreen=False.
      */
-    spinnerClassName: PropTypes.string,
+    coverClassName: PropTypes.string,
 
     /**
      * Sets the color of the Spinner. You can also specify any valid CSS color

@@ -9,42 +9,44 @@ from dash.dependencies import Input, Output
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-spinner_options = [
-    "bar",
-    "beat",
-    "bounce",
-    "circle",
-    "climbingBox",
-    "clip",
-    "clock",
-    "dot",
-    "fade",
-    "grid",
-    "hash",
-    "moon",
-    "pacman",
-    "propagate",
-    "puff",
-    "pulse",
-    "ring",
-    "rise",
-    "rotate",
-    "scale",
-    "sync",
-]
+spinner_options = {
+    # "bar",
+    "beat": dls.Beat,
+    # "bounce",
+    # "circle",
+    # "climbingBox",
+    # "clip",
+    # "clock",
+    # "dot",
+    # "fade",
+    # "grid",
+    # "hash",
+    # "moon",
+    # "pacman",
+    # "propagate",
+    # "puff",
+    # "pulse",
+    # "ring",
+    # "rise",
+    # "rotate",
+    # "scale",
+    # "sync",
+}
 
 app.layout = html.Div(
     [
         dbc.Button("View", id="loading-button", n_clicks=0),
         html.Div(
-            dls.Loader(
+            dls.Beat(
                 html.Div(id="loading-output", style={"height": "100px"}),
+                id="loader",
                 fullscreen=False,
-                spinnerClassName="bg-primary",
+                coverClassName="bg-primary",
                 color="#ff0000",
-                width=100,
+                size=100,
             )
         ),
+        # TODO: Fix this
         dbc.FormGroup(
             [
                 dbc.Label("Loader Style"),
@@ -55,22 +57,8 @@ app.layout = html.Div(
                 ),
             ]
         ),
-        html.Div(
-            dls.Loader(
-                id="loader",
-                fullscreen=False,
-                spinnerClassName="bg-warning",
-                color="#00ff00",
-                spinnerCSS={"border-color": "red"},
-            )
-        ),
     ]
 )
-
-# FIXME: flashes briefly on load
-@app.callback(Output("loader", "type"), [Input("loader-style", "value")])
-def change_style(spinner_style):
-    return spinner_style
 
 
 @app.callback(

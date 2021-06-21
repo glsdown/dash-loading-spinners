@@ -1,3 +1,5 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 export(dlsLoader)
+export(dlsBeat)
+export(dlsBeatLoader)
