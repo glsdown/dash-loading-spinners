@@ -30,11 +30,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Inline CSS styles to apply to the spinner.",
-        "defaultValue": {
-          "value": "'default'",
-          "computed": false
-        }
+        "description": "Defines CSS styles for the container when fullscreen=False."
       },
       "fullscreenClassName": {
         "type": {
@@ -48,7 +44,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "CSS class names to apply to the spinner."
+        "description": "CSS class names to apply to the container when fullscreen=False."
       },
       "color": {
         "type": {
@@ -61,12 +57,34 @@
           "computed": false
         }
       },
+      "spinnerCSS": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
+      },
       "type": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "The type of spinner. Options are:\n- bar\n- beat\n- bounce\n- circle\n- climbingBox\n- clip\n- clock\n- dot\n- fade\n- grid\n- hash\n- moon\n- pacman\n- propagate\n- puff\n- pulse\n- ring\n- rise\n- rotate\n- scale\n- sync"
+        "description": "The type of spinner. Options are:\n- bar\n- beat\n- bounce\n- circle\n- climbingBox\n- clip\n- clock\n- dot\n- fade\n- grid\n- hash\n- moon\n- pacman\n- propagate\n- puff\n- pulse\n- ring\n- rise\n- rotate\n- scale\n- sync",
+        "defaultValue": {
+          "value": "'default'",
+          "computed": false
+        }
+      },
+      "speedMultiplier": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The relative speed of the spinner",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
       },
       "size": {
         "type": {
@@ -117,7 +135,7 @@
         "required": false,
         "description": "When using the spinner as a loading spinner, add a time delay (in ms) to\nthe spinner being removed to prevent flickering.",
         "defaultValue": {
-          "value": "10",
+          "value": "0",
           "computed": false
         }
       },

@@ -51,8 +51,11 @@ has been determined. Default True.
 - bar
 - fade
 - scale
-- `spinnerClassName` (String; optional): CSS class names to apply to the spinner.
-- `spinner_style` (Dict; optional): Inline CSS styles to apply to the spinner.
+- `speedMultiplier` (Real; optional): The relative speed of the spinner
+- `spinnerCSS` (Dict; optional): Defines additional CSS styles for the spinner itself. It's based on the
+emotion css styles here: https://emotion.sh/docs/introduction
+- `spinnerClassName` (String; optional): CSS class names to apply to the container when fullscreen=False.
+- `spinner_style` (Dict; optional): Defines CSS styles for the container when fullscreen=False.
 - `type` (String; optional): The type of spinner. Options are:
 - bar
 - beat
@@ -81,7 +84,7 @@ has been determined. Default True.
 - scale
 """
 function dls_loader(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :margin, :radius, :show_initially, :size, :spinnerClassName, :spinner_style, :type, :width]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :margin, :radius, :show_initially, :size, :speedMultiplier, :spinnerCSS, :spinnerClassName, :spinner_style, :type, :width]
         wild_props = Symbol[]
         return Component("dls_loader", "Loader", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

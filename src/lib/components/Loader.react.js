@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import {omit} from 'ramda';
+import {isNil} from 'ramda';
 import {
     BarLoader,
     BeatLoader,
@@ -25,6 +25,7 @@ import {
     SyncLoader,
 } from 'react-spinners';
 
+// Spinner options
 function getSpinner(spinnerType) {
     switch (spinnerType) {
         case 'bar':
@@ -80,16 +81,24 @@ const Loader = (props) => {
         color,
         type,
         loading_state,
-        spinner_style, // TODO: Identify whether this works with react spinners (maybe need emotion css)
-        spinnerClassName, // TODO: Identify whether this works with react spinners
+        spinnerCSS,
+        spinner_style,
+        spinnerClassName,
         fullscreen,
         fullscreenClassName,
         fullscreen_style,
         debounce,
         show_initially,
+        size,
+        width,
+        height,
+        radius,
+        margin,
+        speedMultiplier,
         ...otherProps
     } = props;
 
+    // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
 
@@ -109,6 +118,75 @@ const Loader = (props) => {
         }
     }, [loading_state]);
 
+    // Identify the spinner type
+    const Spinner = getSpinner(type);
+
+    // Get the spinner size
+    var spinner_size = {};
+
+    !isNil(radius) ? (spinner_size.radius = radius) : null;
+    !isNil(margin) ? (spinner_size.margin = margin) : null;
+
+    // This allows for a generic 'size' for all spinners
+    if (type === 'bar') {
+        !isNil(height)
+            ? (spinner_size.height = height)
+            : !isNil(size)
+            ? (spinner_size.height = Math.ceil(size / 4))
+            : null;
+        !isNil(width)
+            ? (spinner_size.width = width)
+            : !isNil(size)
+            ? (spinner_size.width = size)
+            : null;
+    } else if (type === 'fade') {
+        !isNil(height)
+            ? (spinner_size.height = height)
+            : !isNil(size)
+            ? (spinner_size.height = size)
+            : null;
+        !isNil(width)
+            ? (spinner_size.width = width)
+            : !isNil(size)
+            ? (spinner_size.width = Math.ceil(size / 3))
+            : null;
+    } else if (type === 'scale') {
+        !isNil(height)
+            ? (spinner_size.height = height)
+            : !isNil(size)
+            ? (spinner_size.height = size)
+            : null;
+        !isNil(width)
+            ? (spinner_size.width = width)
+            : !isNil(size)
+            ? (spinner_size.width = Math.ceil(size / 9))
+            : null;
+    } else {
+        !isNil(size) ? (spinner_size.size = size) : null;
+    }
+
+    const SpinnerDiv = ({style}) => (
+        <div
+            className={spinnerClassName}
+            style={{
+                display: 'flex',
+                width: '100%',
+                height: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                ...style,
+            }}
+        >
+            <Spinner
+                color={color}
+                {...spinner_size}
+                css={spinnerCSS}
+                speedMultiplier={speedMultiplier}
+            />
+        </div>
+    );
+
+    // Fullscreen
     const fullscreenStyle = {
         position: 'fixed',
         width: '100vw',
@@ -123,17 +201,6 @@ const Loader = (props) => {
         visibility: 'visible',
         ...fullscreen_style,
     };
-
-    const Spinner = getSpinner(type);
-
-    const SpinnerDiv = ({style}) => (
-        <Spinner
-            color={color}
-            style={{color: color, ...style}}
-            className={spinnerClassName}
-            {...omit(['setProps'], otherProps)}
-        />
-    );
 
     if (children) {
         const coveringStyle = {
@@ -153,7 +220,6 @@ const Loader = (props) => {
         };
 
         const spinnerStyle = {
-            display: 'block',
             margin: '1rem auto',
             ...spinner_style,
         };
@@ -187,10 +253,11 @@ const Loader = (props) => {
 Loader._dashprivate_isLoadingComponent = true;
 
 Loader.defaultProps = {
-    debounce: 10,
+    debounce: 0,
     show_initially: true,
     color: '#000000',
-    spinner_style: 'default',
+    type: 'default',
+    speedMultiplier: 1,
 };
 
 Loader.propTypes = {
@@ -212,7 +279,7 @@ Loader.propTypes = {
     fullscreen_style: PropTypes.object,
 
     /**
-     * Inline CSS styles to apply to the spinner.
+     * Defines CSS styles for the container when fullscreen=False.
      */
     spinner_style: PropTypes.object,
 
@@ -222,7 +289,7 @@ Loader.propTypes = {
     fullscreenClassName: PropTypes.string,
 
     /**
-     * CSS class names to apply to the spinner.
+     * CSS class names to apply to the container when fullscreen=False.
      */
     spinnerClassName: PropTypes.string,
 
@@ -233,6 +300,12 @@ Loader.propTypes = {
      * If not specified will default to black.
      */
     color: PropTypes.string,
+
+    /**
+     * Defines additional CSS styles for the spinner itself. It's based on the
+     * emotion css styles here: https://emotion.sh/docs/introduction
+     */
+    spinnerCSS: PropTypes.object,
 
     /**
      * The type of spinner. Options are:
@@ -259,6 +332,11 @@ Loader.propTypes = {
      * - sync
      */
     type: PropTypes.string,
+
+    /**
+     * The relative speed of the spinner
+     */
+    speedMultiplier: PropTypes.number,
 
     /**
      * The spinner size (in px) - not applicable for loaders of type:

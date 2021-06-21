@@ -7,7 +7,7 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
-app = dash.Dash(__name__)
+app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 spinner_options = [
     "bar",
@@ -36,6 +36,15 @@ spinner_options = [
 app.layout = html.Div(
     [
         dbc.Button("View", id="loading-button", n_clicks=0),
+        html.Div(
+            dls.Loader(
+                html.Div(id="loading-output", style={"height": "100px"}),
+                fullscreen=False,
+                spinnerClassName="bg-primary",
+                color="#ff0000",
+                width=100,
+            )
+        ),
         dbc.FormGroup(
             [
                 dbc.Label("Loader Style"),
@@ -47,13 +56,12 @@ app.layout = html.Div(
             ]
         ),
         html.Div(
-            # FIXME: Has odd margins/no padding when not in fullscreen mode
             dls.Loader(
-                html.Div(id="loading-output"),
                 id="loader",
-                fullscreen=True,
-                color="#ff0000",
-                size=100,  # TODO this isn't relevant for all...
+                fullscreen=False,
+                spinnerClassName="bg-warning",
+                color="#00ff00",
+                spinnerCSS={"border-color": "red"},
             )
         ),
     ]
@@ -61,8 +69,8 @@ app.layout = html.Div(
 
 # FIXME: flashes briefly on load
 @app.callback(Output("loader", "type"), [Input("loader-style", "value")])
-def change_style(style):
-    return style
+def change_style(spinner_style):
+    return spinner_style
 
 
 @app.callback(

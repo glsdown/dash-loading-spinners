@@ -14,6 +14,7 @@ dlsLoader(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
 fullscreen_style=NULL, height=NULL, margin=NULL,
 radius=NULL, show_initially=NULL, size=NULL,
+speedMultiplier=NULL, spinnerCSS=NULL,
 spinnerClassName=NULL, spinner_style=NULL, type=NULL,
 width=NULL)
 }
@@ -71,9 +72,14 @@ has been determined. Default True.}
 - fade
 - scale}
 
-\item{spinnerClassName}{Character. CSS class names to apply to the spinner.}
+\item{speedMultiplier}{Numeric. The relative speed of the spinner}
 
-\item{spinner_style}{Named list. Inline CSS styles to apply to the spinner.}
+\item{spinnerCSS}{Named list. Defines additional CSS styles for the spinner itself. It's based on the
+emotion css styles here: https://emotion.sh/docs/introduction}
+
+\item{spinnerClassName}{Character. CSS class names to apply to the container when fullscreen=False.}
+
+\item{spinner_style}{Named list. Defines CSS styles for the container when fullscreen=False.}
 
 \item{type}{Character. The type of spinner. Options are:
 - bar

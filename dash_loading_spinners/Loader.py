@@ -22,7 +22,7 @@ Keyword arguments:
     color of your choice (e.g. a hex code, a decimal code or a CSS
     color name).  If not specified will default to black.
 
-- debounce (number; default 10):
+- debounce (number; default 0):
     When using the spinner as a loading spinner, add a time delay (in
     ms) to the spinner being removed to prevent flickering.
 
@@ -57,13 +57,21 @@ Keyword arguments:
     The spinner size (in px) - not applicable for loaders of type: -
     bar - fade - scale.
 
+- speedMultiplier (number; default 1):
+    The relative speed of the spinner.
+
+- spinnerCSS (dict; optional):
+    Defines additional CSS styles for the spinner itself. It's based
+    on the emotion css styles here:
+    https://emotion.sh/docs/introduction.
+
 - spinnerClassName (string; optional):
-    CSS class names to apply to the spinner.
+    CSS class names to apply to the container when fullscreen=False.
 
-- spinner_style (dict; default 'default'):
-    Inline CSS styles to apply to the spinner.
+- spinner_style (dict; optional):
+    Defines CSS styles for the container when fullscreen=False.
 
-- type (string; optional):
+- type (string; default 'default'):
     The type of spinner. Options are: - bar - beat - bounce - circle -
     climbingBox - clip - clock - dot - fade - grid - hash - moon -
     pacman - propagate - puff - pulse - ring - rise - rotate - scale -
@@ -73,12 +81,12 @@ Keyword arguments:
     The spinner width (in px) - only applicable for loaders of type: -
     bar - fade - scale."""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, spinner_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, spinnerClassName=Component.UNDEFINED, color=Component.UNDEFINED, type=Component.UNDEFINED, size=Component.UNDEFINED, height=Component.UNDEFINED, width=Component.UNDEFINED, radius=Component.UNDEFINED, margin=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'margin', 'radius', 'show_initially', 'size', 'spinnerClassName', 'spinner_style', 'type', 'width']
+    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, spinner_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, spinnerClassName=Component.UNDEFINED, color=Component.UNDEFINED, spinnerCSS=Component.UNDEFINED, type=Component.UNDEFINED, speedMultiplier=Component.UNDEFINED, size=Component.UNDEFINED, height=Component.UNDEFINED, width=Component.UNDEFINED, radius=Component.UNDEFINED, margin=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'margin', 'radius', 'show_initially', 'size', 'speedMultiplier', 'spinnerCSS', 'spinnerClassName', 'spinner_style', 'type', 'width']
         self._type = 'Loader'
         self._namespace = 'dash_loading_spinners'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'margin', 'radius', 'show_initially', 'size', 'spinnerClassName', 'spinner_style', 'type', 'width']
+        self.available_properties = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'margin', 'radius', 'show_initially', 'size', 'speedMultiplier', 'spinnerCSS', 'spinnerClassName', 'spinner_style', 'type', 'width']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
