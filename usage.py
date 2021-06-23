@@ -11,40 +11,41 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 spinner_options = {
     # "bar",
-    "beat": dls.Beat,
-    # "bounce",
-    # "circle",
-    # "climbingBox",
-    # "clip",
-    # "clock",
-    # "dot",
-    # "fade",
-    # "grid",
-    # "hash",
-    # "moon",
-    # "pacman",
-    # "propagate",
-    # "puff",
-    # "pulse",
-    # "ring",
-    # "rise",
-    # "rotate",
-    # "scale",
-    # "sync",
+    "beat": dls.RSBeat,
+    "bounce": dls.RSBounce,
+    "circle": dls.RSCircle,
+    "climbingBox": dls.RSClimbingBox,
+    "clip": dls.RSClip,
+    "clock": dls.RSClock,
+    "dot": dls.RSDot,
+    "fade": dls.RSFade,
+    "grid": dls.RSGrid,
+    "hash": dls.RSHash,
+    "moon": dls.RSMoon,
+    "pacman": dls.RSPacman,
+    "propagate": dls.RSPropagate,
+    "puff": dls.RSPuff,
+    "pulse": dls.RSPulse,
+    "ring": dls.RSRing,
+    "rise": dls.RSRise,
+    "rotate": dls.RSRotate,
+    "scale": dls.RSScale,
+    "sync": dls.RSSync,
 }
+
+loading_output = html.Div(id="loading-output", style={"height": "100px"})
 
 app.layout = html.Div(
     [
         dbc.Button("View", id="loading-button", n_clicks=0),
         html.Div(
-            dls.Beat(
-                html.Div(id="loading-output", style={"height": "100px"}),
-                id="loader",
+            dls.RSHash(
+                loading_output,
                 fullscreen=False,
                 coverClassName="bg-primary",
-                color="#ff0000",
-                size=100,
-            )
+            ),
+            id="loader",
+            className="container d-flex justify-content-center align-items-center border border-primary rounded my-2",
         ),
         # TODO: Fix this
         dbc.FormGroup(
@@ -52,13 +53,23 @@ app.layout = html.Div(
                 dbc.Label("Loader Style"),
                 dcc.Dropdown(
                     id="loader-style",
-                    options=[{"label": s, "value": s} for s in spinner_options],
+                    options=[{"label": s, "value": s} for s in spinner_options.keys()],
                     value="hash",
                 ),
             ]
         ),
     ]
 )
+
+
+@app.callback(Output("loader", "children"), [Input("loader-style", "value")])
+def change_loader(value):
+
+    return spinner_options[value](
+        loading_output,
+        fullscreen=True,
+        fullscreenClassName="bg-primary",
+    )
 
 
 @app.callback(
@@ -68,7 +79,7 @@ app.layout = html.Div(
 def load_output(n):
 
     if n:
-        time.sleep(3)
+        time.sleep(10)
         return f"Output loaded {n} times"
     return "Output not reloaded yet"
 

@@ -1,5 +1,5 @@
 {
-  "src/lib/components/ReactSpinners/Beat.react.js": {
+  "src/lib/components/ReactSpinners/RSBeat.react.js": {
     "description": "",
     "displayName": "RSBeat",
     "methods": [],
@@ -18,19 +18,19 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": "Defines CSS styles for the container."
+        "description": "Defines CSS styles for the container when in fullscreen."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "CSS class names to apply to the container."
+        "description": "CSS class names to apply to the container when in fullscreen."
       },
       "color": {
         "type": {
@@ -106,7 +106,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Bounce.react.js": {
+  "src/lib/components/ReactSpinners/RSBounce.react.js": {
     "description": "",
     "displayName": "RSBounce",
     "methods": [],
@@ -125,14 +125,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -206,7 +206,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Circle.react.js": {
+  "src/lib/components/ReactSpinners/RSCircle.react.js": {
     "description": "",
     "displayName": "RSCircle",
     "methods": [],
@@ -225,14 +225,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -306,7 +306,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/ClimbingBox.react.js": {
+  "src/lib/components/ReactSpinners/RSClimbingBox.react.js": {
     "description": "",
     "displayName": "RSClimbingBox",
     "methods": [],
@@ -325,14 +325,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -406,7 +406,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Clip.react.js": {
+  "src/lib/components/ReactSpinners/RSClip.react.js": {
     "description": "",
     "displayName": "RSClip",
     "methods": [],
@@ -425,14 +425,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -506,7 +506,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Clock.react.js": {
+  "src/lib/components/ReactSpinners/RSClock.react.js": {
     "description": "",
     "displayName": "RSClock",
     "methods": [],
@@ -525,14 +525,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -606,7 +606,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Dot.react.js": {
+  "src/lib/components/ReactSpinners/RSDot.react.js": {
     "description": "",
     "displayName": "RSDot",
     "methods": [],
@@ -625,14 +625,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -713,7 +713,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Fade.react.js": {
+  "src/lib/components/ReactSpinners/RSFade.react.js": {
     "description": "",
     "displayName": "RSFade",
     "methods": [],
@@ -732,14 +732,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -834,7 +834,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Grid.react.js": {
+  "src/lib/components/ReactSpinners/RSGrid.react.js": {
     "description": "",
     "displayName": "RSGrid",
     "methods": [],
@@ -853,14 +853,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -934,7 +934,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Hash.react.js": {
+  "src/lib/components/ReactSpinners/RSHash.react.js": {
     "description": "",
     "displayName": "RSHash",
     "methods": [],
@@ -953,14 +953,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1041,7 +1041,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Moon.react.js": {
+  "src/lib/components/ReactSpinners/RSMoon.react.js": {
     "description": "",
     "displayName": "RSMoon",
     "methods": [],
@@ -1060,14 +1060,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1148,7 +1148,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Pacman.react.js": {
+  "src/lib/components/ReactSpinners/RSPacman.react.js": {
     "description": "",
     "displayName": "RSPacman",
     "methods": [],
@@ -1167,14 +1167,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1255,7 +1255,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Propagate.react.js": {
+  "src/lib/components/ReactSpinners/RSPropagate.react.js": {
     "description": "",
     "displayName": "RSPropagate",
     "methods": [],
@@ -1274,14 +1274,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1355,7 +1355,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Puff.react.js": {
+  "src/lib/components/ReactSpinners/RSPuff.react.js": {
     "description": "",
     "displayName": "RSPuff",
     "methods": [],
@@ -1374,14 +1374,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1455,7 +1455,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Pulse.react.js": {
+  "src/lib/components/ReactSpinners/RSPulse.react.js": {
     "description": "",
     "displayName": "RSPulse",
     "methods": [],
@@ -1474,14 +1474,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1562,7 +1562,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Ring.react.js": {
+  "src/lib/components/ReactSpinners/RSRing.react.js": {
     "description": "",
     "displayName": "RSRing",
     "methods": [],
@@ -1581,14 +1581,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1669,7 +1669,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Rise.react.js": {
+  "src/lib/components/ReactSpinners/RSRise.react.js": {
     "description": "",
     "displayName": "RSRise",
     "methods": [],
@@ -1688,14 +1688,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1776,7 +1776,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Rotate.react.js": {
+  "src/lib/components/ReactSpinners/RSRotate.react.js": {
     "description": "",
     "displayName": "RSRotate",
     "methods": [],
@@ -1795,14 +1795,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -1883,7 +1883,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Scale.react.js": {
+  "src/lib/components/ReactSpinners/RSScale.react.js": {
     "description": "",
     "displayName": "RSScale",
     "methods": [],
@@ -1902,14 +1902,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },
@@ -2004,7 +2004,7 @@
       }
     }
   },
-  "src/lib/components/ReactSpinners/Sync.react.js": {
+  "src/lib/components/ReactSpinners/RSSync.react.js": {
     "description": "",
     "displayName": "RSSync",
     "methods": [],
@@ -2023,14 +2023,14 @@
         "required": false,
         "description": "The children of this component."
       },
-      "cover_style": {
+      "fullscreen_style": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "Defines CSS styles for the container."
       },
-      "coverClassName": {
+      "fullscreenClassName": {
         "type": {
           "name": "string"
         },

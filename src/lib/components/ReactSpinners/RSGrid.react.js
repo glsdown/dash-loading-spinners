@@ -9,8 +9,8 @@ const RSGrid = (props) => {
         color,
         loading_state,
         spinnerCSS,
-        coverClassName,
-        cover_style,
+        fullscreenClassName,
+        fullscreen_style,
         fullscreen,
         debounce,
         show_initially,
@@ -50,8 +50,8 @@ const RSGrid = (props) => {
     return (
         <CoveringContainer
             children={children}
-            coverClassName={coverClassName}
-            cover_style={cover_style}
+            fullscreenClassName={fullscreenClassName}
+            fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
@@ -84,12 +84,12 @@ RSGrid.propTypes = {
     /**
      * Defines CSS styles for the container.
      */
-    cover_style: PropTypes.object,
+    fullscreen_style: PropTypes.object,
 
     /**
      * CSS class names to apply to the container.
      */
-    coverClassName: PropTypes.string,
+    fullscreenClassName: PropTypes.string,
 
     /**
      * Sets the color of the Spinner. You can also specify any valid CSS color

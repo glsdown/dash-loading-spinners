@@ -3,8 +3,8 @@ import React from 'react';
 const CoveringContainer = (props) => {
     const {
         children,
-        coverClassName,
-        cover_style,
+        fullscreenClassName,
+        fullscreen_style,
         fullscreen,
         SpinnerDiv,
         showSpinner,
@@ -23,7 +23,7 @@ const CoveringContainer = (props) => {
         alignItems: 'center',
         zIndex: 99,
         visibility: 'visible',
-        ...cover_style,
+        ...fullscreen_style,
     };
 
     const coveringStyle = {
@@ -36,7 +36,6 @@ const CoveringContainer = (props) => {
         justifyContent: 'center',
         alignItems: 'center',
         padding: '1rem auto',
-        ...cover_style,
     };
 
     const hiddenStyle = {
@@ -50,7 +49,7 @@ const CoveringContainer = (props) => {
             {showSpinner && (
                 <div
                     style={fullscreen ? fullscreenStyle : coveringStyle}
-                    className={coverClassName}
+                    className={fullscreen ? fullscreenClassName : null}
                 >
                     <SpinnerDiv />
                 </div>

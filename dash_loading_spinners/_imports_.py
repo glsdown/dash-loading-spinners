@@ -1,43 +1,43 @@
-from .Beat import Beat
-from .Bounce import Bounce
-from .Circle import Circle
-from .ClimbingBox import ClimbingBox
-from .Clip import Clip
-from .Clock import Clock
-from .Dot import Dot
-from .Fade import Fade
-from .Grid import Grid
-from .Hash import Hash
-from .Moon import Moon
-from .Pacman import Pacman
-from .Propagate import Propagate
-from .Puff import Puff
-from .Pulse import Pulse
-from .Ring import Ring
-from .Rise import Rise
-from .Rotate import Rotate
-from .Scale import Scale
-from .Sync import Sync
+from .RSBeat import RSBeat
+from .RSBounce import RSBounce
+from .RSCircle import RSCircle
+from .RSClimbingBox import RSClimbingBox
+from .RSClip import RSClip
+from .RSClock import RSClock
+from .RSDot import RSDot
+from .RSFade import RSFade
+from .RSGrid import RSGrid
+from .RSHash import RSHash
+from .RSMoon import RSMoon
+from .RSPacman import RSPacman
+from .RSPropagate import RSPropagate
+from .RSPuff import RSPuff
+from .RSPulse import RSPulse
+from .RSRing import RSRing
+from .RSRise import RSRise
+from .RSRotate import RSRotate
+from .RSScale import RSScale
+from .RSSync import RSSync
 
 __all__ = [
-    "Beat",
-    "Bounce",
-    "Circle",
-    "ClimbingBox",
-    "Clip",
-    "Clock",
-    "Dot",
-    "Fade",
-    "Grid",
-    "Hash",
-    "Moon",
-    "Pacman",
-    "Propagate",
-    "Puff",
-    "Pulse",
-    "Ring",
-    "Rise",
-    "Rotate",
-    "Scale",
-    "Sync"
+    "RSBeat",
+    "RSBounce",
+    "RSCircle",
+    "RSClimbingBox",
+    "RSClip",
+    "RSClock",
+    "RSDot",
+    "RSFade",
+    "RSGrid",
+    "RSHash",
+    "RSMoon",
+    "RSPacman",
+    "RSPropagate",
+    "RSPuff",
+    "RSPulse",
+    "RSRing",
+    "RSRise",
+    "RSRotate",
+    "RSScale",
+    "RSSync"
 ]

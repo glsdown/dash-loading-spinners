@@ -9,8 +9,8 @@ const RSBeat = (props) => {
         color,
         loading_state,
         spinnerCSS,
-        coverClassName,
-        cover_style,
+        fullscreenClassName,
+        fullscreen_style,
         fullscreen,
         debounce,
         show_initially,
@@ -52,9 +52,9 @@ const RSBeat = (props) => {
     return (
         <CoveringContainer
             children={children}
-            coverClassName={coverClassName}
-            cover_style={cover_style}
             fullscreen={fullscreen}
+            fullscreenClassName={fullscreenClassName}
+            fullscreen_style={fullscreen_style}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -84,14 +84,14 @@ RSBeat.propTypes = {
     children: PropTypes.node,
 
     /**
-     * Defines CSS styles for the container.
+     * Defines CSS styles for the container when in fullscreen.
      */
-    cover_style: PropTypes.object,
+    fullscreen_style: PropTypes.object,
 
     /**
-     * CSS class names to apply to the container.
+     * CSS class names to apply to the container when in fullscreen.
      */
-    coverClassName: PropTypes.string,
+    fullscreenClassName: PropTypes.string,
 
     /**
      * Sets the color of the Spinner. You can also specify any valid CSS color
