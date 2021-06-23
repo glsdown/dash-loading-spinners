@@ -1,23 +1,23 @@
-import RSBeat from './ReactSpinners/RSBeat.react';
-import RSBounce from './ReactSpinners/RSBounce.react';
-import RSCircle from './ReactSpinners/RSCircle.react';
-import RSClimbingBox from './ReactSpinners/RSClimbingBox.react';
-import RSClip from './ReactSpinners/RSClip.react';
-import RSClock from './ReactSpinners/RSClock.react';
-import RSDot from './ReactSpinners/RSDot.react';
-import RSFade from './ReactSpinners/RSFade.react';
-import RSGrid from './ReactSpinners/RSGrid.react';
-import RSHash from './ReactSpinners/RSHash.react';
-import RSMoon from './ReactSpinners/RSMoon.react';
-import RSPacman from './ReactSpinners/RSPacman.react';
-import RSPropagate from './ReactSpinners/RSPropagate.react';
-import RSPuff from './ReactSpinners/RSPuff.react';
-import RSPulse from './ReactSpinners/RSPulse.react';
-import RSRing from './ReactSpinners/RSRing.react';
-import RSRise from './ReactSpinners/RSRise.react';
-import RSRotate from './ReactSpinners/RSRotate.react';
-import RSScale from './ReactSpinners/RSScale.react';
-import RSSync from './ReactSpinners/RSSync.react';
+import Beat from './ReactSpinners/Beat.react';
+import Bounce from './ReactSpinners/Bounce.react';
+import Circle from './ReactSpinners/Circle.react';
+import ClimbingBox from './ReactSpinners/ClimbingBox.react';
+import Clip from './ReactSpinners/Clip.react';
+import Clock from './ReactSpinners/Clock.react';
+import Dot from './ReactSpinners/Dot.react';
+import Fade from './ReactSpinners/Fade.react';
+import Grid from './ReactSpinners/Grid.react';
+import Hash from './ReactSpinners/Hash.react';
+import Moon from './ReactSpinners/Moon.react';
+import Pacman from './ReactSpinners/Pacman.react';
+import Propagate from './ReactSpinners/Propagate.react';
+import Puff from './ReactSpinners/Puff.react';
+import Pulse from './ReactSpinners/Pulse.react';
+import Ring from './ReactSpinners/Ring.react';
+import Rise from './ReactSpinners/Rise.react';
+import Rotate from './ReactSpinners/Rotate.react';
+import Scale from './ReactSpinners/Scale.react';
+import Sync from './ReactSpinners/Sync.react';
 
 // The spinners on here are all those included in the
 // React-Spinners library. Details of usage can be found
@@ -25,24 +25,24 @@ import RSSync from './ReactSpinners/RSSync.react';
 // https://github.com/davidhu2000/react-spinners
 
 export {
-    RSBeat,
-    RSBounce,
-    RSCircle,
-    RSClimbingBox,
-    RSClip,
-    RSClock,
-    RSDot,
-    RSFade,
-    RSGrid,
-    RSHash,
-    RSMoon,
-    RSPacman,
-    RSPropagate,
-    RSPuff,
-    RSPulse,
-    RSRing,
-    RSRise,
-    RSRotate,
-    RSScale,
-    RSSync,
+    Beat,
+    Bounce,
+    Circle,
+    ClimbingBox,
+    Clip,
+    Clock,
+    Dot,
+    Fade,
+    Grid,
+    Hash,
+    Moon,
+    Pacman,
+    Propagate,
+    Puff,
+    Pulse,
+    Ring,
+    Rise,
+    Rotate,
+    Scale,
+    Sync,
 };
