@@ -37,29 +37,71 @@ loading_output = html.Div(id="loading-output", style={"height": "100px"})
 
 app.layout = html.Div(
     [
-        dbc.Button("View", id="loading-button", n_clicks=0),
         html.Div(
             dls.RSHash(
                 loading_output,
-                fullscreen=False,
-                coverClassName="bg-primary",
+                id="loading-item",
+                fullscreen=True,
+                fullscreenClassName="bg-light",
             ),
             id="loader",
             className="container d-flex justify-content-center align-items-center border border-primary rounded my-2",
         ),
-        # TODO: Fix this
-        dbc.FormGroup(
+        html.Div(
             [
-                dbc.Label("Loader Style"),
-                dcc.Dropdown(
-                    id="loader-style",
-                    options=[{"label": s, "value": s} for s in spinner_options.keys()],
-                    value="hash",
-                ),
-            ]
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            dbc.FormGroup(
+                                [
+                                    dbc.Label("Loader Style"),
+                                    dcc.Dropdown(
+                                        id="loader-style",
+                                        options=[
+                                            {"label": s, "value": s}
+                                            for s in spinner_options.keys()
+                                        ],
+                                        value="hash",
+                                    ),
+                                ]
+                            ),
+                            className="col-md-6",
+                        ),
+                        dbc.Col(
+                            dbc.FormGroup(
+                                [
+                                    dbc.Checkbox(
+                                        checked=True, id="fullscreen", className="mr-2"
+                                    ),
+                                    dbc.Label("Fullscreen?"),
+                                ]
+                            ),
+                            className="col-md-4",
+                        ),
+                        dbc.Col(
+                            dbc.FormGroup(
+                                dbc.Button(
+                                    "View",
+                                    id="loading-button",
+                                    className="btn-success",
+                                    n_clicks=0,
+                                )
+                            ),
+                            className="col-md-2",
+                        ),
+                    ],
+                    className="align-items-end",
+                )
+            ],
+            className="container",
         ),
     ]
 )
+
+
+@app.callback(Output("loading-item", "fullscreen"), [Input("fullscreen", "checked")])
+def change_fullscreen(checked):
+    return checked
 
 
 @app.callback(Output("loader", "children"), [Input("loader-style", "value")])
@@ -67,8 +109,9 @@ def change_loader(value):
 
     return spinner_options[value](
         loading_output,
+        id="loading-item",
         fullscreen=True,
-        fullscreenClassName="bg-primary",
+        fullscreenClassName="bg-light",
     )
 
 
@@ -79,7 +122,7 @@ def change_loader(value):
 def load_output(n):
 
     if n:
-        time.sleep(10)
+        time.sleep(3)
         return f"Output loaded {n} times"
     return "Output not reloaded yet"
 
