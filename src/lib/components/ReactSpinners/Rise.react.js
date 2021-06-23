@@ -55,6 +55,7 @@ const Rise = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minWidth={size * 7}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -68,6 +69,8 @@ Rise.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
+    size: 15,
+    margin: 2,
 };
 
 Rise.propTypes = {

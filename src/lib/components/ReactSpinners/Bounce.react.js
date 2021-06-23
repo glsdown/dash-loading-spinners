@@ -53,6 +53,7 @@ const Bounce = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minWidth={size}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -66,6 +67,7 @@ Bounce.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
+    size: 60,
 };
 
 Bounce.propTypes = {

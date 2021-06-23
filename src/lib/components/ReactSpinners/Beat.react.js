@@ -55,6 +55,7 @@ const Beat = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
+            minWidth={size}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -68,6 +69,8 @@ Beat.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
+    size: 15,
+    margin: 2,
 };
 
 Beat.propTypes = {

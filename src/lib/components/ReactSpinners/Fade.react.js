@@ -59,6 +59,7 @@ const Fade = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -72,6 +73,10 @@ Fade.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
+    height: 15,
+    width: 5,
+    radius: 2,
+    margin: 2,
 };
 
 Fade.propTypes = {

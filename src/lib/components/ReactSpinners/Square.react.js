@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import {HashLoader} from 'react-spinners';
+import {SquareLoader} from 'react-spinners';
 import CoveringContainer from '../../private/CoveringContainer.react';
 
-const Hash = (props) => {
+const Square = (props) => {
     const {
         children,
         color,
@@ -15,7 +15,6 @@ const Hash = (props) => {
         debounce,
         show_initially,
         size,
-        margin,
         speedMultiplier,
     } = props;
 
@@ -40,10 +39,9 @@ const Hash = (props) => {
     }, [loading_state]);
 
     const SpinnerDiv = () => (
-        <HashLoader
+        <SquareLoader
             color={color}
             size={size}
-            margin={margin}
             css={spinnerCSS}
             speedMultiplier={speedMultiplier}
         />
@@ -62,18 +60,17 @@ const Hash = (props) => {
     );
 };
 
-Hash._dashprivate_isLoadingComponent = true;
+Square._dashprivate_isLoadingComponent = true;
 
-Hash.defaultProps = {
+Square.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
     size: 50,
-    margin: 2,
 };
 
-Hash.propTypes = {
+Square.propTypes = {
     /**
      * The ID of this component, used to identify dash components
      * in callbacks. The ID needs to be unique across all of the
@@ -115,11 +112,6 @@ Hash.propTypes = {
     size: PropTypes.number,
 
     /**
-     * The spinner margin (in px)
-     */
-    margin: PropTypes.number,
-
-    /**
      * Defines additional CSS styles for the spinner itself. It's based on the
      * emotion css styles here: https://emotion.sh/docs/introduction
      */
@@ -144,4 +136,4 @@ Hash.propTypes = {
     show_initially: PropTypes.bool,
 };
 
-export default Hash;
+export default Square;

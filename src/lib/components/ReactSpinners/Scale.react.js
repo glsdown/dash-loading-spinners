@@ -59,6 +59,7 @@ const Scale = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minWidth={width * 10}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -72,6 +73,10 @@ Scale.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
+    height: 35,
+    width: 4,
+    radius: 2,
+    margin: 2,
 };
 
 Scale.propTypes = {

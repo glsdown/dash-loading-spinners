@@ -6,6 +6,7 @@ const CoveringContainer = (props) => {
         fullscreenClassName,
         fullscreen_style,
         fullscreen,
+        minWidth,
         SpinnerDiv,
         showSpinner,
     } = props;
@@ -31,6 +32,7 @@ const CoveringContainer = (props) => {
         position: 'absolute',
         top: 0,
         height: '100%',
+        minWidth: minWidth,
         width: '100%',
         display: 'flex',
         justifyContent: 'center',

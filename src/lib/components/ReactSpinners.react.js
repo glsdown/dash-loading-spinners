@@ -17,6 +17,8 @@ import Ring from './ReactSpinners/Ring.react';
 import Rise from './ReactSpinners/Rise.react';
 import Rotate from './ReactSpinners/Rotate.react';
 import Scale from './ReactSpinners/Scale.react';
+import Skew from './ReactSpinners/Skew.react';
+import Square from './ReactSpinners/Square.react';
 import Sync from './ReactSpinners/Sync.react';
 
 // The spinners on here are all those included in the
@@ -44,5 +46,7 @@ export {
     Rise,
     Rotate,
     Scale,
+    Skew,
+    Square,
     Sync,
 };
