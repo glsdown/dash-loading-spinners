@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import {BeatLoader} from 'react-spinners';
+import {RiseLoader} from 'react-spinners';
 import CoveringContainer from '../../private/CoveringContainer.react';
 
-const RSBeat = (props) => {
+const RSRise = (props) => {
     const {
         children,
         color,
@@ -40,7 +40,7 @@ const RSBeat = (props) => {
     }, [loading_state]);
 
     const SpinnerDiv = () => (
-        <BeatLoader
+        <RiseLoader
             color={color}
             size={size}
             margin={margin}
@@ -61,16 +61,16 @@ const RSBeat = (props) => {
     );
 };
 
-RSBeat._dashprivate_isLoadingComponent = true;
+RSRise._dashprivate_isLoadingComponent = true;
 
-RSBeat.defaultProps = {
+RSRise.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
 };
 
-RSBeat.propTypes = {
+RSRise.propTypes = {
     /**
      * The ID of this component, used to identify dash components
      * in callbacks. The ID needs to be unique across all of the
@@ -141,4 +141,4 @@ RSBeat.propTypes = {
     show_initially: PropTypes.bool,
 };
 
-export default RSBeat;
+export default RSRise;

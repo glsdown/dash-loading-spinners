@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import {BeatLoader} from 'react-spinners';
+import {ScaleLoader} from 'react-spinners';
 import CoveringContainer from '../../private/CoveringContainer.react';
 
-const RSBeat = (props) => {
+const RSScale = (props) => {
     const {
         children,
         color,
@@ -14,7 +14,9 @@ const RSBeat = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        height,
+        width,
+        radius,
         margin,
         speedMultiplier,
     } = props;
@@ -40,9 +42,11 @@ const RSBeat = (props) => {
     }, [loading_state]);
 
     const SpinnerDiv = () => (
-        <BeatLoader
+        <ScaleLoader
             color={color}
-            size={size}
+            height={height}
+            width={width}
+            radius={radius}
             margin={margin}
             css={spinnerCSS}
             speedMultiplier={speedMultiplier}
@@ -61,16 +65,16 @@ const RSBeat = (props) => {
     );
 };
 
-RSBeat._dashprivate_isLoadingComponent = true;
+RSScale._dashprivate_isLoadingComponent = true;
 
-RSBeat.defaultProps = {
+RSScale.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
 };
 
-RSBeat.propTypes = {
+RSScale.propTypes = {
     /**
      * The ID of this component, used to identify dash components
      * in callbacks. The ID needs to be unique across all of the
@@ -107,9 +111,19 @@ RSBeat.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The spinner height (in px)
      */
-    size: PropTypes.number,
+    height: PropTypes.number,
+
+    /**
+     * The spinner width (in px)
+     */
+    width: PropTypes.number,
+
+    /**
+     * The spinner radius (in px)
+     */
+    radius: PropTypes.number,
 
     /**
      * The spinner margin (in px)
@@ -141,4 +155,4 @@ RSBeat.propTypes = {
     show_initially: PropTypes.bool,
 };
 
-export default RSBeat;
+export default RSScale;

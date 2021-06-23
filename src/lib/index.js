@@ -1,5 +1,46 @@
 /* eslint-disable import/prefer-default-export */
-import Loader from './components/Loader.react';
-import {Beat} from './components/ReactSpinners.react';
+import {
+    RSBeat,
+    RSBounce,
+    RSCircle,
+    RSClimbingBox,
+    RSClip,
+    RSClock,
+    RSDot,
+    RSFade,
+    RSGrid,
+    RSHash,
+    RSMoon,
+    RSPacman,
+    RSPropagate,
+    RSPuff,
+    RSPulse,
+    RSRing,
+    RSRise,
+    RSRotate,
+    RSScale,
+    RSSync,
+} from './components/ReactSpinners.react';
 
-export {Loader, Beat};
+export {
+    RSBeat,
+    RSBounce,
+    RSCircle,
+    RSClimbingBox,
+    RSClip,
+    RSClock,
+    RSDot,
+    RSFade,
+    RSGrid,
+    RSHash,
+    RSMoon,
+    RSPacman,
+    RSPropagate,
+    RSPuff,
+    RSPulse,
+    RSRing,
+    RSRise,
+    RSRotate,
+    RSScale,
+    RSSync,
+};
