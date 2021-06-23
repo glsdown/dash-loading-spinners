@@ -36,14 +36,14 @@ Keyword arguments:
 - fullscreen_style (dict; optional):
     Defines CSS styles for the container.
 
-- margin (number; optional):
+- margin (number; default 2):
     The spinner margin (in px).
 
 - show_initially (boolean; default True):
     Whether the Spinner should show on app start-up before the loading
     state has been determined. Default True.
 
-- size (number; optional):
+- size (number; default 60):
     The spinner size (in px).
 
 - speedMultiplier (number; default 1):

@@ -36,13 +36,13 @@ Keyword arguments:
 - fullscreen_style (dict; optional):
     Defines CSS styles for the container.
 
-- height (number; optional):
+- height (number; default 15):
     The spinner height (in px).
 
-- margin (number; optional):
+- margin (number; default 2):
     The spinner margin (in px).
 
-- radius (number; optional):
+- radius (number; default 2):
     The spinner radius (in px).
 
 - show_initially (boolean; default True):
@@ -57,7 +57,7 @@ Keyword arguments:
     on the emotion css styles here:
     https://emotion.sh/docs/introduction.
 
-- width (number; optional):
+- width (number; default 5):
     The spinner width (in px)."""
     @_explicitize_args
     def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, color=Component.UNDEFINED, speedMultiplier=Component.UNDEFINED, height=Component.UNDEFINED, width=Component.UNDEFINED, radius=Component.UNDEFINED, margin=Component.UNDEFINED, spinnerCSS=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):

@@ -10,27 +10,46 @@ from dash.dependencies import Input, Output
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 spinner_options = {
-    # "bar",
-    "beat": dls.RSBeat,
-    "bounce": dls.RSBounce,
-    "circle": dls.RSCircle,
-    "climbingBox": dls.RSClimbingBox,
-    "clip": dls.RSClip,
-    "clock": dls.RSClock,
-    "dot": dls.RSDot,
-    "fade": dls.RSFade,
-    "grid": dls.RSGrid,
-    "hash": dls.RSHash,
-    "moon": dls.RSMoon,
-    "pacman": dls.RSPacman,
-    "propagate": dls.RSPropagate,
-    "puff": dls.RSPuff,
-    "pulse": dls.RSPulse,
-    "ring": dls.RSRing,
-    "rise": dls.RSRise,
-    "rotate": dls.RSRotate,
-    "scale": dls.RSScale,
-    "sync": dls.RSSync,
+    "--- react-spinners ---": None,
+    "Beat": dls.Beat,
+    "Bounce": dls.Bounce,
+    "Circle": dls.Circle,
+    "ClimbingBox": dls.ClimbingBox,
+    "Clip": dls.Clip,
+    "Clock": dls.Clock,
+    "Dot": dls.Dot,
+    "Fade": dls.Fade,
+    "Grid": dls.Grid,
+    "Hash": dls.Hash,
+    "Moon": dls.Moon,  # FIXME - Not working as expected (bouncing around)
+    "Pacman": dls.Pacman,
+    "Propagate": dls.Propagate,
+    "Puff": dls.Puff,
+    "Pulse": dls.Pulse,
+    "Ring": dls.Ring,
+    "Rise": dls.Rise,
+    "Rotate": dls.Rotate,
+    "Scale": dls.Scale,
+    "Skew": dls.Skew,
+    "Square": dls.Square,
+    "Sync": dls.Sync,
+    "--- react-loading-spinners ---": None,
+    "Audio": dls.Audio,
+    "BallTriangle": dls.BallTriangle,
+    "Bars": dls.Bars,
+    "Circles": dls.Circles,
+    "GridAlt": dls.GridAlt,
+    "Hearts": dls.Hearts,
+    "MutatingDots": dls.MutatingDots,
+    "Oval": dls.Oval,
+    "Plane": dls.Plane,  # FIXME - Doesn't fit in box
+    "PuffAlt": dls.PuffAlt,
+    "RevolvingDot": dls.RevolvingDot,  # FIXME - Doesn't fit in box
+    "Rings": dls.Rings,
+    "TailSpin": dls.TailSpin,
+    "ThreeDots": dls.ThreeDots,
+    "Triangle": dls.Triangle,
+    "Watch": dls.Watch,  # TODO - consider renaming as similar to clock?
 }
 
 loading_output = html.Div(id="loading-output", style={"height": "100px"})
@@ -38,10 +57,10 @@ loading_output = html.Div(id="loading-output", style={"height": "100px"})
 app.layout = html.Div(
     [
         html.Div(
-            dls.RSHash(
+            dls.Hash(
                 loading_output,
                 id="loading-item",
-                fullscreen=True,
+                fullscreen=False,
                 fullscreenClassName="bg-light",
             ),
             id="loader",
@@ -61,7 +80,7 @@ app.layout = html.Div(
                                             {"label": s, "value": s}
                                             for s in spinner_options.keys()
                                         ],
-                                        value="hash",
+                                        value="Hash",
                                     ),
                                 ]
                             ),
@@ -71,7 +90,7 @@ app.layout = html.Div(
                             dbc.FormGroup(
                                 [
                                     dbc.Checkbox(
-                                        checked=True, id="fullscreen", className="mr-2"
+                                        checked=False, id="fullscreen", className="mr-2"
                                     ),
                                     dbc.Label("Fullscreen?"),
                                 ]
@@ -110,7 +129,7 @@ def change_loader(value):
     return spinner_options[value](
         loading_output,
         id="loading-item",
-        fullscreen=True,
+        fullscreen=False,
         fullscreenClassName="bg-light",
     )
 

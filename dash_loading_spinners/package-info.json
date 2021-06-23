@@ -25,6 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "ramda": "^0.26.1",
+    "react-loader-spinner": "^4.0.0",
     "react-spinners": "^0.11.0"
   },
   "devDependencies": {

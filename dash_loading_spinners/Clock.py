@@ -40,7 +40,7 @@ Keyword arguments:
     Whether the Spinner should show on app start-up before the loading
     state has been determined. Default True.
 
-- size (number; optional):
+- size (number; default 50):
     The spinner size (in px).
 
 - speedMultiplier (number; default 1):
