@@ -43,6 +43,8 @@ import {
     Watch,
 } from './components/ReactLoaderSpinners.react';
 
+import {Custom} from './components/CustomSpinners.react';
+
 export {
     Beat,
     Bounce,
@@ -82,4 +84,5 @@ export {
     ThreeDots,
     Triangle,
     Watch,
+    Custom,
 };

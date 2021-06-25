@@ -40,11 +40,11 @@ spinner_options = {
     "Circles": dls.Circles,
     "GridAlt": dls.GridAlt,
     "Hearts": dls.Hearts,
-    "MutatingDots": dls.MutatingDots,
+    "MutatingDots": dls.MutatingDots,  # FIXME - Appear to go outside the bottom right of the box
     "Oval": dls.Oval,
-    "Plane": dls.Plane,  # FIXME - Doesn't fit in box
+    "Plane": dls.Plane,  # HACK - Can't change size of it (from source package)
     "PuffAlt": dls.PuffAlt,
-    "RevolvingDot": dls.RevolvingDot,  # FIXME - Doesn't fit in box
+    "RevolvingDot": dls.RevolvingDot,  # HACK - Incorrect original implementation
     "Rings": dls.Rings,
     "TailSpin": dls.TailSpin,
     "ThreeDots": dls.ThreeDots,
@@ -53,6 +53,71 @@ spinner_options = {
 }
 
 loading_output = html.Div(id="loading-output", style={"height": "100px"})
+custom_output = html.Div(
+    "Change the SVG code below", id="custom-output", style={"height": "100px"}
+)
+svg = """<svg width="100%" height="200px" fill="none">
+      <path 
+        fill="#454599" 
+        d="
+          M0 67
+          C 273,183
+            822,-40
+            1920.00,106 
+
+          V 359 
+          H 0 
+          V 67
+          Z">
+        <animate 
+          repeatCount="indefinite" 
+          fill="#454599" 
+          attributeName="d" 
+          dur="15s" 
+          values="
+            M0 77 
+            C 473,283
+              822,-40
+              1920,116 
+
+            V 359 
+            H 0 
+            V 67 
+            Z; 
+
+            M0 77 
+            C 473,-40
+              1222,283
+              1920,136 
+
+            V 359 
+            H 0 
+            V 67 
+            Z; 
+
+            M0 77 
+            C 973,260
+              1722,-53
+              1920,120 
+
+            V 359 
+            H 0 
+            V 67 
+            Z; 
+
+            M0 77 
+            C 473,283
+              822,-40
+              1920,116 
+
+            V 359 
+            H 0 
+            V 67 
+            Z
+            ">
+        </animate>
+      </path>
+    </svg>"""
 
 app.layout = html.Div(
     [
@@ -114,8 +179,25 @@ app.layout = html.Div(
             ],
             className="container",
         ),
+        html.Div(
+            dls.Custom(
+                custom_output,
+                id="custom-loader",
+                fullscreen=False,
+                fullscreenClassName="bg-light",
+                svg=svg,
+            ),
+            style={"height": "200px"},
+            className="container d-flex justify-content-center align-items-center border border-primary rounded my-2",
+        ),
+        html.Div(dbc.Textarea(id="svg-text", value=svg, style={"height": "200px"})),
     ]
 )
+
+
+@app.callback(Output("custom-loader", "svg"), [Input("svg-text", "value")])
+def change_custom(value):
+    return value
 
 
 @app.callback(Output("loading-item", "fullscreen"), [Input("fullscreen", "checked")])
@@ -135,15 +217,15 @@ def change_loader(value):
 
 
 @app.callback(
-    Output("loading-output", "children"),
+    [Output("loading-output", "children"), Output("custom-output", "children")],
     [Input("loading-button", "n_clicks")],
 )
 def load_output(n):
 
     if n:
         time.sleep(3)
-        return f"Output loaded {n} times"
-    return "Output not reloaded yet"
+        return f"Output loaded {n} times", f"Output loaded {n} times"
+    return "Output not reloaded yet", "Output not reloaded yet"
 
 
 if __name__ == "__main__":
