@@ -12,7 +12,8 @@
 \usage{
 dlsRevolvingDot(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
-fullscreen_style=NULL, radius=NULL, show_initially=NULL)
+fullscreen_style=NULL, radius=NULL, secondaryColor=NULL,
+show_initially=NULL, speedMultiplier=NULL, width=NULL)
 }
 
 \arguments{
@@ -39,8 +40,17 @@ full-screen or not.}
 
 \item{radius}{Numeric. The spinner radius (in px)}
 
+\item{secondaryColor}{Character. Sets the color of the Spinner. You can also specify any valid CSS color
+of your choice (e.g. a hex code, a decimal code or a CSS color name).
+
+If not specified will default to blue.}
+
 \item{show_initially}{Logical. Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.}
+
+\item{speedMultiplier}{Numeric. The relative speed of the spinner}
+
+\item{width}{Numeric. The spinner width (in px)}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

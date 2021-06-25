@@ -1,27 +1,28 @@
 import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import Loader from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+// import Loader from 'react-loader-spinner';
+// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import CoveringContainer from '../../private/CoveringContainer.react';
 
 const RevolvingDot = (props) => {
     const {
         children,
         color,
+        secondaryColor,
+        speedMultiplier,
         loading_state,
         fullscreenClassName,
         fullscreen_style,
         fullscreen,
         debounce,
         show_initially,
+        width,
         radius,
     } = props;
 
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
-    const width = (radius * 2 + 38) * 2; // HACK - there is an issue with the original version
-    const height = width;
 
     useEffect(() => {
         if (loading_state) {
@@ -39,16 +40,51 @@ const RevolvingDot = (props) => {
         }
     }, [loading_state]);
 
-    const SpinnerDiv = () => (
-        <Loader
-            type="RevolvingDot"
-            visible={loading_state}
-            color={color}
-            height={height}
-            width={width}
-            radius={radius}
-        />
-    );
+    const SpinnerDiv = () => {
+        const animationTime = 2 / speedMultiplier;
+        return (
+            <svg
+                version="1.1"
+                width={width}
+                height={width}
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                aria-label="loading"
+            >
+                <circle
+                    fill="none"
+                    stroke={color}
+                    strokeWidth={Math.ceil(radius / 3)}
+                    cx={Math.ceil(width / 2)}
+                    cy={Math.ceil(width / 2)}
+                    r={Math.ceil(width / 2) - 2 * radius}
+                    style={{opacity: 0.5}}
+                />
+                <circle
+                    fill={secondaryColor}
+                    stroke={secondaryColor}
+                    strokeWidth="3"
+                    cx={Math.ceil(width / 2)}
+                    cy={radius * 2}
+                    r={radius}
+                >
+                    <animateTransform
+                        attributeName="transform"
+                        dur={`${animationTime}s`}
+                        type="rotate"
+                        from={`0 ${Math.ceil(width / 2)} ${Math.ceil(
+                            width / 2
+                        )}`}
+                        to={`360 ${Math.ceil(width / 2)} ${Math.ceil(
+                            width / 2
+                        )}`}
+                        repeatCount="indefinite"
+                    />
+                </circle>
+            </svg>
+        );
+    };
 
     return (
         <CoveringContainer
@@ -56,7 +92,7 @@ const RevolvingDot = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
-            minHeight={height}
+            minHeight={width}
             minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
@@ -70,6 +106,9 @@ RevolvingDot.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
+    secondaryColor: '#0275d8',
+    speedMultiplier: 1,
+    width: 80,
     radius: 6,
 };
 
@@ -103,6 +142,24 @@ RevolvingDot.propTypes = {
      * If not specified will default to black.
      */
     color: PropTypes.string,
+
+    /**
+     * Sets the color of the Spinner. You can also specify any valid CSS color
+     * of your choice (e.g. a hex code, a decimal code or a CSS color name).
+     *
+     * If not specified will default to blue.
+     */
+    secondaryColor: PropTypes.string,
+
+    /**
+     * The relative speed of the spinner
+     */
+    speedMultiplier: PropTypes.number,
+
+    /**
+     * The spinner width (in px)
+     */
+    width: PropTypes.number,
 
     /**
      * The spinner radius (in px)

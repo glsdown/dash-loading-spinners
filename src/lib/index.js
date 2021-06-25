@@ -33,14 +33,12 @@ import {
     Hearts,
     MutatingDots,
     Oval,
-    Plane,
-    PuffAlt,
+    Target,
     RevolvingDot,
     Rings,
     TailSpin,
     ThreeDots,
     Triangle,
-    Watch,
 } from './components/ReactLoaderSpinners.react';
 
 import {Custom} from './components/CustomSpinners.react';
@@ -76,13 +74,11 @@ export {
     Hearts,
     MutatingDots,
     Oval,
-    Plane,
-    PuffAlt,
+    Target,
     RevolvingDot,
     Rings,
     TailSpin,
     ThreeDots,
     Triangle,
-    Watch,
     Custom,
 };

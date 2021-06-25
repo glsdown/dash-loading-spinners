@@ -69,7 +69,7 @@ Moon.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
-    speedMultiplier: 1,
+    speedMultiplier: 0.75,
     size: 60,
     margin: 2,
 };

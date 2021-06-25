@@ -10,114 +10,81 @@ from dash.dependencies import Input, Output
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 spinner_options = {
-    "--- react-spinners ---": None,
+    # Dots
     "Beat": dls.Beat,
-    "Bounce": dls.Bounce,
-    "Circle": dls.Circle,
-    "ClimbingBox": dls.ClimbingBox,
-    "Clip": dls.Clip,
-    "Clock": dls.Clock,
-    "Dot": dls.Dot,
-    "Fade": dls.Fade,
-    "Grid": dls.Grid,
-    "Hash": dls.Hash,
-    "Moon": dls.Moon,
-    "Pacman": dls.Pacman,
-    "Propagate": dls.Propagate,
-    "Puff": dls.Puff,
-    "Pulse": dls.Pulse,
-    "Ring": dls.Ring,
-    "Rise": dls.Rise,
-    "Rotate": dls.Rotate,
-    "Scale": dls.Scale,
-    "Skew": dls.Skew,
-    "Square": dls.Square,
-    "Sync": dls.Sync,
-    "--- react-loading-spinners ---": None,
-    "Audio": dls.Audio,
-    "BallTriangle": dls.BallTriangle,
-    "Bars": dls.Bars,
-    "Circles": dls.Circles,
-    "GridAlt": dls.GridAlt,
-    "Hearts": dls.Hearts,
-    "MutatingDots": dls.MutatingDots,  # FIXME - Appear to go outside the bottom right of the box
-    "Oval": dls.Oval,
-    "Plane": dls.Plane,  # HACK - Can't change size of it (from source package)
-    "PuffAlt": dls.PuffAlt,
-    "RevolvingDot": dls.RevolvingDot,  # HACK - Incorrect original implementation
-    "Rings": dls.Rings,
-    "TailSpin": dls.TailSpin,
     "ThreeDots": dls.ThreeDots,
+    "Pulse": dls.Pulse,
+    "Rotate": dls.Rotate,
+    "Sync": dls.Sync,
+    "Propagate": dls.Propagate,
+    "Rise": dls.Rise,
+    "Dot": dls.Dot,
+    "MutatingDots": dls.MutatingDots,
+    # Circles
+    "Circle": dls.Circle,
+    "Puff": dls.Puff,
+    "Target": dls.Target,
+    "Rings": dls.Rings,
+    # Grid
+    "Grid": dls.Grid,
+    "GridAlt": dls.GridAlt,
+    "Circles": dls.Circles,
+    # Square
+    "Square": dls.Square,
+    # Circle
+    "Oval": dls.Oval,
+    "RevolvingDot": dls.RevolvingDot,
+    "Moon": dls.Moon,
+    "TailSpin": dls.TailSpin,
+    "Clip": dls.Clip,
+    "Ring": dls.Ring,
+    "Bounce": dls.Bounce,
+    # Lines
+    "Audio": dls.Audio,
+    "Scale": dls.Scale,
+    "Bars": dls.Bars,
+    # Triangle
+    "BallTriangle": dls.BallTriangle,
     "Triangle": dls.Triangle,
-    "Watch": dls.Watch,  # TODO - consider renaming as similar to clock?
+    "Skew": dls.Skew,
+    # Special
+    "Hash": dls.Hash,
+    "Fade": dls.Fade,
+    "Clock": dls.Clock,
+    "Pacman": dls.Pacman,
+    "Hearts": dls.Hearts,
+    "ClimbingBox": dls.ClimbingBox,
 }
 
 loading_output = html.Div(id="loading-output", style={"height": "100px"})
 custom_output = html.Div(
     "Change the SVG code below", id="custom-output", style={"height": "100px"}
 )
-svg = """<svg width="100%" height="200px" fill="none">
-      <path 
-        fill="#454599" 
-        d="
-          M0 67
-          C 273,183
-            822,-40
-            1920.00,106 
-
-          V 359 
-          H 0 
-          V 67
-          Z">
-        <animate 
-          repeatCount="indefinite" 
-          fill="#454599" 
-          attributeName="d" 
-          dur="5s" 
-          values="
-            M0 77 
-            C 473,283
-              822,-40
-              1920,116 
-
-            V 359 
-            H 0 
-            V 67 
-            Z; 
-
-            M0 77 
-            C 473,-40
-              1222,283
-              1920,136 
-
-            V 359 
-            H 0 
-            V 67 
-            Z; 
-
-            M0 77 
-            C 973,260
-              1722,-53
-              1920,120 
-
-            V 359 
-            H 0 
-            V 67 
-            Z; 
-
-            M0 77 
-            C 473,283
-              822,-40
-              1920,116 
-
-            V 359 
-            H 0 
-            V 67 
-            Z
-            ">
-        </animate>
-      </path>
-    </svg>"""
+svg = """<svg
+    height="100"
+    width="100"
+    viewBox="0 0 100% 100%"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <rect width="100%" height="100%">
+        <animate
+            attributeName="rx"
+            values="0;50;0"
+            dur="5s"
+            repeatCount="indefinite"
+        />
+    </rect>
+    <circle r="40%" cx="50%" cy="50%" fill="#ffffff">
+    </circle>
+    <circle r="20%" cx="50%" cy="50%" fill="#000000">
+        <animate
+            attributeName="r"
+            values="20%;40%;20%"
+            dur="5s"
+            repeatCount="indefinite"
+        />
+    </circle>
+</svg>"""
 
 
 def getSpinnerBox(title, spinner):
@@ -197,10 +164,10 @@ app.layout = html.Div(
         html.Div(
             [
                 dbc.Row(
-                    allSpinners[i : i + 4],
+                    allSpinners[i : min(i + 4, len(allSpinners))],
                     className="m-2",
                 )
-                for i in range(0, len(allSpinners) - 3, 4)
+                for i in range(0, len(allSpinners), 4)
             ]
         ),
         html.Div(

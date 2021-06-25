@@ -30,7 +30,7 @@ const CoveringContainer = (props) => {
 
     const coveringStyle = {
         visibility: 'visible',
-        position: 'display',
+        position: children ? 'absolute' : null,
         top: 0,
         minHeight: minHeight,
         height: '100%',

@@ -1,16 +1,16 @@
 % Auto-generated: do not edit by hand
-\name{dlsPuffAlt}
+\name{dlsTarget}
 
-\alias{dlsPuffAlt}
+\alias{dlsTarget}
 
-\title{PuffAlt component}
+\title{Target component}
 
 \description{
 
 }
 
 \usage{
-dlsPuffAlt(children=NULL, id=NULL, color=NULL, debounce=NULL,
+dlsTarget(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
 fullscreen_style=NULL, height=NULL, radius=NULL,
 show_initially=NULL, width=NULL)

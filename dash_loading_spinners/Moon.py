@@ -46,7 +46,7 @@ Keyword arguments:
 - size (number; default 60):
     The spinner size (in px).
 
-- speedMultiplier (number; default 1):
+- speedMultiplier (number; default 0.75):
     The relative speed of the spinner.
 
 - spinnerCSS (dict; optional):

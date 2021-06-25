@@ -1,14 +1,14 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-export dls_plane
+export dls_target
 
 """
-    dls_plane(;kwargs...)
-    dls_plane(children::Any;kwargs...)
-    dls_plane(children_maker::Function;kwargs...)
+    dls_target(;kwargs...)
+    dls_target(children::Any;kwargs...)
+    dls_target(children_maker::Function;kwargs...)
 
 
-A Plane component.
+A Target component.
 
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
@@ -25,19 +25,18 @@ the spinner being removed to prevent flickering.
 full-screen or not.
 - `fullscreenClassName` (String; optional): CSS class names to apply to the container when in fullscreen.
 - `fullscreen_style` (Dict; optional): Defines CSS styles for the container when in fullscreen.
-- `secondaryColor` (String; optional): Sets the color of the Spinner. You can also specify any valid CSS color
-of your choice (e.g. a hex code, a decimal code or a CSS color name).
-
-If not specified will default to blue.
+- `height` (Real; optional): The spinner height (in px)
+- `radius` (Real; optional): The spinner radius (in px)
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
+- `width` (Real; optional): The spinner width (in px)
 """
-function dls_plane(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :secondaryColor, :show_initially]
+function dls_target(; kwargs...)
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :radius, :show_initially, :width]
         wild_props = Symbol[]
-        return Component("dls_plane", "Plane", "dash_loading_spinners", available_props, wild_props; kwargs...)
+        return Component("dls_target", "Target", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end
 
-dls_plane(children::Any; kwargs...) = dls_plane(;kwargs..., children = children)
-dls_plane(children_maker::Function; kwargs...) = dls_plane(children_maker(); kwargs...)
+dls_target(children::Any; kwargs...) = dls_target(;kwargs..., children = children)
+dls_target(children_maker::Function; kwargs...) = dls_target(children_maker(); kwargs...)
 

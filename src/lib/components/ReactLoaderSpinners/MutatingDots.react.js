@@ -41,15 +41,79 @@ const MutatingDots = (props) => {
     }, [loading_state]);
 
     const SpinnerDiv = () => (
-        <Loader
-            type="MutatingDots"
-            visible={loading_state}
-            color={color}
-            secondaryColor={secondaryColor}
-            height={height}
-            width={width}
-            radius={radius}
-        />
+        <svg id="goo-loader" width={width} height={height} aria-label="loading">
+            <filter id="fancy-goo">
+                <feGaussianBlur
+                    in="SourceGraphic"
+                    stdDeviation="6"
+                    result="blur"
+                />
+                <feColorMatrix
+                    in="blur"
+                    mode="matrix"
+                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="goo"
+                />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+            <g filter="url(#fancy-goo)">
+                <animateTransform
+                    id="mainAnim"
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from={`0 ${Math.ceil(width / 2)} ${Math.ceil(height / 2)}`}
+                    to={`360 ${Math.ceil(width / 2)} ${Math.ceil(height / 2)}`}
+                    dur="1.2s"
+                    repeatCount="indefinite"
+                />
+                <circle
+                    cx="50%"
+                    cy={`${Math.ceil(width / 2)}`}
+                    r={radius}
+                    fill={color}
+                >
+                    <animate
+                        id="cAnim1"
+                        attributeType="XML"
+                        attributeName="cy"
+                        dur="0.6s"
+                        begin="0;cAnim1.end+0.2s"
+                        calcMode="spline"
+                        values={`${Math.ceil(width / 2)};${Math.ceil(
+                            width / 4
+                        )};${Math.ceil(width / 2)}`}
+                        keyTimes="0;0.3;1"
+                        keySplines="0.09, 0.45, 0.16, 1;0.09, 0.45, 0.16, 1"
+                    />
+                </circle>
+                <circle cx="50%" cy="75%" r={radius} fill={secondaryColor}>
+                    <animate
+                        id="cAnim2"
+                        attributeType="XML"
+                        attributeName="cy"
+                        dur="0.6s"
+                        begin="0.4s;cAnim2.end+0.2s"
+                        calcMode="spline"
+                        values={`${3 * Math.ceil(width / 4)};${
+                            height - radius
+                        };${3 * Math.ceil(width / 4)}`}
+                        keyTimes="0;0.3;1"
+                        keySplines="0.09, 0.45, 0.16, 1;0.09, 0.45, 0.16, 1"
+                    />
+                </circle>
+            </g>
+        </svg>
+
+        // <Loader
+        //     type="MutatingDots"
+        //     visible={loading_state}
+        //     color={color}
+        //     secondaryColor={secondaryColor}
+        //     height={height}
+        //     width={width}
+        //     radius={radius}
+        // />
     );
 
     return (

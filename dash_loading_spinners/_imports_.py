@@ -7,14 +7,12 @@ from .GridAlt import GridAlt
 from .Hearts import Hearts
 from .MutatingDots import MutatingDots
 from .Oval import Oval
-from .Plane import Plane
-from .PuffAlt import PuffAlt
 from .RevolvingDot import RevolvingDot
 from .Rings import Rings
 from .TailSpin import TailSpin
+from .Target import Target
 from .ThreeDots import ThreeDots
 from .Triangle import Triangle
-from .Watch import Watch
 from .Beat import Beat
 from .Bounce import Bounce
 from .Circle import Circle
@@ -48,14 +46,12 @@ __all__ = [
     "Hearts",
     "MutatingDots",
     "Oval",
-    "Plane",
-    "PuffAlt",
     "RevolvingDot",
     "Rings",
     "TailSpin",
+    "Target",
     "ThreeDots",
     "Triangle",
-    "Watch",
     "Beat",
     "Bounce",
     "Circle",

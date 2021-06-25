@@ -4,7 +4,7 @@ import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import CoveringContainer from '../../private/CoveringContainer.react';
 
-const Watch = (props) => {
+const Target = (props) => {
     const {
         children,
         color,
@@ -41,7 +41,7 @@ const Watch = (props) => {
 
     const SpinnerDiv = () => (
         <Loader
-            type="Watch"
+            type="Puff"
             visible={loading_state}
             color={color}
             height={height}
@@ -64,18 +64,18 @@ const Watch = (props) => {
     );
 };
 
-Watch._dashprivate_isLoadingComponent = true;
+Target._dashprivate_isLoadingComponent = true;
 
-Watch.defaultProps = {
+Target.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
     width: 80,
     height: 80,
-    radius: 48,
+    radius: 1,
 };
 
-Watch.propTypes = {
+Target.propTypes = {
     /**
      * The ID of this component, used to identify dash components
      * in callbacks. The ID needs to be unique across all of the
@@ -140,4 +140,4 @@ Watch.propTypes = {
     show_initially: PropTypes.bool,
 };
 
-export default Watch;
+export default Target;
