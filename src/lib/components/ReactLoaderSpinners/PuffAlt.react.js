@@ -71,6 +71,7 @@ PuffAlt.defaultProps = {
     color: '#000000',
     width: 80,
     height: 80,
+    radius: 1,
 };
 
 PuffAlt.propTypes = {
@@ -103,11 +104,6 @@ PuffAlt.propTypes = {
      * If not specified will default to black.
      */
     color: PropTypes.string,
-
-    /**
-     * The relative speed of the spinner
-     */
-    speedMultiplier: PropTypes.number,
 
     /**
      * The spinner height (in px)

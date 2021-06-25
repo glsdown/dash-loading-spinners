@@ -74,6 +74,7 @@ MutatingDots.defaultProps = {
     secondaryColor: '#0275d8',
     width: 80,
     height: 80,
+    radius: 11,
 };
 
 MutatingDots.propTypes = {
@@ -114,11 +115,6 @@ MutatingDots.propTypes = {
      * If not specified will default to blue.
      */
     secondaryColor: PropTypes.string,
-
-    /**
-     * The relative speed of the spinner
-     */
-    speedMultiplier: PropTypes.number,
 
     /**
      * The spinner height (in px)

@@ -5,6 +5,7 @@ using Dash
 const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
 const version = "0.0.1"
 
+include("dls_custom.jl")
 include("dls_audio.jl")
 include("dls_balltriangle.jl")
 include("dls_bars.jl")

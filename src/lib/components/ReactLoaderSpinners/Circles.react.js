@@ -103,11 +103,6 @@ Circles.propTypes = {
     color: PropTypes.string,
 
     /**
-     * The relative speed of the spinner
-     */
-    speedMultiplier: PropTypes.number,
-
-    /**
      * The spinner height (in px)
      */
     height: PropTypes.number,

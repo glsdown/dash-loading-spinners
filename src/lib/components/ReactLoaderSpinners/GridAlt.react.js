@@ -71,6 +71,7 @@ GridAlt.defaultProps = {
     color: '#000000',
     width: 80,
     height: 80,
+    radius: 12.5,
 };
 
 GridAlt.propTypes = {
@@ -103,11 +104,6 @@ GridAlt.propTypes = {
      * If not specified will default to black.
      */
     color: PropTypes.string,
-
-    /**
-     * The relative speed of the spinner
-     */
-    speedMultiplier: PropTypes.number,
 
     /**
      * The spinner height (in px)

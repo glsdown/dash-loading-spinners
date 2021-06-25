@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-dlsCircles <- function(children=NULL, id=NULL, color=NULL, debounce=NULL, fullscreen=NULL, fullscreenClassName=NULL, fullscreen_style=NULL, height=NULL, show_initially=NULL, speedMultiplier=NULL, width=NULL) {
+dlsCircles <- function(children=NULL, id=NULL, color=NULL, debounce=NULL, fullscreen=NULL, fullscreenClassName=NULL, fullscreen_style=NULL, height=NULL, show_initially=NULL, width=NULL) {
     
-    props <- list(children=children, id=id, color=color, debounce=debounce, fullscreen=fullscreen, fullscreenClassName=fullscreenClassName, fullscreen_style=fullscreen_style, height=height, show_initially=show_initially, speedMultiplier=speedMultiplier, width=width)
+    props <- list(children=children, id=id, color=color, debounce=debounce, fullscreen=fullscreen, fullscreenClassName=fullscreenClassName, fullscreen_style=fullscreen_style, height=height, show_initially=show_initially, width=width)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ dlsCircles <- function(children=NULL, id=NULL, color=NULL, debounce=NULL, fullsc
         props = props,
         type = 'Circles',
         namespace = 'dash_loading_spinners',
-        propNames = c('children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'show_initially', 'speedMultiplier', 'width'),
+        propNames = c('children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'show_initially', 'width'),
         package = 'dashLoadingSpinners'
         )
 

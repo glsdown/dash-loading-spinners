@@ -46,9 +46,6 @@ const Plane = (props) => {
             visible={loading_state}
             color={color}
             secondaryColor={secondaryColor}
-            height={height}
-            width={width}
-            radius={radius}
         />
     );
 
@@ -58,7 +55,7 @@ const Plane = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
-            minWidth={width}
+            minWidth={230}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -72,8 +69,6 @@ Plane.defaultProps = {
     show_initially: true,
     color: '#000000',
     secondaryColor: '#0275d8',
-    width: 80,
-    height: 80,
 };
 
 Plane.propTypes = {
@@ -114,26 +109,6 @@ Plane.propTypes = {
      * If not specified will default to blue.
      */
     secondaryColor: PropTypes.string,
-
-    /**
-     * The relative speed of the spinner
-     */
-    speedMultiplier: PropTypes.number,
-
-    /**
-     * The spinner height (in px)
-     */
-    height: PropTypes.number,
-
-    /**
-     * The spinner width (in px)
-     */
-    width: PropTypes.number,
-
-    /**
-     * The spinner radius (in px)
-     */
-    radius: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

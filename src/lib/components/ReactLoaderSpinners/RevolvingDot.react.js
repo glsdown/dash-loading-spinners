@@ -14,14 +14,14 @@ const RevolvingDot = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        height,
-        width,
         radius,
     } = props;
 
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
+    const width = (radius * 2 + 38) * 2; // HACK - there is an issue with the original version
+    const height = width;
 
     useEffect(() => {
         if (loading_state) {
@@ -69,8 +69,7 @@ RevolvingDot.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
-    width: 80,
-    height: 80,
+    radius: 6,
 };
 
 RevolvingDot.propTypes = {
@@ -103,21 +102,6 @@ RevolvingDot.propTypes = {
      * If not specified will default to black.
      */
     color: PropTypes.string,
-
-    /**
-     * The relative speed of the spinner
-     */
-    speedMultiplier: PropTypes.number,
-
-    /**
-     * The spinner height (in px)
-     */
-    height: PropTypes.number,
-
-    /**
-     * The spinner width (in px)
-     */
-    width: PropTypes.number,
 
     /**
      * The spinner radius (in px)

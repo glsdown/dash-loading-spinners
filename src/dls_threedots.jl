@@ -29,11 +29,10 @@ full-screen or not.
 - `radius` (Real; optional): The spinner radius (in px)
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
-- `speedMultiplier` (Real; optional): The relative speed of the spinner
 - `width` (Real; optional): The spinner width (in px)
 """
 function dls_threedots(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :radius, :show_initially, :speedMultiplier, :width]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :radius, :show_initially, :width]
         wild_props = Symbol[]
         return Component("dls_threedots", "ThreeDots", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

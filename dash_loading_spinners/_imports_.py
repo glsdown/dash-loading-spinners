@@ -1,3 +1,4 @@
+from .Custom import Custom
 from .Audio import Audio
 from .BallTriangle import BallTriangle
 from .Bars import Bars
@@ -38,6 +39,7 @@ from .Square import Square
 from .Sync import Sync
 
 __all__ = [
+    "Custom",
     "Audio",
     "BallTriangle",
     "Bars",
