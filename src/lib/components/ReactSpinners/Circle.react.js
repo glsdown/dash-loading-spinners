@@ -53,6 +53,7 @@ const Circle = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minHeight={size}
             minWidth={size}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}

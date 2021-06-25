@@ -54,6 +54,7 @@ const Audio = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
+            minHeight={height}
             minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}

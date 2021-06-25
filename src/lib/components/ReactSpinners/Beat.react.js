@@ -55,6 +55,7 @@ const Beat = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
+            minHeight={size}
             minWidth={size}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}

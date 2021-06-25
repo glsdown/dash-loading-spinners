@@ -55,6 +55,7 @@ const Sync = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minHeight={size * 4}
             minWidth={size * 4}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}

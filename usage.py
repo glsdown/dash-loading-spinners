@@ -21,7 +21,7 @@ spinner_options = {
     "Fade": dls.Fade,
     "Grid": dls.Grid,
     "Hash": dls.Hash,
-    "Moon": dls.Moon,  # FIXME - Not working as expected (bouncing around)
+    "Moon": dls.Moon,
     "Pacman": dls.Pacman,
     "Propagate": dls.Propagate,
     "Puff": dls.Puff,
@@ -73,7 +73,7 @@ svg = """<svg width="100%" height="200px" fill="none">
           repeatCount="indefinite" 
           fill="#454599" 
           attributeName="d" 
-          dur="15s" 
+          dur="5s" 
           values="
             M0 77 
             C 473,283
@@ -118,6 +118,21 @@ svg = """<svg width="100%" height="200px" fill="none">
         </animate>
       </path>
     </svg>"""
+
+
+def getSpinnerBox(title, spinner):
+    return dbc.Col(
+        html.Div(
+            [html.Div(title), spinner(fullscreen=False)],
+            className="d-flex flex-column align-items-center justify-content-center border border-primary rounded h-100",
+        ),
+        className="col-md-3",
+        style={"height": "150px"},
+    )
+
+
+allSpinners = [getSpinnerBox(t, s) for t, s in spinner_options.items() if s is not None]
+
 
 app.layout = html.Div(
     [
@@ -180,6 +195,15 @@ app.layout = html.Div(
             className="container",
         ),
         html.Div(
+            [
+                dbc.Row(
+                    allSpinners[i : i + 4],
+                    className="m-2",
+                )
+                for i in range(0, len(allSpinners) - 3, 4)
+            ]
+        ),
+        html.Div(
             dls.Custom(
                 custom_output,
                 id="custom-loader",
@@ -190,8 +214,28 @@ app.layout = html.Div(
             style={"height": "200px"},
             className="container d-flex justify-content-center align-items-center border border-primary rounded my-2",
         ),
-        html.Div(dbc.Textarea(id="svg-text", value=svg, style={"height": "200px"})),
-    ]
+        html.Div(
+            dbc.Row(
+                [
+                    dbc.Col(
+                        dbc.Textarea(
+                            id="svg-text", value=svg, style={"height": "200px"}
+                        ),
+                        className="col-md-9",
+                    ),
+                    dbc.Col(
+                        dbc.Button(
+                            "View",
+                            id="custom-button",
+                            className="btn-success",
+                            n_clicks=0,
+                        ),
+                        className="col-md-3",
+                    ),
+                ],
+            ),
+        ),
+    ],
 )
 
 
@@ -217,15 +261,27 @@ def change_loader(value):
 
 
 @app.callback(
-    [Output("loading-output", "children"), Output("custom-output", "children")],
+    Output("custom-output", "children"),
+    [Input("custom-button", "n_clicks")],
+)
+def load_output(n):
+
+    if n:
+        time.sleep(100)
+        return f"Output loaded {n} times"
+    return "Output not reloaded yet"
+
+
+@app.callback(
+    Output("loading-output", "children"),
     [Input("loading-button", "n_clicks")],
 )
 def load_output(n):
 
     if n:
-        time.sleep(3)
-        return f"Output loaded {n} times", f"Output loaded {n} times"
-    return "Output not reloaded yet", "Output not reloaded yet"
+        time.sleep(100)
+        return f"Output loaded {n} times"
+    return "Output not reloaded yet"
 
 
 if __name__ == "__main__":

@@ -55,6 +55,7 @@ const Plane = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
+            minHeight={230}
             minWidth={230}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}

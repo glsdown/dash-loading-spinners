@@ -7,6 +7,7 @@ const CoveringContainer = (props) => {
         fullscreen_style,
         fullscreen,
         minWidth,
+        minHeight,
         SpinnerDiv,
         showSpinner,
     } = props;
@@ -29,8 +30,9 @@ const CoveringContainer = (props) => {
 
     const coveringStyle = {
         visibility: 'visible',
-        position: 'absolute',
+        position: 'display',
         top: 0,
+        minHeight: minHeight,
         height: '100%',
         minWidth: minWidth,
         width: '100%',
@@ -44,20 +46,30 @@ const CoveringContainer = (props) => {
         visibility: 'hidden',
         position: 'relative',
     };
-
-    return (
-        <div style={showSpinner ? hiddenStyle : {}}>
-            {children}
-            {showSpinner && (
-                <div
-                    style={fullscreen ? fullscreenStyle : coveringStyle}
-                    className={fullscreen ? fullscreenClassName : null}
-                >
-                    <SpinnerDiv />
-                </div>
-            )}
-        </div>
-    );
+    if (children) {
+        return (
+            <div style={showSpinner ? hiddenStyle : {}}>
+                {children}
+                {showSpinner && (
+                    <div
+                        style={fullscreen ? fullscreenStyle : coveringStyle}
+                        className={fullscreen ? fullscreenClassName : null}
+                    >
+                        <SpinnerDiv />
+                    </div>
+                )}
+            </div>
+        );
+    } else {
+        return (
+            <div
+                style={fullscreen ? fullscreenStyle : coveringStyle}
+                className={fullscreen ? fullscreenClassName : null}
+            >
+                <SpinnerDiv />
+            </div>
+        );
+    }
 };
 
 export default CoveringContainer;

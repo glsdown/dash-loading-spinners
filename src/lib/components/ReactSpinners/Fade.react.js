@@ -59,6 +59,7 @@ const Fade = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minHeight={height}
             minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}

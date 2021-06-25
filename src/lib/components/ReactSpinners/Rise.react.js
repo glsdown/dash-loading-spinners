@@ -55,6 +55,7 @@ const Rise = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minHeight={size * 7}
             minWidth={size * 7}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}

@@ -56,6 +56,7 @@ const Pulse = (props) => {
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
             minWidth={size * 4}
+            minHeight={size * 4}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />

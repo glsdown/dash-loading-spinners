@@ -6,11 +6,7 @@ const Spinner = ({svg, visible}) => {
     if (!visible || visible === 'false') {
         return null;
     }
-    return (
-        <div aria-busy="true">
-            <div dangerouslySetInnerHTML={{__html: svg}} />
-        </div>
-    );
+    return <div dangerouslySetInnerHTML={{__html: svg}} />;
 };
 
 const Custom = (props) => {
@@ -54,6 +50,7 @@ const Custom = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
+            minHeight={width}
             minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}

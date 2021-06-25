@@ -59,6 +59,7 @@ const Scale = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
+            minHeight={width * 10}
             minWidth={width * 10}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
