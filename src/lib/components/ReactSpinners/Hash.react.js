@@ -14,7 +14,6 @@ const Hash = (props) => {
         debounce,
         show_initially,
         size,
-        margin,
         speedMultiplier,
     } = props;
 
@@ -42,7 +41,6 @@ const Hash = (props) => {
         <HashLoader
             color={color}
             size={size}
-            margin={margin}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -53,8 +51,8 @@ const Hash = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size}
-            minWidth={size}
+            minHeight={1.42 * size}
+            minWidth={1.42 * size}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -69,7 +67,6 @@ Hash.defaultProps = {
     color: '#000000',
     speedMultiplier: 1,
     size: 50,
-    margin: 2,
 };
 
 Hash.propTypes = {
@@ -109,14 +106,9 @@ Hash.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The spinner size (in px). Note, as this is rotated, this is not the width.
      */
     size: PropTypes.number,
-
-    /**
-     * The spinner margin (in px)
-     */
-    margin: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

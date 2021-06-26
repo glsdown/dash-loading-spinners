@@ -13,7 +13,7 @@ const Propagate = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        radius,
         speedMultiplier,
     } = props;
 
@@ -40,7 +40,7 @@ const Propagate = (props) => {
     const SpinnerDiv = () => (
         <PropagateLoader
             color={color}
-            size={size}
+            size={radius}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -51,8 +51,8 @@ const Propagate = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size}
-            minWidth={size}
+            minHeight={radius}
+            minWidth={radius}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -66,7 +66,7 @@ Propagate.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 15,
+    radius: 15,
 };
 
 Propagate.propTypes = {
@@ -106,9 +106,9 @@ Propagate.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The radius of the dots (in px)
      */
-    size: PropTypes.number,
+    radius: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

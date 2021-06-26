@@ -129,12 +129,14 @@ Custom.propTypes = {
     fullscreenClassName: PropTypes.string,
 
     /**
-     * The SVG code to include as the spinner
+     * The SVG code to include as the spinner, including required animations.
      */
     svg: PropTypes.string,
 
     /**
      * The width of the resultant SVG (in px)
+     *
+     * This helps to identify how big the covering div should be.
      */
     width: PropTypes.number,
 

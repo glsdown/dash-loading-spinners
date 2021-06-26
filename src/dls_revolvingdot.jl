@@ -25,7 +25,7 @@ the spinner being removed to prevent flickering.
 full-screen or not.
 - `fullscreenClassName` (String; optional): CSS class names to apply to the container when in fullscreen.
 - `fullscreen_style` (Dict; optional): Defines CSS styles for the container when in fullscreen.
-- `radius` (Real; optional): The spinner radius (in px)
+- `radius` (Real; optional): The radius of the spinning dot (in px)
 - `secondaryColor` (String; optional): Sets the color of the Spinner. You can also specify any valid CSS color
 of your choice (e.g. a hex code, a decimal code or a CSS color name).
 

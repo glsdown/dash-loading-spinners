@@ -41,7 +41,7 @@ full-screen or not.}
 
 \item{height}{Numeric. The spinner height (in px)}
 
-\item{radius}{Numeric. The spinner radius (in px)}
+\item{radius}{Numeric. The radius of each dot (in px)}
 
 \item{secondaryColor}{Character. Sets the color of the Spinner. You can also specify any valid CSS color
 of your choice (e.g. a hex code, a decimal code or a CSS color name).

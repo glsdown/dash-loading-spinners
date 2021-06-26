@@ -13,7 +13,7 @@ const Rotate = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        width,
         margin,
         speedMultiplier,
     } = props;
@@ -21,6 +21,8 @@ const Rotate = (props) => {
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
+
+    const size = Math.floor((width - 6 * margin) / 3);
 
     useEffect(() => {
         if (loading_state) {
@@ -53,8 +55,8 @@ const Rotate = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size}
-            minWidth={size}
+            minHeight={width}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -68,7 +70,7 @@ Rotate.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 15,
+    width: 57,
     margin: 2,
 };
 
@@ -109,9 +111,9 @@ Rotate.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The spinner width (in px)
      */
-    size: PropTypes.number,
+    width: PropTypes.number,
 
     /**
      * The spinner margin (in px)

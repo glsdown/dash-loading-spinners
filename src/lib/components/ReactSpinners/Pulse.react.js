@@ -13,7 +13,7 @@ const Pulse = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        width,
         margin,
         speedMultiplier,
     } = props;
@@ -21,6 +21,8 @@ const Pulse = (props) => {
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
+
+    const size = Math.floor((width - 3 * margin) / 3);
 
     useEffect(() => {
         if (loading_state) {
@@ -42,7 +44,7 @@ const Pulse = (props) => {
         <PulseLoader
             color={color}
             size={size}
-            margin={margin}
+            margin={Math.ceil(margin / 2)}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -53,8 +55,8 @@ const Pulse = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minWidth={size * 4}
-            minHeight={size * 4}
+            minWidth={width}
+            minHeight={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -68,8 +70,8 @@ Pulse.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 15,
-    margin: 2,
+    width: 57,
+    margin: 4,
 };
 
 Pulse.propTypes = {
@@ -109,12 +111,12 @@ Pulse.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The width of the spinner (in px)
      */
-    size: PropTypes.number,
+    width: PropTypes.number,
 
     /**
-     * The spinner margin (in px)
+     * The gap size between the dots (in px)
      */
     margin: PropTypes.number,
 

@@ -40,9 +40,9 @@ Keyword arguments:
     The spinner height (in px).
 
 - radius (number; default 6):
-    The spinner radius (in px).
+    The radius of each dot (in px).
 
-- secondaryColor (string; default '#0275d8'):
+- secondaryColor (string; optional):
     Sets the color of the Spinner. You can also specify any valid CSS
     color of your choice (e.g. a hex code, a decimal code or a CSS
     color name).  If not specified will default to blue.
@@ -54,7 +54,7 @@ Keyword arguments:
 - speedMultiplier (number; default 1):
     The relative speed of the spinner.
 
-- tertiaryColor (string; default '#5cb85c'):
+- tertiaryColor (string; optional):
     Sets the color of the Spinner. You can also specify any valid CSS
     color of your choice (e.g. a hex code, a decimal code or a CSS
     color name).  If not specified will default to green.

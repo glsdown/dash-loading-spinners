@@ -13,7 +13,7 @@ const Sync = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        width,
         margin,
         speedMultiplier,
     } = props;
@@ -21,6 +21,8 @@ const Sync = (props) => {
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
+
+    const size = Math.floor((width - 3 * margin) / 3);
 
     useEffect(() => {
         if (loading_state) {
@@ -42,7 +44,7 @@ const Sync = (props) => {
         <SyncLoader
             color={color}
             size={size}
-            margin={margin}
+            margin={Math.floor(margin / 2)}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -53,8 +55,8 @@ const Sync = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size * 4}
-            minWidth={size * 4}
+            minHeight={size * 2}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -68,9 +70,8 @@ Sync.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-
-    size: 15,
-    margin: 2,
+    width: 57,
+    margin: 4,
 };
 
 Sync.propTypes = {
@@ -110,12 +111,12 @@ Sync.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The spinner width (in px)
      */
-    size: PropTypes.number,
+    width: PropTypes.number,
 
     /**
-     * The spinner margin (in px)
+     * The gap between the dots (in px)
      */
     margin: PropTypes.number,
 

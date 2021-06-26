@@ -35,9 +35,11 @@ full-screen or not.}
 \item{show_initially}{Logical. Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.}
 
-\item{svg}{Character. The SVG code to include as the spinner}
+\item{svg}{Character. The SVG code to include as the spinner, including required animations.}
 
-\item{width}{Numeric. The width of the resultant SVG (in px)}
+\item{width}{Numeric. The width of the resultant SVG (in px)
+
+This helps to identify how big the covering div should be.}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

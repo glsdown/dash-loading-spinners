@@ -40,7 +40,7 @@ Keyword arguments:
     The spinner height (in px).
 
 - radius (number; default 11):
-    The spinner radius (in px).
+    The radius of the dots (in px).
 
 - secondaryColor (string; default '#0275d8'):
     Sets the color of the Spinner. You can also specify any valid CSS

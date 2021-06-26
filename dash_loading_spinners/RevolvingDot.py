@@ -37,7 +37,7 @@ Keyword arguments:
     Defines CSS styles for the container when in fullscreen.
 
 - radius (number; default 6):
-    The spinner radius (in px).
+    The radius of the spinning dot (in px).
 
 - secondaryColor (string; default '#0275d8'):
     Sets the color of the Spinner. You can also specify any valid CSS

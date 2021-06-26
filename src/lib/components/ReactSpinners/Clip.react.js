@@ -13,7 +13,7 @@ const Clip = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        width,
         speedMultiplier,
     } = props;
 
@@ -40,7 +40,7 @@ const Clip = (props) => {
     const SpinnerDiv = () => (
         <ClipLoader
             color={color}
-            size={size}
+            size={width}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -51,8 +51,8 @@ const Clip = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size}
-            minWidth={size}
+            minHeight={width}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -66,7 +66,7 @@ Clip.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 35,
+    width: 35,
 };
 
 Clip.propTypes = {
@@ -106,9 +106,9 @@ Clip.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The spinner width (in px)
      */
-    size: PropTypes.number,
+    width: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

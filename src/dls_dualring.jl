@@ -27,11 +27,11 @@ full-screen or not.
 - `fullscreen_style` (Dict; optional): Defines CSS styles for the container when in fullscreen.
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
-- `size` (Real; optional): The spinner size
-- `thickness` (Real; optional): The line thickness
+- `thickness` (Real; optional): The line thickness for the circle.
+- `width` (Real; optional): The width of the spinner (in px).
 """
 function dls_dualring(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :size, :thickness]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :thickness, :width]
         wild_props = Symbol[]
         return Component("dls_dualring", "DualRing", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

@@ -29,11 +29,9 @@ full-screen or not.
 has been determined. Default True.
 - `size` (Real; optional): The spinner size (in px)
 - `speedMultiplier` (Real; optional): The relative speed of the spinner
-- `spinnerCSS` (Dict; optional): Defines additional CSS styles for the spinner itself. It's based on the
-emotion css styles here: https://emotion.sh/docs/introduction
 """
 function dls_climbingbox(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :size, :speedMultiplier, :spinnerCSS]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :size, :speedMultiplier]
         wild_props = Symbol[]
         return Component("dls_climbingbox", "ClimbingBox", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

@@ -13,8 +13,7 @@ const Ring = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
-        margin,
+        width,
         speedMultiplier,
     } = props;
 
@@ -41,8 +40,7 @@ const Ring = (props) => {
     const SpinnerDiv = () => (
         <RingLoader
             color={color}
-            size={size}
-            margin={margin}
+            size={width}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -53,8 +51,8 @@ const Ring = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size}
-            minWidth={size}
+            minHeight={width}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -68,8 +66,7 @@ Ring.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 60,
-    margin: 2,
+    width: 60,
 };
 
 Ring.propTypes = {
@@ -109,14 +106,9 @@ Ring.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The spinner width (in px)
      */
-    size: PropTypes.number,
-
-    /**
-     * The spinner margin (in px)
-     */
-    margin: PropTypes.number,
+    width: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

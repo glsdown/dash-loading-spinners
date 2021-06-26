@@ -13,10 +13,8 @@ const Fade = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        height,
         width,
-        radius,
-        margin,
+        thickness,
         speedMultiplier,
     } = props;
 
@@ -43,10 +41,8 @@ const Fade = (props) => {
     const SpinnerDiv = () => (
         <FadeLoader
             color={color}
-            height={height}
-            width={width}
-            radius={radius}
-            margin={margin}
+            height={width}
+            width={thickness}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -57,7 +53,7 @@ const Fade = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={height}
+            minHeight={width}
             minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
@@ -72,10 +68,8 @@ Fade.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    height: 15,
-    width: 5,
-    radius: 2,
-    margin: 2,
+    width: 15,
+    thickness: 5,
 };
 
 Fade.propTypes = {
@@ -115,24 +109,14 @@ Fade.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner height (in px)
-     */
-    height: PropTypes.number,
-
-    /**
      * The spinner width (in px)
      */
     width: PropTypes.number,
 
     /**
-     * The spinner radius (in px)
+     * The thickness of the spinner spokes (in px)
      */
-    radius: PropTypes.number,
-
-    /**
-     * The spinner margin (in px)
-     */
-    margin: PropTypes.number,
+    thickness: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

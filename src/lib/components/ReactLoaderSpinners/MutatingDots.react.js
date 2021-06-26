@@ -1,7 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import Loader from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import CoveringContainer from '../../private/CoveringContainer.react';
 
 const MutatingDots = (props) => {
@@ -104,16 +102,6 @@ const MutatingDots = (props) => {
                 </circle>
             </g>
         </svg>
-
-        // <Loader
-        //     type="MutatingDots"
-        //     visible={loading_state}
-        //     color={color}
-        //     secondaryColor={secondaryColor}
-        //     height={height}
-        //     width={width}
-        //     radius={radius}
-        // />
     );
 
     return (
@@ -192,7 +180,7 @@ MutatingDots.propTypes = {
     width: PropTypes.number,
 
     /**
-     * The spinner radius (in px)
+     * The radius of the dots (in px)
      */
     radius: PropTypes.number,
 

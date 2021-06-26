@@ -83,7 +83,7 @@ const ThreeDots = (props) => {
                     attributeName="fillOpacity"
                     from="1"
                     to="0.3"
-                    fill={secondaryColor}
+                    fill={secondaryColor ? secondaryColor : color}
                 >
                     <animate
                         attributeName="r"
@@ -106,7 +106,12 @@ const ThreeDots = (props) => {
                         repeatCount="indefinite"
                     />
                 </circle>
-                <circle cx="75%" cy="50%" r={maxRadius} fill={tertiaryColor}>
+                <circle
+                    cx="75%"
+                    cy="50%"
+                    r={maxRadius}
+                    fill={tertiaryColor ? tertiaryColor : color}
+                >
                     <animate
                         attributeName="r"
                         from={`${maxRadius}`}
@@ -153,8 +158,6 @@ ThreeDots.defaultProps = {
     show_initially: true,
     speedMultiplier: 1,
     color: '#000000',
-    secondaryColor: '#0275d8',
-    tertiaryColor: '#5cb85c',
     width: 120,
     height: 30,
     radius: 6,
@@ -223,7 +226,7 @@ ThreeDots.propTypes = {
     width: PropTypes.number,
 
     /**
-     * The spinner radius (in px)
+     * The radius of each dot (in px)
      */
     radius: PropTypes.number,
 

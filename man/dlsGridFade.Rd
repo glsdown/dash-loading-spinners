@@ -12,8 +12,7 @@
 \usage{
 dlsGridFade(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
-fullscreen_style=NULL, height=NULL, radius=NULL,
-show_initially=NULL, width=NULL)
+fullscreen_style=NULL, radius=NULL, show_initially=NULL)
 }
 
 \arguments{
@@ -38,14 +37,10 @@ full-screen or not.}
 
 \item{fullscreen_style}{Named list. Defines CSS styles for the container when in fullscreen.}
 
-\item{height}{Numeric. The spinner height (in px)}
-
-\item{radius}{Numeric. The spinner radius (in px)}
+\item{radius}{Numeric. The radius of the individual circles}
 
 \item{show_initially}{Logical. Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.}
-
-\item{width}{Numeric. The spinner width (in px)}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

@@ -13,8 +13,7 @@ const Pacman = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
-        margin,
+        width,
         speedMultiplier,
     } = props;
 
@@ -41,8 +40,7 @@ const Pacman = (props) => {
     const SpinnerDiv = () => (
         <PacmanLoader
             color={color}
-            size={size}
-            margin={margin}
+            size={Math.round(width / 4)}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -53,8 +51,8 @@ const Pacman = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size}
-            minWidth={size}
+            minHeight={Math.ceil(width / 2)}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -68,8 +66,7 @@ Pacman.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 25,
-    margin: 2,
+    width: 100,
 };
 
 Pacman.propTypes = {
@@ -109,14 +106,9 @@ Pacman.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The width of the animation (in px)
      */
-    size: PropTypes.number,
-
-    /**
-     * The spinner margin (in px)
-     */
-    margin: PropTypes.number,
+    width: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

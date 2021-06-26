@@ -13,7 +13,6 @@ const ClimbingBox = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
         speedMultiplier,
     } = props;
 
@@ -40,7 +39,7 @@ const ClimbingBox = (props) => {
     const SpinnerDiv = () => (
         <ClimbingBoxLoader
             color={color}
-            size={size}
+            size={15}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -51,8 +50,8 @@ const ClimbingBox = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size}
-            minWidth={size}
+            minHeight={128}
+            minWidth={128}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -66,7 +65,6 @@ ClimbingBox.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 15,
 };
 
 ClimbingBox.propTypes = {

@@ -28,10 +28,12 @@ full-screen or not.
 - `height` (Real; optional): The spinner height (in px)
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
+- `thickness` (Real; optional): The thickness of the bars (in px). The gaps between the bars will be
+half the thickness of the bar itself.
 - `width` (Real; optional): The spinner width (in px)
 """
 function dls_audio(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :show_initially, :width]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :show_initially, :thickness, :width]
         wild_props = Symbol[]
         return Component("dls_audio", "Audio", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

@@ -13,7 +13,7 @@ const RingChase = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        width,
         thickness,
     } = props;
 
@@ -38,7 +38,7 @@ const RingChase = (props) => {
     }, [loading_state]);
 
     const SpinnerDiv = () => (
-        <RingSpinner color={color} size={size} thickness={thickness} />
+        <RingSpinner color={color} size={width} thickness={thickness} />
     );
 
     return (
@@ -47,8 +47,8 @@ const RingChase = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
-            minHeight={size}
-            minWidth={size}
+            minHeight={width}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -61,7 +61,7 @@ RingChase.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
-    size: 60,
+    width: 60,
     thickness: 6,
 };
 
@@ -97,12 +97,12 @@ RingChase.propTypes = {
     color: PropTypes.string,
 
     /**
-     * The spinner size
+     * The width of the spinner (in px).
      */
-    size: PropTypes.number,
+    width: PropTypes.number,
 
     /**
-     * The line thickness
+     * The line thickness of the circle
      */
     thickness: PropTypes.number,
 

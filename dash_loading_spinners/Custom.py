@@ -36,10 +36,12 @@ Keyword arguments:
     state has been determined. Default True.
 
 - svg (string; default `<svgwidth=80height=80viewBox="0 0 38 38"xmlns="http://www.w3.org/2000/svg"aria-label="Loading"><defs>  <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">    <stop stopColor="black" stopOpacity="0" offset="0%" />    <stop stopColor="black" stopOpacity=".631" offset="63.146%" />    <stop stopColor="black" offset="100%" />  </linearGradient></defs><g fill="none" fillRule="evenodd">  <g transform="translate(1 1)">    <path d="M36 18c0-9.94-8.06-18-18-18" id="Oval-2" stroke="black" strokeWidth="2">      <animateTransform        attributeName="transform"        type="rotate"        from="0 18 18"        to="360 18 18"        dur="0.9s"        repeatCount="indefinite"      />    </path>    <circle fill="#fff" cx="36" cy="18" r=1>      <animateTransform        attributeName="transform"        type="rotate"        from="0 18 18"        to="360 18 18"        dur="0.9s"        repeatCount="indefinite"      />    </circle>  </g></g></svg>`):
-    The SVG code to include as the spinner.
+    The SVG code to include as the spinner, including required
+    animations.
 
 - width (number; default 80):
-    The width of the resultant SVG (in px)."""
+    The width of the resultant SVG (in px)  This helps to identify how
+    big the covering div should be."""
     @_explicitize_args
     def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, svg=Component.UNDEFINED, width=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'id', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'show_initially', 'svg', 'width']

@@ -13,14 +13,16 @@ const Rise = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
-        margin,
+        width,
         speedMultiplier,
     } = props;
 
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
+
+    const margin = 2;
+    const size = Math.floor((width - 6 * margin) / 3);
 
     useEffect(() => {
         if (loading_state) {
@@ -53,8 +55,8 @@ const Rise = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size * 7}
-            minWidth={size * 7}
+            minHeight={size * 2 + 4 * margin}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -68,8 +70,7 @@ Rise.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 15,
-    margin: 2,
+    width: 57,
 };
 
 Rise.propTypes = {
@@ -109,14 +110,9 @@ Rise.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The spinner width (in px)
      */
-    size: PropTypes.number,
-
-    /**
-     * The spinner margin (in px)
-     */
-    margin: PropTypes.number,
+    width: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

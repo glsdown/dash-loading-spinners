@@ -23,8 +23,10 @@ full-screen or not.
 - `fullscreen_style` (Dict; optional): Defines CSS styles for the container when in fullscreen.
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
-- `svg` (String; optional): The SVG code to include as the spinner
+- `svg` (String; optional): The SVG code to include as the spinner, including required animations.
 - `width` (Real; optional): The width of the resultant SVG (in px)
+
+This helps to identify how big the covering div should be.
 """
 function dls_custom(; kwargs...)
         available_props = Symbol[:children, :id, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :svg, :width]

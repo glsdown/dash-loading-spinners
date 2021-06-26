@@ -13,7 +13,7 @@
 dlsAudio(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
 fullscreen_style=NULL, height=NULL, show_initially=NULL,
-width=NULL)
+thickness=NULL, width=NULL)
 }
 
 \arguments{
@@ -42,6 +42,9 @@ full-screen or not.}
 
 \item{show_initially}{Logical. Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.}
+
+\item{thickness}{Numeric. The thickness of the bars (in px). The gaps between the bars will be
+half the thickness of the bar itself.}
 
 \item{width}{Numeric. The spinner width (in px)}
 }

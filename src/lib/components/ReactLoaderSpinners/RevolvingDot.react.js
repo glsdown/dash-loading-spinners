@@ -1,7 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-// import Loader from 'react-loader-spinner';
-// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import CoveringContainer from '../../private/CoveringContainer.react';
 
 const RevolvingDot = (props) => {
@@ -162,7 +160,7 @@ RevolvingDot.propTypes = {
     width: PropTypes.number,
 
     /**
-     * The spinner radius (in px)
+     * The radius of the spinning dot (in px)
      */
     radius: PropTypes.number,
 

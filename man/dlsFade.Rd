@@ -12,9 +12,8 @@
 \usage{
 dlsFade(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
-fullscreen_style=NULL, height=NULL, margin=NULL,
-radius=NULL, show_initially=NULL, speedMultiplier=NULL,
-spinnerCSS=NULL, width=NULL)
+fullscreen_style=NULL, show_initially=NULL,
+speedMultiplier=NULL, thickness=NULL, width=NULL)
 }
 
 \arguments{
@@ -39,19 +38,12 @@ full-screen or not.}
 
 \item{fullscreen_style}{Named list. Defines CSS styles for the container.}
 
-\item{height}{Numeric. The spinner height (in px)}
-
-\item{margin}{Numeric. The spinner margin (in px)}
-
-\item{radius}{Numeric. The spinner radius (in px)}
-
 \item{show_initially}{Logical. Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.}
 
 \item{speedMultiplier}{Numeric. The relative speed of the spinner}
 
-\item{spinnerCSS}{Named list. Defines additional CSS styles for the spinner itself. It's based on the
-emotion css styles here: https://emotion.sh/docs/introduction}
+\item{thickness}{Numeric. The thickness of the spinner spokes (in px)}
 
 \item{width}{Numeric. The spinner width (in px)}
 }

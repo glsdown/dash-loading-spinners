@@ -14,13 +14,14 @@ const Triangle = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        height,
-        width,
     } = props;
 
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
+
+    const width = 80;
+    const height = 80;
 
     useEffect(() => {
         if (loading_state) {
@@ -39,13 +40,7 @@ const Triangle = (props) => {
     }, [loading_state]);
 
     const SpinnerDiv = () => (
-        <Loader
-            type="Triangle"
-            visible={loading_state}
-            color={color}
-            height={height}
-            width={width}
-        />
+        <Loader type="Triangle" visible={loading_state} color={color} />
     );
 
     return (
@@ -68,8 +63,6 @@ Triangle.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
-    width: 80,
-    height: 80,
 };
 
 Triangle.propTypes = {
@@ -102,16 +95,6 @@ Triangle.propTypes = {
      * If not specified will default to black.
      */
     color: PropTypes.string,
-
-    /**
-     * The spinner height (in px)
-     */
-    height: PropTypes.number,
-
-    /**
-     * The spinner width (in px)
-     */
-    width: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

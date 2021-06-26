@@ -37,7 +37,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "The SVG code to include as the spinner",
+        "description": "The SVG code to include as the spinner, including required animations.",
         "defaultValue": {
           "value": "`<svg\nwidth=80\nheight=80\nviewBox=\"0 0 38 38\"\nxmlns=\"http://www.w3.org/2000/svg\"\naria-label=\"Loading\"\n>\n<defs>\n  <linearGradient x1=\"8.042%\" y1=\"0%\" x2=\"65.682%\" y2=\"23.865%\" id=\"a\">\n    <stop stopColor=\"black\" stopOpacity=\"0\" offset=\"0%\" />\n    <stop stopColor=\"black\" stopOpacity=\".631\" offset=\"63.146%\" />\n    <stop stopColor=\"black\" offset=\"100%\" />\n  </linearGradient>\n</defs>\n<g fill=\"none\" fillRule=\"evenodd\">\n  <g transform=\"translate(1 1)\">\n    <path d=\"M36 18c0-9.94-8.06-18-18-18\" id=\"Oval-2\" stroke=\"black\" strokeWidth=\"2\">\n      <animateTransform\n        attributeName=\"transform\"\n        type=\"rotate\"\n        from=\"0 18 18\"\n        to=\"360 18 18\"\n        dur=\"0.9s\"\n        repeatCount=\"indefinite\"\n      />\n    </path>\n    <circle fill=\"#fff\" cx=\"36\" cy=\"18\" r=1>\n      <animateTransform\n        attributeName=\"transform\"\n        type=\"rotate\"\n        from=\"0 18 18\"\n        to=\"360 18 18\"\n        dur=\"0.9s\"\n        repeatCount=\"indefinite\"\n      />\n    </circle>\n  </g>\n</g>\n</svg>`",
           "computed": false
@@ -48,7 +48,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "The width of the resultant SVG (in px)",
+        "description": "The width of the resultant SVG (in px)\n\nThis helps to identify how big the covering div should be.",
         "defaultValue": {
           "value": "80",
           "computed": false
@@ -129,12 +129,12 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size",
+        "description": "The width of the spinner (in px).",
         "defaultValue": {
           "value": "60",
           "computed": false
@@ -145,7 +145,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "The line thickness",
+        "description": "The line thickness for the circle.",
         "defaultValue": {
           "value": "6",
           "computed": false
@@ -226,12 +226,12 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size",
+        "description": "The width of the spinner (in px).",
         "defaultValue": {
           "value": "60",
           "computed": false
@@ -312,12 +312,12 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size",
+        "description": "The width of the spinner (in px).",
         "defaultValue": {
           "value": "60",
           "computed": false
@@ -398,12 +398,12 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size",
+        "description": "The width of the spinner (in px).",
         "defaultValue": {
           "value": "60",
           "computed": false
@@ -414,7 +414,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "The line thickness",
+        "description": "The line thickness of the circle",
         "defaultValue": {
           "value": "6",
           "computed": false
@@ -495,12 +495,12 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size",
+        "description": "The width of the spinner (in px).",
         "defaultValue": {
           "value": "60",
           "computed": false
@@ -511,7 +511,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "The line thickness",
+        "description": "The line thickness of the circles",
         "defaultValue": {
           "value": "6",
           "computed": false
@@ -592,12 +592,12 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size",
+        "description": "The width of the spinner (in px).",
         "defaultValue": {
           "value": "60",
           "computed": false
@@ -678,12 +678,12 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size",
+        "description": "The width of the spinner (in px).",
         "defaultValue": {
           "value": "60",
           "computed": false
@@ -764,12 +764,12 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size",
+        "description": "The width of the spinner (in px).",
         "defaultValue": {
           "value": "60",
           "computed": false
@@ -780,9 +780,9 @@
           "name": "number"
         },
         "required": false,
-        "description": "The line thickness",
+        "description": "The line thickness of the bars",
         "defaultValue": {
-          "value": "6",
+          "value": "15",
           "computed": false
         }
       },
@@ -883,6 +883,17 @@
           "computed": false
         }
       },
+      "thickness": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The thickness of the bars (in px). The gaps between the bars will be\nhalf the thickness of the bar itself.",
+        "defaultValue": {
+          "value": "10",
+          "computed": false
+        }
+      },
       "fullscreen": {
         "type": {
           "name": "bool"
@@ -958,34 +969,12 @@
           "computed": false
         }
       },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
       "radius": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner radius (in px)",
+        "description": "The radius of the spinning balls (in px)",
         "defaultValue": {
           "value": "5",
           "computed": false
@@ -1066,28 +1055,6 @@
           "computed": false
         }
       },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
       "fullscreen": {
         "type": {
           "name": "bool"
@@ -1160,28 +1127,6 @@
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to black.",
         "defaultValue": {
           "value": "'#000000'",
-          "computed": false
-        }
-      },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
           "computed": false
         }
       },
@@ -1260,34 +1205,12 @@
           "computed": false
         }
       },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
       "radius": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner radius (in px)",
+        "description": "The radius of the individual circles",
         "defaultValue": {
           "value": "12.5",
           "computed": false
@@ -1365,28 +1288,6 @@
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to black.",
         "defaultValue": {
           "value": "'#000000'",
-          "computed": false
-        }
-      },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
           "computed": false
         }
       },
@@ -1503,7 +1404,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner radius (in px)",
+        "description": "The radius of the dots (in px)",
         "defaultValue": {
           "value": "11",
           "computed": false
@@ -1581,28 +1482,6 @@
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to black.",
         "defaultValue": {
           "value": "'#000000'",
-          "computed": false
-        }
-      },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
           "computed": false
         }
       },
@@ -1730,7 +1609,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner radius (in px)",
+        "description": "The radius of the spinning dot (in px)",
         "defaultValue": {
           "value": "6",
           "computed": false
@@ -1811,34 +1690,12 @@
           "computed": false
         }
       },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
       "radius": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner radius (in px)",
+        "description": "The radius of each circle in the spinner (in px)",
         "defaultValue": {
           "value": "6",
           "computed": false
@@ -1919,39 +1776,6 @@
           "computed": false
         }
       },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "radius": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner radius (in px)",
-        "defaultValue": {
-          "value": "1",
-          "computed": false
-        }
-      },
       "fullscreen": {
         "type": {
           "name": "bool"
@@ -2024,28 +1848,6 @@
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to black.",
         "defaultValue": {
           "value": "'#000000'",
-          "computed": false
-        }
-      },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
           "computed": false
         }
       },
@@ -2140,22 +1942,14 @@
           "name": "string"
         },
         "required": false,
-        "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to blue.",
-        "defaultValue": {
-          "value": "'#0275d8'",
-          "computed": false
-        }
+        "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to blue."
       },
       "tertiaryColor": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to green.",
-        "defaultValue": {
-          "value": "'#5cb85c'",
-          "computed": false
-        }
+        "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to green."
       },
       "speedMultiplier": {
         "type": {
@@ -2195,7 +1989,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner radius (in px)",
+        "description": "The radius of each dot (in px)",
         "defaultValue": {
           "value": "6",
           "computed": false
@@ -2273,28 +2067,6 @@
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to black.",
         "defaultValue": {
           "value": "'#000000'",
-          "computed": false
-        }
-      },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "80",
-          "computed": false
-        }
-      },
-      "width": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner width (in px)",
-        "defaultValue": {
-          "value": "80",
           "computed": false
         }
       },
@@ -2384,14 +2156,14 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The width of the spinner (in px)",
         "defaultValue": {
-          "value": "15",
+          "value": "57",
           "computed": false
         }
       },
@@ -2400,18 +2172,11 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner margin (in px)",
+        "description": "The gap size between the dots (in px)",
         "defaultValue": {
-          "value": "2",
+          "value": "4",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -2499,23 +2264,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "60",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -2603,23 +2361,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "50",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -2712,18 +2463,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
-        "defaultValue": {
-          "value": "15",
-          "computed": false
-        }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
+        "description": "The spinner size (in px)"
       },
       "fullscreen": {
         "type": {
@@ -2811,23 +2551,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "35",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -2915,23 +2648,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "50",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -3019,34 +2745,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "60",
           "computed": false
         }
-      },
-      "margin": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner margin (in px)",
-        "defaultValue": {
-          "value": "2",
-          "computed": false
-        }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -3134,17 +2842,6 @@
           "computed": false
         }
       },
-      "height": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner height (in px)",
-        "defaultValue": {
-          "value": "15",
-          "computed": false
-        }
-      },
       "width": {
         "type": {
           "name": "number"
@@ -3152,38 +2849,20 @@
         "required": false,
         "description": "The spinner width (in px)",
         "defaultValue": {
+          "value": "15",
+          "computed": false
+        }
+      },
+      "thickness": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The thickness of the spinner spokes (in px)",
+        "defaultValue": {
           "value": "5",
           "computed": false
         }
-      },
-      "radius": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner radius (in px)",
-        "defaultValue": {
-          "value": "2",
-          "computed": false
-        }
-      },
-      "margin": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner margin (in px)",
-        "defaultValue": {
-          "value": "2",
-          "computed": false
-        }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -3271,23 +2950,27 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
-          "value": "15",
+          "value": "57",
           "computed": false
         }
       },
-      "spinnerCSS": {
+      "margin": {
         "type": {
-          "name": "object"
+          "name": "number"
         },
         "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
+        "description": "The gap between the dots (in px)",
+        "defaultValue": {
+          "value": "2",
+          "computed": false
+        }
       },
       "fullscreen": {
         "type": {
@@ -3380,29 +3063,11 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner size (in px). Note, as this is rotated, this is not the width.",
         "defaultValue": {
           "value": "50",
           "computed": false
         }
-      },
-      "margin": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner margin (in px)",
-        "defaultValue": {
-          "value": "2",
-          "computed": false
-        }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -3490,34 +3155,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "60",
           "computed": false
         }
-      },
-      "margin": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner margin (in px)",
-        "defaultValue": {
-          "value": "2",
-          "computed": false
-        }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -3605,34 +3252,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The width of the animation (in px)",
         "defaultValue": {
-          "value": "25",
+          "value": "100",
           "computed": false
         }
-      },
-      "margin": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner margin (in px)",
-        "defaultValue": {
-          "value": "2",
-          "computed": false
-        }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -3720,23 +3349,16 @@
           "computed": false
         }
       },
-      "size": {
+      "radius": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The radius of the dots (in px)",
         "defaultValue": {
           "value": "15",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -3824,23 +3446,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "60",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -3928,14 +3543,14 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The width of the spinner (in px)",
         "defaultValue": {
-          "value": "15",
+          "value": "57",
           "computed": false
         }
       },
@@ -3944,18 +3559,11 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner margin (in px)",
+        "description": "The gap size between the dots (in px)",
         "defaultValue": {
-          "value": "2",
+          "value": "4",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -4043,34 +3651,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "60",
           "computed": false
         }
-      },
-      "margin": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner margin (in px)",
-        "defaultValue": {
-          "value": "2",
-          "computed": false
-        }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -4158,34 +3748,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
-          "value": "15",
+          "value": "57",
           "computed": false
         }
-      },
-      "margin": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner margin (in px)",
-        "defaultValue": {
-          "value": "2",
-          "computed": false
-        }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -4273,14 +3845,14 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
-          "value": "15",
+          "value": "57",
           "computed": false
         }
       },
@@ -4294,13 +3866,6 @@
           "value": "2",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -4406,18 +3971,7 @@
         "required": false,
         "description": "The spinner width (in px)",
         "defaultValue": {
-          "value": "4",
-          "computed": false
-        }
-      },
-      "radius": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner radius (in px)",
-        "defaultValue": {
-          "value": "2",
+          "value": "70",
           "computed": false
         }
       },
@@ -4426,18 +3980,11 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner margin (in px)",
+        "description": "The margin between the bars (in px)",
         "defaultValue": {
-          "value": "2",
+          "value": "4",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -4525,23 +4072,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
-          "value": "20",
+          "value": "80",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -4629,23 +4169,16 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
           "value": "50",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {
@@ -4733,14 +4266,14 @@
           "computed": false
         }
       },
-      "size": {
+      "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "The spinner size (in px)",
+        "description": "The spinner width (in px)",
         "defaultValue": {
-          "value": "15",
+          "value": "57",
           "computed": false
         }
       },
@@ -4749,18 +4282,11 @@
           "name": "number"
         },
         "required": false,
-        "description": "The spinner margin (in px)",
+        "description": "The gap between the dots (in px)",
         "defaultValue": {
-          "value": "2",
+          "value": "4",
           "computed": false
         }
-      },
-      "spinnerCSS": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Defines additional CSS styles for the spinner itself. It's based on the\nemotion css styles here: https://emotion.sh/docs/introduction"
       },
       "fullscreen": {
         "type": {

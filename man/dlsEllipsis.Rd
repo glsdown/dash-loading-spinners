@@ -12,7 +12,7 @@
 \usage{
 dlsEllipsis(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
-fullscreen_style=NULL, show_initially=NULL, size=NULL)
+fullscreen_style=NULL, show_initially=NULL, width=NULL)
 }
 
 \arguments{
@@ -40,7 +40,7 @@ full-screen or not.}
 \item{show_initially}{Logical. Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.}
 
-\item{size}{Numeric. The spinner size}
+\item{width}{Numeric. The width of the spinner (in px).}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

@@ -111,6 +111,11 @@ allSpinners = [getSpinnerBox(t, s) for t, s in spinner_options.items() if s is n
 
 app.layout = html.Div(
     [
+        html.Div("Loading spinners.", className="h1"),
+        html.Div(
+            "Loading spinners can be used whilst a dash component is loading.",
+            className="p",
+        ),
         html.Div(
             dls.Hash(
                 loading_output,
@@ -169,6 +174,7 @@ app.layout = html.Div(
             ],
             className="container",
         ),
+        html.Div("All loading spinners.", className="h1"),
         html.Div(
             [
                 dbc.Row(
@@ -177,6 +183,11 @@ app.layout = html.Div(
                 )
                 for i in range(0, len(allSpinners), 4)
             ]
+        ),
+        html.Div("Custom loading spinners.", className="h1"),
+        html.Div(
+            "If you have animated SVG code, you can use this as a custom spinner.",
+            className="p",
         ),
         html.Div(
             dls.Custom(
@@ -254,7 +265,7 @@ def load_output(n):
 def load_output(n):
 
     if n:
-        time.sleep(100)
+        time.sleep(3)
         return f"Output loaded {n} times"
     return "Output not reloaded yet"
 

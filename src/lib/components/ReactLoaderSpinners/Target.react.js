@@ -14,14 +14,14 @@ const Target = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        height,
-        width,
         radius,
     } = props;
 
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
+    const width = 80;
+    const height = 80;
 
     useEffect(() => {
         if (loading_state) {
@@ -70,8 +70,6 @@ Target.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
-    width: 80,
-    height: 80,
     radius: 1,
 };
 
@@ -105,16 +103,6 @@ Target.propTypes = {
      * If not specified will default to black.
      */
     color: PropTypes.string,
-
-    /**
-     * The spinner height (in px)
-     */
-    height: PropTypes.number,
-
-    /**
-     * The spinner width (in px)
-     */
-    width: PropTypes.number,
 
     /**
      * The spinner radius (in px)

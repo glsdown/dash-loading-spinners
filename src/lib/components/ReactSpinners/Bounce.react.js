@@ -13,7 +13,7 @@ const Bounce = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        width,
         speedMultiplier,
     } = props;
 
@@ -40,7 +40,7 @@ const Bounce = (props) => {
     const SpinnerDiv = () => (
         <BounceLoader
             color={color}
-            size={size}
+            size={width}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -51,8 +51,8 @@ const Bounce = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={size}
-            minWidth={size}
+            minHeight={width}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -66,7 +66,7 @@ Bounce.defaultProps = {
     show_initially: true,
     color: '#000000',
     speedMultiplier: 1,
-    size: 60,
+    width: 60,
 };
 
 Bounce.propTypes = {
@@ -106,9 +106,9 @@ Bounce.propTypes = {
     speedMultiplier: PropTypes.number,
 
     /**
-     * The spinner size (in px)
+     * The spinner width (in px)
      */
-    size: PropTypes.number,
+    width: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

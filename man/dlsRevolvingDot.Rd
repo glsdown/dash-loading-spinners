@@ -38,7 +38,7 @@ full-screen or not.}
 
 \item{fullscreen_style}{Named list. Defines CSS styles for the container when in fullscreen.}
 
-\item{radius}{Numeric. The spinner radius (in px)}
+\item{radius}{Numeric. The radius of the spinning dot (in px)}
 
 \item{secondaryColor}{Character. Sets the color of the Spinner. You can also specify any valid CSS color
 of your choice (e.g. a hex code, a decimal code or a CSS color name).

@@ -15,7 +15,6 @@ const Scale = (props) => {
         show_initially,
         height,
         width,
-        radius,
         margin,
         speedMultiplier,
     } = props;
@@ -23,6 +22,8 @@ const Scale = (props) => {
     // Loading options
     const [showSpinner, setShowSpinner] = useState(show_initially);
     const timer = useRef();
+
+    const thickness = Math.floor((width - 5 * margin) / 5);
 
     useEffect(() => {
         if (loading_state) {
@@ -44,9 +45,9 @@ const Scale = (props) => {
         <ScaleLoader
             color={color}
             height={height}
-            width={width}
-            radius={radius}
-            margin={margin}
+            width={thickness}
+            radius={Math.ceil(thickness / 2)}
+            margin={Math.ceil(margin / 2)}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -57,8 +58,8 @@ const Scale = (props) => {
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
             fullscreen={fullscreen}
-            minHeight={width * 10}
-            minWidth={width * 10}
+            minHeight={height}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -73,9 +74,8 @@ Scale.defaultProps = {
     color: '#000000',
     speedMultiplier: 1,
     height: 35,
-    width: 4,
-    radius: 2,
-    margin: 2,
+    width: 70,
+    margin: 4,
 };
 
 Scale.propTypes = {
@@ -125,12 +125,7 @@ Scale.propTypes = {
     width: PropTypes.number,
 
     /**
-     * The spinner radius (in px)
-     */
-    radius: PropTypes.number,
-
-    /**
-     * The spinner margin (in px)
+     * The margin between the bars (in px)
      */
     margin: PropTypes.number,
 

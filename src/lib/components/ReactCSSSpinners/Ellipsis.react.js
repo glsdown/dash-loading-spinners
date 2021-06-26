@@ -13,7 +13,7 @@ const Ellipsis = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        size,
+        width,
     } = props;
 
     // Loading options
@@ -36,7 +36,7 @@ const Ellipsis = (props) => {
         }
     }, [loading_state]);
 
-    const SpinnerDiv = () => <EllipsisSpinner color={color} size={size} />;
+    const SpinnerDiv = () => <EllipsisSpinner color={color} size={width} />;
 
     return (
         <CoveringContainer
@@ -44,8 +44,8 @@ const Ellipsis = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
-            minHeight={size}
-            minWidth={size}
+            minHeight={width}
+            minWidth={width}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
@@ -58,7 +58,7 @@ Ellipsis.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
-    size: 60,
+    width: 60,
 };
 
 Ellipsis.propTypes = {
@@ -93,9 +93,9 @@ Ellipsis.propTypes = {
     color: PropTypes.string,
 
     /**
-     * The spinner size
+     * The width of the spinner (in px).
      */
-    size: PropTypes.number,
+    width: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

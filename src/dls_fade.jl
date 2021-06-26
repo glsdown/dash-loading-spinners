@@ -25,18 +25,14 @@ the spinner being removed to prevent flickering.
 full-screen or not.
 - `fullscreenClassName` (String; optional): CSS class names to apply to the container.
 - `fullscreen_style` (Dict; optional): Defines CSS styles for the container.
-- `height` (Real; optional): The spinner height (in px)
-- `margin` (Real; optional): The spinner margin (in px)
-- `radius` (Real; optional): The spinner radius (in px)
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
 - `speedMultiplier` (Real; optional): The relative speed of the spinner
-- `spinnerCSS` (Dict; optional): Defines additional CSS styles for the spinner itself. It's based on the
-emotion css styles here: https://emotion.sh/docs/introduction
+- `thickness` (Real; optional): The thickness of the spinner spokes (in px)
 - `width` (Real; optional): The spinner width (in px)
 """
 function dls_fade(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :margin, :radius, :show_initially, :speedMultiplier, :spinnerCSS, :width]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :speedMultiplier, :thickness, :width]
         wild_props = Symbol[]
         return Component("dls_fade", "Fade", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end
