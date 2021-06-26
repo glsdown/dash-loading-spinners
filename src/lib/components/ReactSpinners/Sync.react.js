@@ -8,7 +8,6 @@ const Sync = (props) => {
         children,
         color,
         loading_state,
-        spinnerCSS,
         fullscreenClassName,
         fullscreen_style,
         fullscreen,
@@ -44,7 +43,6 @@ const Sync = (props) => {
             color={color}
             size={size}
             margin={margin}
-            css={spinnerCSS}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -120,12 +118,6 @@ Sync.propTypes = {
      * The spinner margin (in px)
      */
     margin: PropTypes.number,
-
-    /**
-     * Defines additional CSS styles for the spinner itself. It's based on the
-     * emotion css styles here: https://emotion.sh/docs/introduction
-     */
-    spinnerCSS: PropTypes.object,
 
     /**
      * Boolean that determines if the loading spinner will be displayed

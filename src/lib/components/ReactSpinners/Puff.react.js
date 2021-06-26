@@ -8,7 +8,6 @@ const Puff = (props) => {
         children,
         color,
         loading_state,
-        spinnerCSS,
         fullscreenClassName,
         fullscreen_style,
         fullscreen,
@@ -42,7 +41,6 @@ const Puff = (props) => {
         <PuffLoader
             color={color}
             size={size}
-            css={spinnerCSS}
             speedMultiplier={speedMultiplier}
         />
     );
@@ -111,12 +109,6 @@ Puff.propTypes = {
      * The spinner size (in px)
      */
     size: PropTypes.number,
-
-    /**
-     * Defines additional CSS styles for the spinner itself. It's based on the
-     * emotion css styles here: https://emotion.sh/docs/introduction
-     */
-    spinnerCSS: PropTypes.object,
 
     /**
      * Boolean that determines if the loading spinner will be displayed
