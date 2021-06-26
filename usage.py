@@ -14,6 +14,7 @@ spinner_options = {
     "Beat": dls.Beat,
     "ThreeDots": dls.ThreeDots,
     "Pulse": dls.Pulse,
+    "Ellipsis": dls.Ellipsis,
     "Rotate": dls.Rotate,
     "Sync": dls.Sync,
     "Propagate": dls.Propagate,
@@ -25,24 +26,31 @@ spinner_options = {
     "Puff": dls.Puff,
     "Target": dls.Target,
     "Rings": dls.Rings,
+    "Ripple": dls.Ripple,
     # Grid
     "Grid": dls.Grid,
-    "GridAlt": dls.GridAlt,
+    "GridFade": dls.GridFade,
     "Circles": dls.Circles,
-    # Square
-    "Square": dls.Square,
     # Circle
     "Oval": dls.Oval,
     "RevolvingDot": dls.RevolvingDot,
     "Moon": dls.Moon,
     "TailSpin": dls.TailSpin,
     "Clip": dls.Clip,
+    "DualRing": dls.DualRing,
+    "RingChase": dls.RingChase,
+    "Roller": dls.Roller,
     "Ring": dls.Ring,
     "Bounce": dls.Bounce,
+    "SpinningDisc": dls.SpinningDisc,
+    "Hourglass": dls.Hourglass,
+    # Square
+    "Square": dls.Square,
     # Lines
     "Audio": dls.Audio,
     "Scale": dls.Scale,
     "Bars": dls.Bars,
+    "Wave": dls.Wave,
     # Triangle
     "BallTriangle": dls.BallTriangle,
     "Triangle": dls.Triangle,

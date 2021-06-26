@@ -2,7 +2,7 @@ import Audio from './ReactLoaderSpinners/Audio.react';
 import BallTriangle from './ReactLoaderSpinners/BallTriangle.react';
 import Bars from './ReactLoaderSpinners/Bars.react';
 import Circles from './ReactLoaderSpinners/Circles.react';
-import GridAlt from './ReactLoaderSpinners/GridAlt.react';
+import GridFade from './ReactLoaderSpinners/GridFade.react';
 import Hearts from './ReactLoaderSpinners/Hearts.react';
 import MutatingDots from './ReactLoaderSpinners/MutatingDots.react';
 import Oval from './ReactLoaderSpinners/Oval.react';
@@ -18,7 +18,7 @@ export {
     BallTriangle,
     Bars,
     Circles,
-    GridAlt,
+    GridFade,
     Hearts,
     MutatingDots,
     Oval,

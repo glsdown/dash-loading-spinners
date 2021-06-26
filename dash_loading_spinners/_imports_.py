@@ -1,9 +1,17 @@
 from .Custom import Custom
+from .DualRing import DualRing
+from .Ellipsis import Ellipsis
+from .Hourglass import Hourglass
+from .RingChase import RingChase
+from .Ripple import Ripple
+from .Roller import Roller
+from .SpinningDisc import SpinningDisc
+from .Wave import Wave
 from .Audio import Audio
 from .BallTriangle import BallTriangle
 from .Bars import Bars
 from .Circles import Circles
-from .GridAlt import GridAlt
+from .GridFade import GridFade
 from .Hearts import Hearts
 from .MutatingDots import MutatingDots
 from .Oval import Oval
@@ -38,11 +46,19 @@ from .Sync import Sync
 
 __all__ = [
     "Custom",
+    "DualRing",
+    "Ellipsis",
+    "Hourglass",
+    "RingChase",
+    "Ripple",
+    "Roller",
+    "SpinningDisc",
+    "Wave",
     "Audio",
     "BallTriangle",
     "Bars",
     "Circles",
-    "GridAlt",
+    "GridFade",
     "Hearts",
     "MutatingDots",
     "Oval",

@@ -1,16 +1,16 @@
 % Auto-generated: do not edit by hand
-\name{dlsGridAlt}
+\name{dlsGridFade}
 
-\alias{dlsGridAlt}
+\alias{dlsGridFade}
 
-\title{GridAlt component}
+\title{GridFade component}
 
 \description{
 
 }
 
 \usage{
-dlsGridAlt(children=NULL, id=NULL, color=NULL, debounce=NULL,
+dlsGridFade(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
 fullscreen_style=NULL, height=NULL, radius=NULL,
 show_initially=NULL, width=NULL)

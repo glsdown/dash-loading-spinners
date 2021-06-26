@@ -29,7 +29,7 @@ import {
     BallTriangle,
     Bars,
     Circles,
-    GridAlt,
+    GridFade,
     Hearts,
     MutatingDots,
     Oval,
@@ -42,6 +42,17 @@ import {
 } from './components/ReactLoaderSpinners.react';
 
 import {Custom} from './components/CustomSpinners.react';
+
+import {
+    DualRing,
+    Ellipsis,
+    Hourglass,
+    RingChase,
+    Ripple,
+    Roller,
+    SpinningDisc,
+    Wave,
+} from './components/ReactCSSSpinners.react';
 
 export {
     Beat,
@@ -70,7 +81,7 @@ export {
     BallTriangle,
     Bars,
     Circles,
-    GridAlt,
+    GridFade,
     Hearts,
     MutatingDots,
     Oval,
@@ -81,4 +92,12 @@ export {
     ThreeDots,
     Triangle,
     Custom,
+    DualRing,
+    Ellipsis,
+    Hourglass,
+    RingChase,
+    Ripple,
+    Roller,
+    SpinningDisc,
+    Wave,
 };

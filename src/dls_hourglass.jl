@@ -1,14 +1,14 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-export dls_gridalt
+export dls_hourglass
 
 """
-    dls_gridalt(;kwargs...)
-    dls_gridalt(children::Any;kwargs...)
-    dls_gridalt(children_maker::Function;kwargs...)
+    dls_hourglass(;kwargs...)
+    dls_hourglass(children::Any;kwargs...)
+    dls_hourglass(children_maker::Function;kwargs...)
 
 
-A GridAlt component.
+A Hourglass component.
 
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
@@ -25,18 +25,16 @@ the spinner being removed to prevent flickering.
 full-screen or not.
 - `fullscreenClassName` (String; optional): CSS class names to apply to the container when in fullscreen.
 - `fullscreen_style` (Dict; optional): Defines CSS styles for the container when in fullscreen.
-- `height` (Real; optional): The spinner height (in px)
-- `radius` (Real; optional): The spinner radius (in px)
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
-- `width` (Real; optional): The spinner width (in px)
+- `size` (Real; optional): The spinner size
 """
-function dls_gridalt(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :radius, :show_initially, :width]
+function dls_hourglass(; kwargs...)
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :size]
         wild_props = Symbol[]
-        return Component("dls_gridalt", "GridAlt", "dash_loading_spinners", available_props, wild_props; kwargs...)
+        return Component("dls_hourglass", "Hourglass", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end
 
-dls_gridalt(children::Any; kwargs...) = dls_gridalt(;kwargs..., children = children)
-dls_gridalt(children_maker::Function; kwargs...) = dls_gridalt(children_maker(); kwargs...)
+dls_hourglass(children::Any; kwargs...) = dls_hourglass(;kwargs..., children = children)
+dls_hourglass(children_maker::Function; kwargs...) = dls_hourglass(children_maker(); kwargs...)
 

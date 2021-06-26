@@ -1,10 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import Loader from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import {Ring as RingSpinner} from 'react-css-spinners';
 import CoveringContainer from '../../private/CoveringContainer.react';
 
-const GridAlt = (props) => {
+const RingChase = (props) => {
     const {
         children,
         color,
@@ -14,9 +13,8 @@ const GridAlt = (props) => {
         fullscreen,
         debounce,
         show_initially,
-        height,
-        width,
-        radius,
+        size,
+        thickness,
     } = props;
 
     // Loading options
@@ -40,14 +38,7 @@ const GridAlt = (props) => {
     }, [loading_state]);
 
     const SpinnerDiv = () => (
-        <Loader
-            type="Grid"
-            visible={loading_state}
-            color={color}
-            height={height}
-            width={width}
-            radius={radius}
-        />
+        <RingSpinner color={color} size={size} thickness={thickness} />
     );
 
     return (
@@ -56,26 +47,25 @@ const GridAlt = (props) => {
             fullscreen={fullscreen}
             fullscreenClassName={fullscreenClassName}
             fullscreen_style={fullscreen_style}
-            minHeight={height}
-            minWidth={width}
+            minHeight={size}
+            minWidth={size}
             SpinnerDiv={SpinnerDiv}
             showSpinner={showSpinner}
         />
     );
 };
 
-GridAlt._dashprivate_isLoadingComponent = true;
+RingChase._dashprivate_isLoadingComponent = true;
 
-GridAlt.defaultProps = {
+RingChase.defaultProps = {
     debounce: 0,
     show_initially: true,
     color: '#000000',
-    width: 80,
-    height: 80,
-    radius: 12.5,
+    size: 60,
+    thickness: 6,
 };
 
-GridAlt.propTypes = {
+RingChase.propTypes = {
     /**
      * The ID of this component, used to identify dash components
      * in callbacks. The ID needs to be unique across all of the
@@ -107,19 +97,14 @@ GridAlt.propTypes = {
     color: PropTypes.string,
 
     /**
-     * The spinner height (in px)
+     * The spinner size
      */
-    height: PropTypes.number,
+    size: PropTypes.number,
 
     /**
-     * The spinner width (in px)
+     * The line thickness
      */
-    width: PropTypes.number,
-
-    /**
-     * The spinner radius (in px)
-     */
-    radius: PropTypes.number,
+    thickness: PropTypes.number,
 
     /**
      * Boolean that determines if the loading spinner will be displayed
@@ -140,4 +125,4 @@ GridAlt.propTypes = {
     show_initially: PropTypes.bool,
 };
 
-export default GridAlt;
+export default RingChase;
