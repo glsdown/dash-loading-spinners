@@ -1,96 +1,127 @@
 # Dash Loading Spinners
 
-Dash Loading Spinners is a Dash component library.
+This library is designed for use with [Plotly Dash](https://plotly.com). The components have all been
+designed to provide functionality similar to Dash's core 
+[`Loading` component](https://dash.plotly.com/dash-core-components/loading),
+and will display a loading spinner whilst the underlying children are re-rendering.
 
-Get started with:
-1. Install Dash and its dependencies: https://dash.plotly.com/installation
-2. Run `python usage.py`
-3. Visit http://localhost:8050 in your web browser
+The spinners in it have been adapted for use from a number of other existing
+libraries:
 
-## Contributing
+- [react-spinners](https://github.com/davidhu2000/react-spinners)
+- [react-loader-spinner](https://github.com/mhnpd/react-loader-spinner)
+- [react-css-spinners](https://github.com/alex996/react-css-spinners)
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md)
+The majority of spinner names have been retained from the originals, but some have 
+been amended where there were name clashes.
 
-### Install dependencies
+More details on the components and usage can be found in our [documentation](/docs). TODO - update link
 
-If you have selected install_dependencies during the prompt, you can skip this part.
+---
+## Installation
 
-1. Install npm packages
-    ```
-    $ npm install
-    ```
-2. Create a virtual env and activate.
-    ```
-    $ virtualenv venv
-    $ . venv/bin/activate
-    ```
-    _Note: venv\Scripts\activate for windows_
+TODO - add details for installation
 
-3. Install python packages required to build components.
-    ```
-    $ pip install -r requirements.txt
-    ```
-4. Install the python packages for testing (optional)
-    ```
-    $ pip install -r tests/requirements.txt
-    ```
+```python
+import dash_loading_spinners as dls
+```
 
-### Write your component code in `src/lib/components/BarLoader.react.js`.
+---
+## Basic Usage
 
-- The demo app is in `src/demo` and you will import your example component code into your demo app.
-- Test your code in a Python environment:
-    1. Build your code
-        ```
-        $ npm run build
-        ```
-    2. Run and modify the `usage.py` sample dash app:
-        ```
-        $ python usage.py
-        ```
-- Write tests for your component.
-    - A sample test is available in `tests/test_usage.py`, it will load `usage.py` and you can then automate interactions with selenium.
-    - Run the tests with `$ pytest tests`.
-    - The Dash team uses these types of integration tests extensively. Browse the Dash component code on GitHub for more examples of testing (e.g. https://github.com/plotly/dash-core-components)
-- Add custom styles to your component by putting your custom CSS files into your distribution folder (`dash_loading_spinners`).
-    - Make sure that they are referenced in `MANIFEST.in` so that they get properly included when you're ready to publish your component.
-    - Make sure the stylesheets are added to the `_css_dist` dict in `dash_loading_spinners/__init__.py` so dash will serve them automatically when the component suite is requested.
-- [Review your code](./review_checklist.md)
+Once installed, you can make use of the components (in their most basic sense) as follows:
 
-### Create a production build and publish:
+```python
+import dash
+import dash_loading_spinners as dls
 
-1. Build your code:
-    ```
-    $ npm run build
-    ```
-2. Create a Python distribution
-    ```
-    $ python setup.py sdist bdist_wheel
-    ```
-    This will create source and wheel distribution in the generated the `dist/` folder.
-    See [PyPA](https://packaging.python.org/guides/distributing-packages-using-setuptools/#packaging-your-project)
-    for more information.
+app = dash.Dash()
 
-3. Test your tarball by copying it into a new environment and installing it locally:
-    ```
-    $ pip install dash_loading_spinners-0.0.1.tar.gz
-    ```
+app.layout = dls.Hash()
 
-4. If it works, then you can publish the component to NPM and PyPI:
-    1. Publish on PyPI
-        ```
-        $ twine upload dist/*
-        ```
-    2. Cleanup the dist folder (optional)
-        ```
-        $ rm -rf dist
-        ```
-    3. Publish on NPM (Optional if chosen False in `publish_on_npm`)
-        ```
-        $ npm publish
-        ```
-        _Publishing your component to NPM will make the JavaScript bundles available on the unpkg CDN. By default, Dash serves the component library's CSS and JS locally, but if you choose to publish the package to NPM you can set `serve_locally` to `False` and you may see faster load times._
+if __name__ == "__main__":
+    app.run_server()
+```
 
-5. Share your component with the community! https://community.plotly.com/c/dash
-    1. Publish this repository to GitHub
-    2. Tag your GitHub repository with the plotly-dash tag so that it appears here: https://github.com/topics/plotly-dash
-    3. Create a post in the Dash community forum: https://community.plotly.com/c/dash
+There are a number of attributes which are common across all spinners. These are:
+
+- **`id`** (*string*; optional):
+    The ID of this component, used to identify dash components in
+    callbacks. The ID needs to be unique across all of the components
+    in an app. 
+- **`children`** (*a list of or a singular dash component, string or number*; optional):
+    The children of this component.
+- **`show_initially`** (*boolean*; default `True`):
+    Whether the Spinner should show on app start-up before the loading
+    state has been determined. Default True.
+- **`debounce`** (*number*; default `0`):
+    When using the spinner as a loading spinner, add a time delay (in
+    ms) to the spinner being removed to prevent flickering.
+- **`fullscreen`** (*boolean*; optional):
+    Boolean that determines if the loading spinner will be displayed
+    full-screen or not.
+- **`fullscreenClassName`** (*string*; optional):
+    CSS class names to apply to the container when in fullscreen.
+- **`fullscreen_style`** (*dict*; optional):
+    Defines CSS styles for the container when in fullscreen.
+
+Many spinners additional have properties that can be customised, including colour and size. You 
+can find these on the individual [component](/examples) pages. 
+
+Realistically, as part of an application, you will be using them alongside other components and 
+callbacks. Here is an example of what this might look like:
+
+_Note: 
+[`dash-bootstrap-components`](https://github.com/facultyai/dash-bootstrap-components) 
+isn't necessary for `dash-loading-spinners` to work, but has been included
+to improve the layout._
+
+```python
+import dash
+import dash_bootstrap_components as dbs
+import dash_core_components as dcc
+import dash_html_components as html
+import dash_loading_spinners as dls
+
+app = dash.Dash(external_stylesheets=[dbc.themes.UNITED])
+
+app.layout = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    dbc.FormGroup(
+                        dbc.Button(
+                            "Simulate slow loading component",
+                            id="loading-button",
+                            className="btn-success",
+                            n_clicks=0,
+                        )
+                    ),
+                    md=3,
+                ),
+                dbc.Col(
+                    dls.Hash(
+                        dcc.Graph(id="loading-output",),
+                        color="#435278",
+                        speed_multiplier=2,
+                        size=100,
+                    ),
+                    md=9,
+                ),
+            ],
+        ),
+    ]
+)
+
+
+@app.callback(
+    Output("loading-output", "figure"), [Input("loading-button", "n_clicks")],
+)
+def load_output(n):
+    return get_new_graph(n)
+
+if __name__ == "__main__":
+    app.run_server()
+
+```
