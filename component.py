@@ -3,17 +3,9 @@
 # - Example of source code for the component
 # - Props for the component
 
-import dash_core_components as dcc
 import dash_loading_spinners as dls
 
-from markdown_parser import get_component_details
-
-from not_found import layout as not_found_layout
+from component_parser import get_component_details, COMPONENT_NAMES
 
 
-def layout(component_name):
-    try:
-        getattr(dls, component_name)
-        return get_component_details(component_name)
-    except:
-        return not_found_layout
+components = {name: get_component_details(name) for name in COMPONENT_NAMES}
