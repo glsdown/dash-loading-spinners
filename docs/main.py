@@ -1,3 +1,24 @@
+# Main page:
+# - Details on what the package is
+#   - Include details of where components are from
+# - Installation instructions
+# - Simple use case
+import time
+
+import dash_bootstrap_components as dbc
+import dash_core_components as dcc
+import dash_html_components as html
+import dash_loading_spinners as dls
+from dash.dependencies import Input, Output
+
+import plotly.graph_objects as go
+import numpy as np
+import random
+
+
+from helpers import app, COLOURSCALES
+
+markdown_intro = """
 # Dash Loading Spinners
 
 This library is designed for use with [Plotly Dash](https://plotly.com). The components have all been
@@ -15,9 +36,9 @@ libraries:
 The majority of spinner names have been retained from the originals, but some have 
 been amended where there were name clashes.
 
-More details on the components and usage can be found in our [documentation](/docs). TODO - update link
-
 ---
+"""
+markdown_install = """
 ## Installation
 
 TODO - add details for installation
@@ -27,6 +48,9 @@ import dash_loading_spinners as dls
 ```
 
 ---
+"""
+
+markdown_usage = """
 ## Basic Usage
 
 Once installed, you can make use of the components (in their most basic sense) as follows:
@@ -125,3 +149,72 @@ if __name__ == "__main__":
     app.run_server()
 
 ```
+
+"""
+
+
+def get_new_graph(n):
+    time.sleep(2)
+    n = (n + 1) * 10
+    return go.Figure(
+        data=go.Scatter(
+            y=np.random.randn(n) * 100,
+            mode="markers",
+            marker=dict(
+                size=16,
+                color=np.random.randn(n)
+                * 100,  # set color equal to a variable
+                colorscale=random.choice(COLOURSCALES),
+                showscale=True,
+            ),
+        ),
+        layout=go.Layout(title="This graph takes ages to re-load"),
+    )
+
+
+example = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    dbc.FormGroup(
+                        dbc.Button(
+                            "Simulate slow loading component",
+                            id="loading-button",
+                            className="btn-success",
+                            n_clicks=0,
+                        )
+                    ),
+                    md=3,
+                ),
+                dbc.Col(
+                    dls.Hash(
+                        dcc.Graph(id="loading-output",),
+                        color="#435278",
+                        speed_multiplier=2,
+                        size=100,
+                    ),
+                    md=9,
+                ),
+            ],
+        ),
+    ]
+)
+
+
+@app.callback(
+    Output("loading-output", "figure"), [Input("loading-button", "n_clicks")],
+)
+def load_output(n):
+    return get_new_graph(n)
+
+
+layout = html.Div(
+    [
+        dcc.Markdown(markdown_intro),
+        dcc.Markdown(markdown_install),
+        dcc.Markdown(markdown_usage),
+        example,
+    ]
+)
+
