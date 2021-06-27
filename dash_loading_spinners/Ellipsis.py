@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Ellipsis(Component):
     """An Ellipsis component.
-
+Three/Four dots chasing each other in a pulsing line horizontally
 
 Keyword arguments:
 

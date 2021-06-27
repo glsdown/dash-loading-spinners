@@ -6,7 +6,7 @@
 \title{Oval component}
 
 \description{
-
+Darker arc chasing around a faded circle.
 }
 
 \usage{

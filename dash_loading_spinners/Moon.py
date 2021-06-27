@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Moon(Component):
     """A Moon component.
-
+Solid circle chasing around a faded outer ring.
 
 Keyword arguments:
 

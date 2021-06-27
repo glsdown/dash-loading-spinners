@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Fade(Component):
     """A Fade component.
-
+'Spokes' arranged around a central point, with a fading effect chasing
+around the ring. Similar to the Apple loading icon.
 
 Keyword arguments:
 

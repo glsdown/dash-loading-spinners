@@ -6,7 +6,7 @@
 \title{MutatingDots component}
 
 \description{
-
+Two dots (optionally of different colours) morphing and rotating around a central point.
 }
 
 \usage{

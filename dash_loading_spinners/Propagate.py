@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Propagate(Component):
     """A Propagate component.
-
+Five dots appearing in a horizontal line from a central point
 
 Keyword arguments:
 

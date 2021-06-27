@@ -9,7 +9,7 @@ export dls_skew
 
 
 A Skew component.
-
+Triangle seeming to rotate about both y and x axis
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

@@ -9,7 +9,8 @@ export dls_pulse
 
 
 A Pulse component.
-
+Three dots in a horizontal line that increase in size in a wave, and
+decrease again.
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

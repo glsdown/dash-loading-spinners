@@ -6,7 +6,7 @@
 \title{ClimbingBox component}
 
 \description{
-
+Line with a square box appearing to rotate up and down the slope.
 }
 
 \usage{

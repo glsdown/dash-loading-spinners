@@ -6,7 +6,7 @@
 \title{Moon component}
 
 \description{
-
+Solid circle chasing around a faded outer ring.
 }
 
 \usage{

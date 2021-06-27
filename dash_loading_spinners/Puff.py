@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Puff(Component):
     """A Puff component.
-
+Single ring expanding and fading
 
 Keyword arguments:
 

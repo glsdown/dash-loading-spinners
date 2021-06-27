@@ -6,7 +6,7 @@
 \title{Triangle component}
 
 \description{
-
+Three lines chasing each other around a triangle
 }
 
 \usage{

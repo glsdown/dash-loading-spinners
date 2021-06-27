@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Wave(Component):
     """A Wave component.
-
+Three rectangular beating bars
 
 Keyword arguments:
 

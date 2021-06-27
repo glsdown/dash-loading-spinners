@@ -6,7 +6,7 @@
 \title{Circles component}
 
 \description{
-
+Two concentric rings of dots rotating in opposite directions.
 }
 
 \usage{

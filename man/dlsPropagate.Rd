@@ -6,7 +6,7 @@
 \title{Propagate component}
 
 \description{
-
+Five dots appearing in a horizontal line from a central point
 }
 
 \usage{

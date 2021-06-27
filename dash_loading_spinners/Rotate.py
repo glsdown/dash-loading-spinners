@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Rotate(Component):
     """A Rotate component.
-
+Three dots in a line that rotate around the central dot.
 
 Keyword arguments:
 

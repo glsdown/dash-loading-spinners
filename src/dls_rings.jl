@@ -9,7 +9,8 @@ export dls_rings
 
 
 A Rings component.
-
+Two pulsing concentric circles, with the outer circle fading as it
+gets larger.
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

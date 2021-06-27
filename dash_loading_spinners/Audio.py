@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Audio(Component):
     """An Audio component.
-
+Audio bars beating spinner.
 
 Keyword arguments:
 

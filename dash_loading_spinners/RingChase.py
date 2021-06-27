@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class RingChase(Component):
     """A RingChase component.
-
+Arc contracting and extending in a ring shape to catch its 'tail'
 
 Keyword arguments:
 

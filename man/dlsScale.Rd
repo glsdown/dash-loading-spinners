@@ -6,7 +6,7 @@
 \title{Scale component}
 
 \description{
-
+Five bars which increase in size in a wave, and then decrease again.
 }
 
 \usage{

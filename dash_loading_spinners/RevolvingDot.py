@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class RevolvingDot(Component):
     """A RevolvingDot component.
-
+Solid circle (optionally of a different colour) rotating around a
+faded ring.
 
 Keyword arguments:
 
@@ -39,7 +40,7 @@ Keyword arguments:
 - radius (number; default 6):
     The radius of the spinning dot (in px).
 
-- secondaryColor (string; default '#0275d8'):
+- secondaryColor (string; optional):
     Sets the color of the Spinner. You can also specify any valid CSS
     color of your choice (e.g. a hex code, a decimal code or a CSS
     color name).  If not specified will default to blue.

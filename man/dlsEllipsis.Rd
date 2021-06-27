@@ -6,7 +6,7 @@
 \title{Ellipsis component}
 
 \description{
-
+Three/Four dots chasing each other in a pulsing line horizontally
 }
 
 \usage{

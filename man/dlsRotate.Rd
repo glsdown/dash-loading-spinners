@@ -6,7 +6,7 @@
 \title{Rotate component}
 
 \description{
-
+Three dots in a line that rotate around the central dot.
 }
 
 \usage{

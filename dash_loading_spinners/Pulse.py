@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Pulse(Component):
     """A Pulse component.
-
+Three dots in a horizontal line that increase in size in a wave, and
+decrease again.
 
 Keyword arguments:
 

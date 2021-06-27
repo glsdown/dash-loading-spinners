@@ -6,7 +6,7 @@
 \title{Pulse component}
 
 \description{
-
+Three dots in a horizontal line that increase in size in a wave, and decrease again.
 }
 
 \usage{

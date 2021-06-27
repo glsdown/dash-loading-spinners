@@ -6,7 +6,7 @@
 \title{Audio component}
 
 \description{
-
+Audio bars beating spinner.
 }
 
 \usage{

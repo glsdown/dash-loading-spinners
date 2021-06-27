@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Rise(Component):
     """A Rise component.
-
+Five dots which alternately rise up and down, increasing and decreasing
+in size as they do.
 
 Keyword arguments:
 

@@ -9,7 +9,7 @@ export dls_spinningdisc
 
 
 A SpinningDisc component.
-
+Circle spinning on its Y axis
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

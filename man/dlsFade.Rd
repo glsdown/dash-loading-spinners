@@ -6,7 +6,7 @@
 \title{Fade component}
 
 \description{
-
+'Spokes' arranged around a central point, with a fading effect chasing around the ring. Similar to the Apple loading icon.
 }
 
 \usage{

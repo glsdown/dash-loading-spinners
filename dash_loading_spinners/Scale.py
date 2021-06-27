@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Scale(Component):
     """A Scale component.
-
+Five bars which increase in size in a wave, and then decrease again.
 
 Keyword arguments:
 

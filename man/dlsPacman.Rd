@@ -6,7 +6,7 @@
 \title{Pacman component}
 
 \description{
-
+Pacman chasing dots
 }
 
 \usage{

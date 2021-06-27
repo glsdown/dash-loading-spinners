@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class MutatingDots(Component):
     """A MutatingDots component.
-
+Two dots (optionally of different colours) morphing and rotating around
+a central point.
 
 Keyword arguments:
 
@@ -42,7 +43,7 @@ Keyword arguments:
 - radius (number; default 11):
     The radius of the dots (in px).
 
-- secondaryColor (string; default '#0275d8'):
+- secondaryColor (string; optional):
     Sets the color of the Spinner. You can also specify any valid CSS
     color of your choice (e.g. a hex code, a decimal code or a CSS
     color name).  If not specified will default to blue.

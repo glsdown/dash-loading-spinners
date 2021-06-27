@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Skew(Component):
     """A Skew component.
-
+Triangle seeming to rotate about both y and x axis
 
 Keyword arguments:
 

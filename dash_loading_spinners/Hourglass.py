@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Hourglass(Component):
     """A Hourglass component.
-
+Two triangles pointing into the centre of a circle, and rotating
+at varying speeds.
 
 Keyword arguments:
 

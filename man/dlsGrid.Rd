@@ -6,7 +6,7 @@
 \title{Grid component}
 
 \description{
-
+Nine dots arranged in a grid pattern, shrinking and growing at different times.
 }
 
 \usage{

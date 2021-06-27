@@ -6,7 +6,7 @@
 \title{Hourglass component}
 
 \description{
-
+Two triangles pointing into the centre of a circle, and rotating at varying speeds.
 }
 
 \usage{

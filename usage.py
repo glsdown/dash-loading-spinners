@@ -1,13 +1,14 @@
 import time
 
-import dash_loading_spinners as dls
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
 import dash_bootstrap_components as dbc
+import dash_core_components as dcc
+import dash_html_components as html
 from dash.dependencies import Input, Output
 
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+import dash_loading_spinners as dls
+
+app = dash.Dash(external_stylesheets=[dbc.themes.UNITED])
 
 spinner_options = {
     # Dots
@@ -22,7 +23,7 @@ spinner_options = {
     "Dot": dls.Dot,
     "MutatingDots": dls.MutatingDots,
     # Circles
-    "Circle": dls.Circle,
+    "Tunnel": dls.Tunnel,
     "Puff": dls.Puff,
     "Target": dls.Target,
     "Rings": dls.Rings,
@@ -65,11 +66,8 @@ spinner_options = {
 }
 
 loading_output = html.Div(id="loading-output", style={"height": "100px"})
-custom_output = html.Div(
-    "Change the SVG code below", id="custom-output", style={"height": "100px"}
-)
 svg = """<svg
-    height="100"
+    height="70"
     width="100"
     viewBox="0 0 100% 100%"
     xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +104,9 @@ def getSpinnerBox(title, spinner):
     )
 
 
-allSpinners = [getSpinnerBox(t, s) for t, s in spinner_options.items() if s is not None]
+allSpinners = [
+    getSpinnerBox(t, s) for t, s in spinner_options.items() if s is not None
+]
 
 
 app.layout = html.Div(
@@ -133,24 +133,10 @@ app.layout = html.Div(
                         dbc.Col(
                             dbc.FormGroup(
                                 [
-                                    dbc.Label("Loader Style"),
-                                    dcc.Dropdown(
-                                        id="loader-style",
-                                        options=[
-                                            {"label": s, "value": s}
-                                            for s in spinner_options.keys()
-                                        ],
-                                        value="Hash",
-                                    ),
-                                ]
-                            ),
-                            className="col-md-6",
-                        ),
-                        dbc.Col(
-                            dbc.FormGroup(
-                                [
                                     dbc.Checkbox(
-                                        checked=False, id="fullscreen", className="mr-2"
+                                        checked=False,
+                                        id="fullscreen",
+                                        className="mr-2",
                                     ),
                                     dbc.Label("Fullscreen?"),
                                 ]
@@ -191,7 +177,6 @@ app.layout = html.Div(
         ),
         html.Div(
             dls.Custom(
-                custom_output,
                 id="custom-loader",
                 fullscreen=False,
                 fullscreenClassName="bg-light",
@@ -219,6 +204,7 @@ app.layout = html.Div(
                         className="col-md-3",
                     ),
                 ],
+                className="mx-2",
             ),
         ),
     ],
@@ -230,32 +216,11 @@ def change_custom(value):
     return value
 
 
-@app.callback(Output("loading-item", "fullscreen"), [Input("fullscreen", "checked")])
+@app.callback(
+    Output("loading-item", "fullscreen"), [Input("fullscreen", "checked")]
+)
 def change_fullscreen(checked):
     return checked
-
-
-@app.callback(Output("loader", "children"), [Input("loader-style", "value")])
-def change_loader(value):
-
-    return spinner_options[value](
-        loading_output,
-        id="loading-item",
-        fullscreen=False,
-        fullscreenClassName="bg-light",
-    )
-
-
-@app.callback(
-    Output("custom-output", "children"),
-    [Input("custom-button", "n_clicks")],
-)
-def load_output(n):
-
-    if n:
-        time.sleep(100)
-        return f"Output loaded {n} times"
-    return "Output not reloaded yet"
 
 
 @app.callback(

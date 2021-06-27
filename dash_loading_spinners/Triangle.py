@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Triangle(Component):
     """A Triangle component.
-
+Three lines chasing each other around a triangle
 
 Keyword arguments:
 

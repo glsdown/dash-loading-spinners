@@ -6,7 +6,7 @@
 \title{Ring component}
 
 \description{
-
+Two rings rotating around each other in different dimension.
 }
 
 \usage{

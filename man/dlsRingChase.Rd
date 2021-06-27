@@ -6,7 +6,7 @@
 \title{RingChase component}
 
 \description{
-
+Arc contracting and extending in a ring shape to catch its 'tail'
 }
 
 \usage{

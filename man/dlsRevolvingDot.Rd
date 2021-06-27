@@ -6,7 +6,7 @@
 \title{RevolvingDot component}
 
 \description{
-
+Solid circle (optionally of a different colour) rotating around a faded ring.
 }
 
 \usage{

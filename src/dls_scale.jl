@@ -9,7 +9,7 @@ export dls_scale
 
 
 A Scale component.
-
+Five bars which increase in size in a wave, and then decrease again.
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

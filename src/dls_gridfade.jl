@@ -9,7 +9,7 @@ export dls_gridfade
 
 
 A GridFade component.
-
+Nine dots in a grid formation pulsing fades at different times.
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

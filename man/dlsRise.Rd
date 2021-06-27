@@ -6,7 +6,7 @@
 \title{Rise component}
 
 \description{
-
+Five dots which alternately rise up and down, increasing and decreasing in size as they do.
 }
 
 \usage{

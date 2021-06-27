@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class ThreeDots(Component):
     """A ThreeDots component.
-
+Three solid colour pulsing dots (optionally of different colours),
+in a horizontal line.
 
 Keyword arguments:
 

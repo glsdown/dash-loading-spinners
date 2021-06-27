@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Clip(Component):
     """A Clip component.
-
+Almost complete ring rotating and pulsing in size.
 
 Keyword arguments:
 

@@ -6,7 +6,7 @@
 \title{Clip component}
 
 \description{
-
+Almost complete ring rotating and pulsing in size.
 }
 
 \usage{

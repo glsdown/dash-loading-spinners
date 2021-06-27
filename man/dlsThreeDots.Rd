@@ -6,7 +6,7 @@
 \title{ThreeDots component}
 
 \description{
-
+Three solid colour pulsing dots (optionally of different colours), in a horizontal line.
 }
 
 \usage{

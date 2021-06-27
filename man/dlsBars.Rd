@@ -6,7 +6,7 @@
 \title{Bars component}
 
 \description{
-
+Five bars which increase in length in a wave to the left and right simultaneously.
 }
 
 \usage{

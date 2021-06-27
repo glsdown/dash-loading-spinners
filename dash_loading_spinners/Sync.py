@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Sync(Component):
     """A Sync component.
-
+Three horizontal, solid bouncing dots.
 
 Keyword arguments:
 

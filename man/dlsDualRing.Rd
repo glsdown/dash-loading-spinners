@@ -6,7 +6,7 @@
 \title{DualRing component}
 
 \description{
-
+Two arcs rotating around in a circle opposite each other.
 }
 
 \usage{

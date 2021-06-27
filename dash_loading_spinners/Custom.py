@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Custom(Component):
     """A Custom component.
-
+Create a custom spinner from an animated SVG
 
 Keyword arguments:
 
@@ -35,7 +35,7 @@ Keyword arguments:
     Whether the Spinner should show on app start-up before the loading
     state has been determined. Default True.
 
-- svg (string; default `<svgwidth=80height=80viewBox="0 0 38 38"xmlns="http://www.w3.org/2000/svg"aria-label="Loading"><defs>  <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">    <stop stopColor="black" stopOpacity="0" offset="0%" />    <stop stopColor="black" stopOpacity=".631" offset="63.146%" />    <stop stopColor="black" offset="100%" />  </linearGradient></defs><g fill="none" fillRule="evenodd">  <g transform="translate(1 1)">    <path d="M36 18c0-9.94-8.06-18-18-18" id="Oval-2" stroke="black" strokeWidth="2">      <animateTransform        attributeName="transform"        type="rotate"        from="0 18 18"        to="360 18 18"        dur="0.9s"        repeatCount="indefinite"      />    </path>    <circle fill="#fff" cx="36" cy="18" r=1>      <animateTransform        attributeName="transform"        type="rotate"        from="0 18 18"        to="360 18 18"        dur="0.9s"        repeatCount="indefinite"      />    </circle>  </g></g></svg>`):
+- svg (string; default `<svg  width=80  height=80  viewBox="0 0 38 38"  xmlns="http://www.w3.org/2000/svg"  aria-label="Loading">  <defs>    <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">      <stop stopColor="black" stopOpacity="0" offset="0%" />      <stop stopColor="black" stopOpacity=".631" offset="63.146%" />      <stop stopColor="black" offset="100%" />    </linearGradient>  </defs>  <g fill="none" fillRule="evenodd">    <g transform="translate(1 1)">      <path d="M36 18c0-9.94-8.06-18-18-18" id="Oval-2" stroke="black" strokeWidth="2">        <animateTransform          attributeName="transform"          type="rotate"          from="0 18 18"          to="360 18 18"          dur="0.9s"          repeatCount="indefinite"        />      </path>      <circle fill="#fff" cx="36" cy="18" r=1>        <animateTransform          attributeName="transform"          type="rotate"          from="0 18 18"          to="360 18 18"          dur="0.9s"          repeatCount="indefinite"        />      </circle>    </g>  </g></svg>`):
     The SVG code to include as the spinner, including required
     animations.
 

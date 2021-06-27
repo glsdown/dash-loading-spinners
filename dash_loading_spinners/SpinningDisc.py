@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class SpinningDisc(Component):
     """A SpinningDisc component.
-
+Circle spinning on its Y axis
 
 Keyword arguments:
 

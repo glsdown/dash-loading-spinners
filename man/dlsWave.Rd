@@ -6,7 +6,7 @@
 \title{Wave component}
 
 \description{
-
+Three rectangular beating bars
 }
 
 \usage{

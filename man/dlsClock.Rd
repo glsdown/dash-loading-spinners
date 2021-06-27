@@ -6,7 +6,7 @@
 \title{Clock component}
 
 \description{
-
+Clock face with rotating hands
 }
 
 \usage{

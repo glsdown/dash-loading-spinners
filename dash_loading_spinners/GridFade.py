@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class GridFade(Component):
     """A GridFade component.
-
+Nine dots in a grid formation pulsing fades at different times.
 
 Keyword arguments:
 

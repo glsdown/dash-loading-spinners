@@ -6,7 +6,7 @@
 \title{Puff component}
 
 \description{
-
+Single ring expanding and fading
 }
 
 \usage{

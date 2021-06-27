@@ -6,7 +6,7 @@
 \title{Hash component}
 
 \description{
-
+Hash shape forming from single dots and rotating.
 }
 
 \usage{

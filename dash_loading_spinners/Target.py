@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Target(Component):
     """A Target component.
-
+Two solid concentric rings, with the inner ring expanding to meet
+the outer ring.
 
 Keyword arguments:
 

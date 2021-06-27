@@ -6,7 +6,7 @@
 \title{Roller component}
 
 \description{
-
+Dots chasing each other around in a circle
 }
 
 \usage{

@@ -6,7 +6,7 @@
 \title{TailSpin component}
 
 \description{
-
+Single arc rotating around a circle.
 }
 
 \usage{

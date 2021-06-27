@@ -6,7 +6,7 @@
 \title{Dot component}
 
 \description{
-
+Two dots spinning around each other, increasing and decreasing in size.
 }
 
 \usage{

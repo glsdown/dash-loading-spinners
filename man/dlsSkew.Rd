@@ -6,7 +6,7 @@
 \title{Skew component}
 
 \description{
-
+Triangle seeming to rotate about both y and x axis
 }
 
 \usage{

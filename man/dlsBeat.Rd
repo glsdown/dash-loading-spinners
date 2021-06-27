@@ -6,7 +6,7 @@
 \title{Beat component}
 
 \description{
-
+Three circles in a horizontal line pulsing fade.
 }
 
 \usage{

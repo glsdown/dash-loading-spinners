@@ -9,7 +9,8 @@ export dls_mutatingdots
 
 
 A MutatingDots component.
-
+Two dots (optionally of different colours) morphing and rotating around
+a central point.
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

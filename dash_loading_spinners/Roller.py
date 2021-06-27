@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Roller(Component):
     """A Roller component.
-
+Dots chasing each other around in a circle
 
 Keyword arguments:
 

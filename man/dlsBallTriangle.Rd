@@ -6,7 +6,7 @@
 \title{BallTriangle component}
 
 \description{
-
+Three rings rotating in a triangular shape.
 }
 
 \usage{

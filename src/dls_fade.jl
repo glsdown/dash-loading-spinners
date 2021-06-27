@@ -9,7 +9,8 @@ export dls_fade
 
 
 A Fade component.
-
+'Spokes' arranged around a central point, with a fading effect chasing
+around the ring. Similar to the Apple loading icon.
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

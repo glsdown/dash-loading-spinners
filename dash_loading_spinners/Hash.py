@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Hash(Component):
     """A Hash component.
-
+Hash shape forming from single dots and rotating.
 
 Keyword arguments:
 

@@ -6,7 +6,7 @@
 \title{Custom component}
 
 \description{
-
+Create a custom spinner from an animated SVG
 }
 
 \usage{

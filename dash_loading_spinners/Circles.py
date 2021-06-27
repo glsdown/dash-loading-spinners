@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Circles(Component):
     """A Circles component.
-
+Two concentric rings of dots rotating in opposite directions.
 
 Keyword arguments:
 

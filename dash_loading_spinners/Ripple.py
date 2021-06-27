@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Ripple(Component):
     """A Ripple component.
-
+Concentric circles beating outwards and fading
 
 Keyword arguments:
 

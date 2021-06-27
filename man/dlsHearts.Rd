@@ -6,7 +6,7 @@
 \title{Hearts component}
 
 \description{
-
+Three pulsing hearts.
 }
 
 \usage{

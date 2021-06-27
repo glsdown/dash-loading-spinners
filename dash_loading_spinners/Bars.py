@@ -5,7 +5,8 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Bars(Component):
     """A Bars component.
-
+Five bars which increase in length in a wave to the left and right
+simultaneously.
 
 Keyword arguments:
 

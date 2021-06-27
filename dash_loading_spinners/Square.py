@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Square(Component):
     """A Square component.
-
+Square seeming to rotate around both y and x axis.
 
 Keyword arguments:
 

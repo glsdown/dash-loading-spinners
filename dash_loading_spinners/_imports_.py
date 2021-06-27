@@ -23,7 +23,6 @@ from .ThreeDots import ThreeDots
 from .Triangle import Triangle
 from .Beat import Beat
 from .Bounce import Bounce
-from .Circle import Circle
 from .ClimbingBox import ClimbingBox
 from .Clip import Clip
 from .Clock import Clock
@@ -43,6 +42,7 @@ from .Scale import Scale
 from .Skew import Skew
 from .Square import Square
 from .Sync import Sync
+from .Tunnel import Tunnel
 
 __all__ = [
     "Custom",
@@ -70,7 +70,6 @@ __all__ = [
     "Triangle",
     "Beat",
     "Bounce",
-    "Circle",
     "ClimbingBox",
     "Clip",
     "Clock",
@@ -89,5 +88,6 @@ __all__ = [
     "Scale",
     "Skew",
     "Square",
-    "Sync"
+    "Sync",
+    "Tunnel"
 ]

@@ -6,7 +6,7 @@
 \title{Rings component}
 
 \description{
-
+Two pulsing concentric circles, with the outer circle fading as it gets larger.
 }
 
 \usage{

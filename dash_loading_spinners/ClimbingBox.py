@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class ClimbingBox(Component):
     """A ClimbingBox component.
-
+Line with a square box appearing to rotate up and down the slope.
 
 Keyword arguments:
 

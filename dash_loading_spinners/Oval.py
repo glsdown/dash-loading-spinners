@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Oval(Component):
     """An Oval component.
-
+Darker arc chasing around a faded circle.
 
 Keyword arguments:
 

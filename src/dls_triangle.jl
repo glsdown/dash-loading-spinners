@@ -9,7 +9,7 @@ export dls_triangle
 
 
 A Triangle component.
-
+Three lines chasing each other around a triangle
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components

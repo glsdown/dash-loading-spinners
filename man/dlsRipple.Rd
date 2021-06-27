@@ -6,7 +6,7 @@
 \title{Ripple component}
 
 \description{
-
+Concentric circles beating outwards and fading
 }
 
 \usage{

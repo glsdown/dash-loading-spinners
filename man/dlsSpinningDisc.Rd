@@ -6,7 +6,7 @@
 \title{SpinningDisc component}
 
 \description{
-
+Circle spinning on its Y axis
 }
 
 \usage{

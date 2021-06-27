@@ -6,7 +6,7 @@
 \title{Sync component}
 
 \description{
-
+Three horizontal, solid bouncing dots.
 }
 
 \usage{

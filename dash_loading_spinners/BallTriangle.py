@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class BallTriangle(Component):
     """A BallTriangle component.
-
+Three rings rotating in a triangular shape.
 
 Keyword arguments:
 

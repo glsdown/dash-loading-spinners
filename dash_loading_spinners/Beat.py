@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Beat(Component):
     """A Beat component.
-
+Three circles in a horizontal line pulsing fade.
 
 Keyword arguments:
 

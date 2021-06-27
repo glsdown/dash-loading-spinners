@@ -6,7 +6,7 @@
 \title{Target component}
 
 \description{
-
+Two solid concentric rings, with the inner ring expanding to meet the outer ring.
 }
 
 \usage{

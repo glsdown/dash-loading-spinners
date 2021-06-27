@@ -6,7 +6,7 @@
 \title{Bounce component}
 
 \description{
-
+Two solid rings expanding and contracting from a central point.
 }
 
 \usage{

@@ -6,7 +6,7 @@
 \title{Square component}
 
 \description{
-
+Square seeming to rotate around both y and x axis.
 }
 
 \usage{

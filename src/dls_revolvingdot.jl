@@ -9,7 +9,8 @@ export dls_revolvingdot
 
 
 A RevolvingDot component.
-
+Solid circle (optionally of a different colour) rotating around a
+faded ring.
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): The children of this component.
 - `id` (String; optional): The ID of this component, used to identify dash components
