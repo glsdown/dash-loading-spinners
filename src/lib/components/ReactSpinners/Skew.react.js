@@ -17,7 +17,7 @@ const Skew = (props) => {
     debounce,
     show_initially,
     width,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -41,7 +41,7 @@ const Skew = (props) => {
     <SkewLoader
       color={color}
       size={Math.floor(width / 2)}
-      speedMultiplier={speedMultiplier}
+      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -65,7 +65,7 @@ Skew.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 80,
 };
 
@@ -103,7 +103,7 @@ Skew.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner width (in px)

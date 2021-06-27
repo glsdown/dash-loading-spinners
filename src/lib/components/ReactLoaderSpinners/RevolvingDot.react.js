@@ -11,7 +11,7 @@ const RevolvingDot = (props) => {
     children,
     color,
     secondaryColor,
-    speedMultiplier,
+    speed_multiplier,
     loading_state,
     fullscreenClassName,
     fullscreen_style,
@@ -40,7 +40,7 @@ const RevolvingDot = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => {
-    const animationTime = 2 / speedMultiplier;
+    const animationTime = 2 / speed_multiplier;
     return (
       <svg
         version="1.1"
@@ -101,7 +101,7 @@ RevolvingDot.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 80,
   radius: 6,
 };
@@ -148,7 +148,7 @@ RevolvingDot.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner width (in px)

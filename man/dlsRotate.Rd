@@ -13,7 +13,7 @@ Three dots in a line that rotate around the central dot.
 dlsRotate(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
 fullscreen_style=NULL, margin=NULL, show_initially=NULL,
-speedMultiplier=NULL, width=NULL)
+speed_multiplier=NULL, width=NULL)
 }
 
 \arguments{
@@ -43,7 +43,7 @@ full-screen or not.}
 \item{show_initially}{Logical. Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.}
 
-\item{speedMultiplier}{Numeric. The relative speed of the spinner}
+\item{speed_multiplier}{Numeric. The relative speed of the spinner}
 
 \item{width}{Numeric. The spinner width (in px)}
 }

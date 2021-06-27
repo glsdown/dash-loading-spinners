@@ -17,7 +17,7 @@ const Puff = (props) => {
     debounce,
     show_initially,
     width,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -38,7 +38,11 @@ const Puff = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <PuffLoader color={color} size={width} speedMultiplier={speedMultiplier} />
+    <PuffLoader
+      color={color}
+      size={width}
+      speed_multiplier={speed_multiplier}
+    />
   );
 
   return (
@@ -61,7 +65,7 @@ Puff.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 60,
 };
 
@@ -99,7 +103,7 @@ Puff.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner width (in px)

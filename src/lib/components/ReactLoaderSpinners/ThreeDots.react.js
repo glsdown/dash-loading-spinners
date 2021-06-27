@@ -14,7 +14,7 @@ const ThreeDots = (props) => {
     color,
     secondaryColor,
     tertiaryColor,
-    speedMultiplier,
+    speed_multiplier,
     loading_state,
     fullscreenClassName,
     fullscreen_style,
@@ -45,7 +45,7 @@ const ThreeDots = (props) => {
 
   const SpinnerDiv = () => {
     const maxRadius = radius + 2 * Math.ceil(radius / 3);
-    const animationTime = 0.8 / speedMultiplier;
+    const animationTime = 0.8 / speed_multiplier;
 
     return (
       <svg
@@ -157,7 +157,7 @@ ThreeDots._dashprivate_isLoadingComponent = true;
 ThreeDots.defaultProps = {
   debounce: 0,
   show_initially: true,
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   color: '#000000',
   width: 120,
   height: 30,
@@ -214,7 +214,7 @@ ThreeDots.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner height (in px)

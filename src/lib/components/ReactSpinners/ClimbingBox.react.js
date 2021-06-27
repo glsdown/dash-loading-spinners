@@ -16,7 +16,7 @@ const ClimbingBox = (props) => {
     fullscreen,
     debounce,
     show_initially,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -40,7 +40,7 @@ const ClimbingBox = (props) => {
     <ClimbingBoxLoader
       color={color}
       size={15}
-      speedMultiplier={speedMultiplier}
+      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -64,7 +64,7 @@ ClimbingBox.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
 };
 
 ClimbingBox.propTypes = {
@@ -101,7 +101,7 @@ ClimbingBox.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner size (in px)

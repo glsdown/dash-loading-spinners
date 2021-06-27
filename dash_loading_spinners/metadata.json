@@ -1574,7 +1574,7 @@
         "required": false,
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to blue."
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -1943,7 +1943,7 @@
         "required": false,
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to green."
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2137,7 +2137,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2245,7 +2245,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2342,7 +2342,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2435,7 +2435,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2532,7 +2532,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2629,7 +2629,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2726,7 +2726,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2834,7 +2834,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -2942,7 +2942,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3039,7 +3039,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3136,7 +3136,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3233,7 +3233,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3330,7 +3330,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3427,7 +3427,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3535,7 +3535,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3632,7 +3632,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3729,7 +3729,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3837,7 +3837,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -3956,7 +3956,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -4053,7 +4053,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -4150,7 +4150,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },
@@ -4258,7 +4258,7 @@
           "computed": false
         }
       },
-      "speedMultiplier": {
+      "speed_multiplier": {
         "type": {
           "name": "number"
         },

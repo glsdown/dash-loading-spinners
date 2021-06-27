@@ -52,7 +52,7 @@ Keyword arguments:
     Whether the Spinner should show on app start-up before the loading
     state has been determined. Default True.
 
-- speedMultiplier (number; default 1):
+- speed_multiplier (number; default 1):
     The relative speed of the spinner.
 
 - tertiaryColor (string; optional):
@@ -63,12 +63,12 @@ Keyword arguments:
 - width (number; default 120):
     The spinner width (in px)."""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, color=Component.UNDEFINED, secondaryColor=Component.UNDEFINED, tertiaryColor=Component.UNDEFINED, speedMultiplier=Component.UNDEFINED, height=Component.UNDEFINED, width=Component.UNDEFINED, radius=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'radius', 'secondaryColor', 'show_initially', 'speedMultiplier', 'tertiaryColor', 'width']
+    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, color=Component.UNDEFINED, secondaryColor=Component.UNDEFINED, tertiaryColor=Component.UNDEFINED, speed_multiplier=Component.UNDEFINED, height=Component.UNDEFINED, width=Component.UNDEFINED, radius=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'radius', 'secondaryColor', 'show_initially', 'speed_multiplier', 'tertiaryColor', 'width']
         self._type = 'ThreeDots'
         self._namespace = 'dash_loading_spinners'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'radius', 'secondaryColor', 'show_initially', 'speedMultiplier', 'tertiaryColor', 'width']
+        self.available_properties = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'height', 'radius', 'secondaryColor', 'show_initially', 'speed_multiplier', 'tertiaryColor', 'width']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

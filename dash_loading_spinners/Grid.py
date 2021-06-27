@@ -43,18 +43,18 @@ Keyword arguments:
     Whether the Spinner should show on app start-up before the loading
     state has been determined. Default True.
 
-- speedMultiplier (number; default 1):
+- speed_multiplier (number; default 1):
     The relative speed of the spinner.
 
 - width (number; default 57):
     The spinner width (in px)."""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, color=Component.UNDEFINED, speedMultiplier=Component.UNDEFINED, width=Component.UNDEFINED, margin=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'margin', 'show_initially', 'speedMultiplier', 'width']
+    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, color=Component.UNDEFINED, speed_multiplier=Component.UNDEFINED, width=Component.UNDEFINED, margin=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'margin', 'show_initially', 'speed_multiplier', 'width']
         self._type = 'Grid'
         self._namespace = 'dash_loading_spinners'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'margin', 'show_initially', 'speedMultiplier', 'width']
+        self.available_properties = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'margin', 'show_initially', 'speed_multiplier', 'width']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

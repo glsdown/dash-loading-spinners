@@ -19,7 +19,7 @@ const Fade = (props) => {
     show_initially,
     width,
     thickness,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -44,7 +44,7 @@ const Fade = (props) => {
       color={color}
       height={width}
       width={thickness}
-      speedMultiplier={speedMultiplier}
+      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -68,7 +68,7 @@ Fade.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 15,
   thickness: 5,
 };
@@ -107,7 +107,7 @@ Fade.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner width (in px)

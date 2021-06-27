@@ -17,7 +17,7 @@ const Propagate = (props) => {
     debounce,
     show_initially,
     radius,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -41,7 +41,7 @@ const Propagate = (props) => {
     <PropagateLoader
       color={color}
       size={radius}
-      speedMultiplier={speedMultiplier}
+      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -65,7 +65,7 @@ Propagate.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   radius: 15,
 };
 
@@ -103,7 +103,7 @@ Propagate.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The radius of the dots (in px)

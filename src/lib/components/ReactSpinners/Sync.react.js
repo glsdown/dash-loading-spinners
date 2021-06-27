@@ -18,7 +18,7 @@ const Sync = (props) => {
     show_initially,
     width,
     margin,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -45,7 +45,7 @@ const Sync = (props) => {
       color={color}
       size={size}
       margin={Math.floor(margin / 2)}
-      speedMultiplier={speedMultiplier}
+      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -69,7 +69,7 @@ Sync.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 57,
   margin: 4,
 };
@@ -108,7 +108,7 @@ Sync.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner width (in px)

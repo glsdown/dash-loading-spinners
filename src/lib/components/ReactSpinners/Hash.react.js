@@ -17,7 +17,7 @@ const Hash = (props) => {
     debounce,
     show_initially,
     size,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -38,7 +38,7 @@ const Hash = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <HashLoader color={color} size={size} speedMultiplier={speedMultiplier} />
+    <HashLoader color={color} size={size} speed_multiplier={speed_multiplier} />
   );
 
   return (
@@ -61,7 +61,7 @@ Hash.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   size: 50,
 };
 
@@ -99,7 +99,7 @@ Hash.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner size (in px). Note, as this is rotated, this is not the width.

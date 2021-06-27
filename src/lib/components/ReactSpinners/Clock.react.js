@@ -17,7 +17,7 @@ const Clock = (props) => {
     debounce,
     show_initially,
     width,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -38,7 +38,11 @@ const Clock = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <ClockLoader color={color} size={width} speedMultiplier={speedMultiplier} />
+    <ClockLoader
+      color={color}
+      size={width}
+      speed_multiplier={speed_multiplier}
+    />
   );
 
   return (
@@ -61,7 +65,7 @@ Clock.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 50,
 };
 
@@ -99,7 +103,7 @@ Clock.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner width (in px)

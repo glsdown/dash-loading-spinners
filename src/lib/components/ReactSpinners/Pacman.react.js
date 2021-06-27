@@ -17,7 +17,7 @@ const Pacman = (props) => {
     debounce,
     show_initially,
     width,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -41,7 +41,7 @@ const Pacman = (props) => {
     <PacmanLoader
       color={color}
       size={Math.round(width / 4)}
-      speedMultiplier={speedMultiplier}
+      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -65,7 +65,7 @@ Pacman.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 100,
 };
 
@@ -103,7 +103,7 @@ Pacman.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The width of the animation (in px)

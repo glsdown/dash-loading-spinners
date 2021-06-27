@@ -19,7 +19,7 @@ const Pulse = (props) => {
     show_initially,
     width,
     margin,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -46,7 +46,7 @@ const Pulse = (props) => {
       color={color}
       size={size}
       margin={Math.ceil(margin / 2)}
-      speedMultiplier={speedMultiplier}
+      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -70,7 +70,7 @@ Pulse.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 57,
   margin: 4,
 };
@@ -109,7 +109,7 @@ Pulse.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The width of the spinner (in px)

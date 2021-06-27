@@ -17,7 +17,7 @@ const Clip = (props) => {
     debounce,
     show_initially,
     width,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -38,7 +38,11 @@ const Clip = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <ClipLoader color={color} size={width} speedMultiplier={speedMultiplier} />
+    <ClipLoader
+      color={color}
+      size={width}
+      speed_multiplier={speed_multiplier}
+    />
   );
 
   return (
@@ -61,7 +65,7 @@ Clip.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 35,
 };
 
@@ -99,7 +103,7 @@ Clip.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner width (in px)

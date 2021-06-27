@@ -28,10 +28,10 @@ full-screen or not.
 - `radius` (Real; optional): The radius of the dots (in px)
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
-- `speedMultiplier` (Real; optional): The relative speed of the spinner
+- `speed_multiplier` (Real; optional): The relative speed of the spinner
 """
 function dls_propagate(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :radius, :show_initially, :speedMultiplier]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :radius, :show_initially, :speed_multiplier]
         wild_props = Symbol[]
         return Component("dls_propagate", "Propagate", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

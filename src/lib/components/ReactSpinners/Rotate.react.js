@@ -18,7 +18,7 @@ const Rotate = (props) => {
     show_initially,
     width,
     margin,
-    speedMultiplier,
+    speed_multiplier,
   } = props;
 
   // Loading options
@@ -45,7 +45,7 @@ const Rotate = (props) => {
       color={color}
       size={size}
       margin={margin}
-      speedMultiplier={speedMultiplier}
+      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -69,7 +69,7 @@ Rotate.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speedMultiplier: 1,
+  speed_multiplier: 1,
   width: 57,
   margin: 2,
 };
@@ -108,7 +108,7 @@ Rotate.propTypes = {
   /**
    * The relative speed of the spinner
    */
-  speedMultiplier: PropTypes.number,
+  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner width (in px)

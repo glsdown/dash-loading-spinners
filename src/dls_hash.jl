@@ -28,10 +28,10 @@ full-screen or not.
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
 - `size` (Real; optional): The spinner size (in px). Note, as this is rotated, this is not the width.
-- `speedMultiplier` (Real; optional): The relative speed of the spinner
+- `speed_multiplier` (Real; optional): The relative speed of the spinner
 """
 function dls_hash(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :size, :speedMultiplier]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :size, :speed_multiplier]
         wild_props = Symbol[]
         return Component("dls_hash", "Hash", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end
