@@ -38,7 +38,7 @@ const Dot = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <DotLoader color={color} size={width} speed_multiplier={speed_multiplier} />
+    <DotLoader color={color} size={width} speedMultiplier={speed_multiplier} />
   );
 
   return (

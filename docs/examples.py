@@ -92,7 +92,7 @@ def getSpinnerGroup(title, group):
     group_spinners = [getSpinnerBox(t, s) for t, s in group.items()]
     return html.Div(
         [
-            html.Div(title, className="h2 text-primary"),
+            html.Div(title, className="h2 text-secondary"),
             dbc.Row(group_spinners),
             html.Hr(),
         ]

@@ -41,13 +41,7 @@ const Bars = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <Loader
-      type="Bars"
-      visible={loading_state}
-      color={color}
-      height={height}
-      width={width}
-    />
+    <Loader type="Bars" color={color} height={height} width={width} />
   );
 
   return (

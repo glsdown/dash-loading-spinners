@@ -46,7 +46,7 @@ const Rise = (props) => {
       color={color}
       size={size}
       margin={margin}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

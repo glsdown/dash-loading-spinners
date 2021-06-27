@@ -41,7 +41,7 @@ const Skew = (props) => {
     <SkewLoader
       color={color}
       size={Math.floor(width / 2)}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

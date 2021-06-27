@@ -40,7 +40,7 @@ const ClimbingBox = (props) => {
     <ClimbingBoxLoader
       color={color}
       size={15}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 
@@ -102,11 +102,6 @@ ClimbingBox.propTypes = {
    * The relative speed of the spinner
    */
   speed_multiplier: PropTypes.number,
-
-  /**
-   * The spinner size (in px)
-   */
-  size: PropTypes.number,
 
   /**
    * Boolean that determines if the loading spinner will be displayed

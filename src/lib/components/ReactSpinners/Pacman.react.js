@@ -41,7 +41,7 @@ const Pacman = (props) => {
     <PacmanLoader
       color={color}
       size={Math.round(width / 4)}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

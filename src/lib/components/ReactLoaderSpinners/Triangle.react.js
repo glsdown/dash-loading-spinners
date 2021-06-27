@@ -39,9 +39,7 @@ const Triangle = (props) => {
     }
   }, [loading_state]);
 
-  const SpinnerDiv = () => (
-    <Loader type="Triangle" visible={loading_state} color={color} />
-  );
+  const SpinnerDiv = () => <Loader type="Triangle" color={color} />;
 
   return (
     <CoveringContainer

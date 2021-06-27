@@ -38,11 +38,7 @@ const Clip = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <ClipLoader
-      color={color}
-      size={width}
-      speed_multiplier={speed_multiplier}
-    />
+    <ClipLoader color={color} size={width} speedMultiplier={speed_multiplier} />
   );
 
   return (

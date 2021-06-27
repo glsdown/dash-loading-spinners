@@ -29,11 +29,10 @@ full-screen or not.
 - `margin` (Real; optional): The margin between the bars (in px)
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
-- `speed_multiplier` (Real; optional): The relative speed of the spinner
 - `width` (Real; optional): The spinner width (in px)
 """
 function dls_scale(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :margin, :show_initially, :speed_multiplier, :width]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :height, :margin, :show_initially, :width]
         wild_props = Symbol[]
         return Component("dls_scale", "Scale", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

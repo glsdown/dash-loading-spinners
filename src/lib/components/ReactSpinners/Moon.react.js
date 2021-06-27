@@ -38,11 +38,7 @@ const Moon = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <MoonLoader
-      color={color}
-      size={width}
-      speed_multiplier={speed_multiplier}
-    />
+    <MoonLoader color={color} size={width} speedMultiplier={speed_multiplier} />
   );
 
   return (
@@ -65,7 +61,7 @@ Moon.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speed_multiplier: 0.75,
+  speed_multiplier: 0.7,
   width: 60,
 };
 

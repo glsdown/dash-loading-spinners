@@ -43,7 +43,6 @@ const BallTriangle = (props) => {
   const SpinnerDiv = () => (
     <Loader
       type="BallTriangle"
-      visible={loading_state}
       color={color}
       height={height}
       width={width}

@@ -36,7 +36,7 @@ Keyword arguments:
 - fullscreen_style (dict; optional):
     Defines CSS styles for the container when in fullscreen.
 
-- radius (number; default 12.5):
+- radius (number; default 12):
     The radius of the individual circles.
 
 - show_initially (boolean; default True):
