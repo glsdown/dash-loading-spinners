@@ -154,7 +154,8 @@ if __name__ == "__main__":
 
 
 def get_new_graph(n):
-    time.sleep(2)
+    if n:
+        time.sleep(2)
     n = (n + 1) * 10
     return go.Figure(
         data=go.Scatter(
@@ -201,9 +202,47 @@ example = html.Div(
     ]
 )
 
+example_fullscreen = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    dbc.FormGroup(
+                        dbc.Button(
+                            "Simulate slow loading component (fullscreen)",
+                            id="loading-button-fullscreen",
+                            className="btn-info",
+                            n_clicks=0,
+                        )
+                    ),
+                    md=3,
+                ),
+                dbc.Col(
+                    dls.Hash(
+                        dcc.Graph(id="loading-output-fullscreen",),
+                        color="#435278",
+                        fullscreen=True,
+                        speed_multiplier=2,
+                        size=100,
+                    ),
+                    md=9,
+                ),
+            ],
+        ),
+    ]
+)
+
 
 @app.callback(
     Output("loading-output", "figure"), [Input("loading-button", "n_clicks")],
+)
+def load_output(n):
+    return get_new_graph(n)
+
+
+@app.callback(
+    Output("loading-output-fullscreen", "figure"),
+    [Input("loading-button-fullscreen", "n_clicks")],
 )
 def load_output(n):
     return get_new_graph(n)
@@ -215,6 +254,11 @@ layout = html.Div(
         dcc.Markdown(markdown_install),
         dcc.Markdown(markdown_usage),
         example,
+        dcc.Markdown(
+            "Using the same example, but setting `fullscreen=True` will display the"
+            "spinner in full screen mode"
+        ),
+        example_fullscreen,
     ]
 )
 
