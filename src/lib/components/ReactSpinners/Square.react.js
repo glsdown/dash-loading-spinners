@@ -41,7 +41,7 @@ const Square = (props) => {
     <SquareLoader
       color={color}
       size={width}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

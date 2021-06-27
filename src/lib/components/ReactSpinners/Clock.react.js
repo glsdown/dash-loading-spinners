@@ -41,7 +41,7 @@ const Clock = (props) => {
     <ClockLoader
       color={color}
       size={width}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

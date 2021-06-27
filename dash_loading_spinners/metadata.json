@@ -1212,7 +1212,7 @@
         "required": false,
         "description": "The radius of the individual circles",
         "defaultValue": {
-          "value": "12.5",
+          "value": "12",
           "computed": false
         }
       },
@@ -1478,17 +1478,6 @@
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to black.",
         "defaultValue": {
           "value": "'#000000'",
-          "computed": false
-        }
-      },
-      "radius": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner radius (in px)",
-        "defaultValue": {
-          "value": "18",
           "computed": false
         }
       },
@@ -1840,17 +1829,6 @@
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to black.",
         "defaultValue": {
           "value": "'#000000'",
-          "computed": false
-        }
-      },
-      "radius": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner radius (in px)",
-        "defaultValue": {
-          "value": "1",
           "computed": false
         }
       },
@@ -2352,13 +2330,6 @@
           "value": "1",
           "computed": false
         }
-      },
-      "size": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The spinner size (in px)"
       },
       "fullscreen": {
         "type": {
@@ -3046,7 +3017,7 @@
         "required": false,
         "description": "The relative speed of the spinner",
         "defaultValue": {
-          "value": "0.75",
+          "value": "0.7",
           "computed": false
         }
       },
@@ -3834,17 +3805,6 @@
         "description": "Sets the color of the Spinner. You can also specify any valid CSS color\nof your choice (e.g. a hex code, a decimal code or a CSS color name).\n\nIf not specified will default to black.",
         "defaultValue": {
           "value": "'#000000'",
-          "computed": false
-        }
-      },
-      "speed_multiplier": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The relative speed of the spinner",
-        "defaultValue": {
-          "value": "1",
           "computed": false
         }
       },

@@ -40,18 +40,15 @@ Keyword arguments:
     Whether the Spinner should show on app start-up before the loading
     state has been determined. Default True.
 
-- size (number; optional):
-    The spinner size (in px).
-
 - speed_multiplier (number; default 1):
     The relative speed of the spinner."""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, color=Component.UNDEFINED, speed_multiplier=Component.UNDEFINED, size=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'show_initially', 'size', 'speed_multiplier']
+    def __init__(self, children=None, id=Component.UNDEFINED, fullscreen_style=Component.UNDEFINED, fullscreenClassName=Component.UNDEFINED, color=Component.UNDEFINED, speed_multiplier=Component.UNDEFINED, fullscreen=Component.UNDEFINED, debounce=Component.UNDEFINED, show_initially=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'show_initially', 'speed_multiplier']
         self._type = 'ClimbingBox'
         self._namespace = 'dash_loading_spinners'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'show_initially', 'size', 'speed_multiplier']
+        self.available_properties = ['children', 'id', 'color', 'debounce', 'fullscreen', 'fullscreenClassName', 'fullscreen_style', 'show_initially', 'speed_multiplier']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

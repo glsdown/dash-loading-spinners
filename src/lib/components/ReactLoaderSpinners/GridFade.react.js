@@ -43,7 +43,6 @@ const GridFade = (props) => {
   const SpinnerDiv = () => (
     <Loader
       type="Grid"
-      visible={loading_state}
       color={color}
       height={height}
       width={width}
@@ -71,7 +70,7 @@ GridFade.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  radius: 12.5,
+  radius: 12,
 };
 
 GridFade.propTypes = {

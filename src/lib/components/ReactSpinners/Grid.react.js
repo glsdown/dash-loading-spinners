@@ -45,7 +45,7 @@ const Grid = (props) => {
       color={color}
       size={size}
       margin={Math.floor(margin / 2)}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

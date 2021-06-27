@@ -18,14 +18,13 @@ const Target = (props) => {
     fullscreen,
     debounce,
     show_initially,
-    radius,
   } = props;
 
   // Loading options
   const [showSpinner, setShowSpinner] = useState(show_initially);
   const timer = useRef();
+
   const width = 80;
-  const height = 80;
 
   useEffect(() => {
     if (loading_state) {
@@ -41,14 +40,7 @@ const Target = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <Loader
-      type="Puff"
-      visible={loading_state}
-      color={color}
-      height={height}
-      width={width}
-      radius={radius}
-    />
+    <Loader type="Puff" color={color} height={width} width={width} radius={1} />
   );
 
   return (
@@ -57,7 +49,7 @@ const Target = (props) => {
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}
       fullscreen_style={fullscreen_style}
-      minHeight={height}
+      minHeight={width}
       minWidth={width}
       SpinnerDiv={SpinnerDiv}
       showSpinner={showSpinner}
@@ -71,7 +63,6 @@ Target.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  radius: 1,
 };
 
 Target.propTypes = {
@@ -104,11 +95,6 @@ Target.propTypes = {
    * If not specified will default to black.
    */
   color: PropTypes.string,
-
-  /**
-   * The spinner radius (in px)
-   */
-  radius: PropTypes.number,
 
   /**
    * Boolean that determines if the loading spinner will be displayed

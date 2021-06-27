@@ -38,11 +38,7 @@ const Puff = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <PuffLoader
-      color={color}
-      size={width}
-      speed_multiplier={speed_multiplier}
-    />
+    <PuffLoader color={color} size={width} speedMultiplier={speed_multiplier} />
   );
 
   return (

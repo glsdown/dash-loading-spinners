@@ -41,7 +41,7 @@ const Bounce = (props) => {
     <BounceLoader
       color={color}
       size={width}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

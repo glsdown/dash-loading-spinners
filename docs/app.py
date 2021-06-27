@@ -8,7 +8,7 @@ import re
 
 from main import layout as main_layout
 from examples import layout as examples_layout
-from component import layout as component_layout
+from component import components
 from custom import layout as custom_layout
 from not_found import layout as not_found_layout
 from helpers import app
@@ -26,7 +26,8 @@ app.layout = html.Div(
             brand="Dash Loading Spinners",
         ),
         dbc.Container(id="content", className="py-3"),
-    ]
+    ],
+    className="dash-bootstrap",
 )
 
 
@@ -37,7 +38,10 @@ def change_page(pathname):
     elif pathname == "/examples":
         return examples_layout
     elif m := re.match("/examples/details/([a-zA-Z0-9]*)", pathname):
-        return component_layout(m.group(1))
+        try:
+            return components[m.group(1)]
+        except KeyError:
+            return not_found_layout
     elif pathname == "/customise":
         return custom_layout
     return not_found_layout

@@ -38,7 +38,7 @@ const Hash = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <HashLoader color={color} size={size} speed_multiplier={speed_multiplier} />
+    <HashLoader color={color} size={size} speedMultiplier={speed_multiplier} />
   );
 
   return (

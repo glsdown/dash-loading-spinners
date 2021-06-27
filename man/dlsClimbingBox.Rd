@@ -12,7 +12,7 @@ Line with a square box appearing to rotate up and down the slope.
 \usage{
 dlsClimbingBox(children=NULL, id=NULL, color=NULL, debounce=NULL,
 fullscreen=NULL, fullscreenClassName=NULL,
-fullscreen_style=NULL, show_initially=NULL, size=NULL,
+fullscreen_style=NULL, show_initially=NULL,
 speed_multiplier=NULL)
 }
 
@@ -40,8 +40,6 @@ full-screen or not.}
 
 \item{show_initially}{Logical. Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.}
-
-\item{size}{Numeric. The spinner size (in px)}
 
 \item{speed_multiplier}{Numeric. The relative speed of the spinner}
 }

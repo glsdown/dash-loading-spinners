@@ -17,7 +17,6 @@ const Oval = (props) => {
     fullscreen,
     debounce,
     show_initially,
-    radius,
   } = props;
 
   // Loading options
@@ -26,6 +25,7 @@ const Oval = (props) => {
 
   const width = 80;
   const height = 80;
+  const radius = 18;
 
   useEffect(() => {
     if (loading_state) {
@@ -43,7 +43,6 @@ const Oval = (props) => {
   const SpinnerDiv = () => (
     <Loader
       type="Oval"
-      visible={loading_state}
       color={color}
       height={height}
       width={width}
@@ -71,7 +70,6 @@ Oval.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  radius: 18,
 };
 
 Oval.propTypes = {
@@ -104,11 +102,6 @@ Oval.propTypes = {
    * If not specified will default to black.
    */
   color: PropTypes.string,
-
-  /**
-   * The spinner radius (in px)
-   */
-  radius: PropTypes.number,
 
   /**
    * Boolean that determines if the loading spinner will be displayed

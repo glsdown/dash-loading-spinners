@@ -44,7 +44,6 @@ const Rings = (props) => {
   const SpinnerDiv = () => (
     <Loader
       type="Rings"
-      visible={loading_state}
       color={color}
       height={height}
       width={width}

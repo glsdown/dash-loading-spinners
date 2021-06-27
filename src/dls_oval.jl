@@ -25,12 +25,11 @@ the spinner being removed to prevent flickering.
 full-screen or not.
 - `fullscreenClassName` (String; optional): CSS class names to apply to the container when in fullscreen.
 - `fullscreen_style` (Dict; optional): Defines CSS styles for the container when in fullscreen.
-- `radius` (Real; optional): The spinner radius (in px)
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
 """
 function dls_oval(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :radius, :show_initially]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially]
         wild_props = Symbol[]
         return Component("dls_oval", "Oval", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

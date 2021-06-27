@@ -44,7 +44,7 @@ const Fade = (props) => {
       color={color}
       height={width}
       width={thickness}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

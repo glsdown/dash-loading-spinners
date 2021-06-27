@@ -40,7 +40,7 @@ Keyword arguments:
     Whether the Spinner should show on app start-up before the loading
     state has been determined. Default True.
 
-- speed_multiplier (number; default 0.75):
+- speed_multiplier (number; default 0.7):
     The relative speed of the spinner.
 
 - width (number; default 60):

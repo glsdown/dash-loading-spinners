@@ -27,11 +27,10 @@ full-screen or not.
 - `fullscreen_style` (Dict; optional): Defines CSS styles for the container.
 - `show_initially` (Bool; optional): Whether the Spinner should show on app start-up before the loading state
 has been determined. Default True.
-- `size` (Real; optional): The spinner size (in px)
 - `speed_multiplier` (Real; optional): The relative speed of the spinner
 """
 function dls_climbingbox(; kwargs...)
-        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :size, :speed_multiplier]
+        available_props = Symbol[:children, :id, :color, :debounce, :fullscreen, :fullscreenClassName, :fullscreen_style, :show_initially, :speed_multiplier]
         wild_props = Symbol[]
         return Component("dls_climbingbox", "ClimbingBox", "dash_loading_spinners", available_props, wild_props; kwargs...)
 end

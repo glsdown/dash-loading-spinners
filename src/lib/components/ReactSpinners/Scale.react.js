@@ -19,7 +19,6 @@ const Scale = (props) => {
     height,
     width,
     margin,
-    speed_multiplier,
   } = props;
 
   // Loading options
@@ -48,7 +47,6 @@ const Scale = (props) => {
       width={thickness}
       radius={Math.ceil(thickness / 2)}
       margin={Math.ceil(margin / 2)}
-      speed_multiplier={speed_multiplier}
     />
   );
 
@@ -72,7 +70,6 @@ Scale.defaultProps = {
   debounce: 0,
   show_initially: true,
   color: '#000000',
-  speed_multiplier: 1,
   height: 35,
   width: 70,
   margin: 4,
@@ -108,11 +105,6 @@ Scale.propTypes = {
    * If not specified will default to black.
    */
   color: PropTypes.string,
-
-  /**
-   * The relative speed of the spinner
-   */
-  speed_multiplier: PropTypes.number,
 
   /**
    * The spinner height (in px)

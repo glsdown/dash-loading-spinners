@@ -40,13 +40,7 @@ const Hearts = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <Loader
-      type="Hearts"
-      visible={loading_state}
-      color={color}
-      height={height}
-      width={width}
-    />
+    <Loader type="Hearts" color={color} height={height} width={width} />
   );
 
   return (

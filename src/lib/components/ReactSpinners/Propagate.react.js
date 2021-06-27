@@ -41,7 +41,7 @@ const Propagate = (props) => {
     <PropagateLoader
       color={color}
       size={radius}
-      speed_multiplier={speed_multiplier}
+      speedMultiplier={speed_multiplier}
     />
   );
 

@@ -43,7 +43,6 @@ const TailSpin = (props) => {
   const SpinnerDiv = () => (
     <Loader
       type="TailSpin"
-      visible={loading_state}
       color={color}
       height={height}
       width={width}

@@ -40,13 +40,7 @@ const Circles = (props) => {
   }, [loading_state]);
 
   const SpinnerDiv = () => (
-    <Loader
-      type="Circles"
-      visible={loading_state}
-      color={color}
-      height={height}
-      width={width}
-    />
+    <Loader type="Circles" color={color} height={height} width={width} />
   );
 
   return (
