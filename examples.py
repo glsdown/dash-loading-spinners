@@ -6,9 +6,9 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
+from helpers import app
 
 import dash_loading_spinners as dls
-from helpers import app
 
 spinner_options = {
     "Dots": {
@@ -60,7 +60,10 @@ spinner_options = {
         "Bars": dls.Bars,
         "Wave": dls.Wave,
     },
-    "Triangles": {"BallTriangle": dls.BallTriangle, "Triangle": dls.Triangle,},
+    "Triangles": {
+        "BallTriangle": dls.BallTriangle,
+        "Triangle": dls.Triangle,
+    },
     "Special": {
         "Hash": dls.Hash,
         "Clock": dls.Clock,

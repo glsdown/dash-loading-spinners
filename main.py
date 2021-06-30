@@ -3,28 +3,28 @@
 #   - Include details of where components are from
 # - Installation instructions
 # - Simple use case
+import random
 import time
 
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-import dash_loading_spinners as dls
-from dash.dependencies import Input, Output
-
-import plotly.graph_objects as go
 import numpy as np
-import random
+import plotly.graph_objects as go
+from dash.dependencies import Input, Output
+from helpers import COLOURSCALES, app
 
-
-from helpers import app, COLOURSCALES
+import dash_loading_spinners as dls
 
 markdown_intro = """
 # Dash Loading Spinners
 
-This library is designed for use with [Plotly Dash](https://plotly.com). The components have all been
-designed to provide functionality similar to Dash's core 
+This library is designed for use with [Plotly Dash](https://plotly.com).
+The components have all been designed to provide functionality similar to
+Dash's core
 [`Loading` component](https://dash.plotly.com/dash-core-components/loading),
-and will display a loading spinner whilst the underlying children are re-rendering.
+and will display a loading spinner whilst the underlying children are
+re-rendering.
 
 The spinners in it have been adapted for use from a number of other existing
 libraries:
@@ -33,8 +33,8 @@ libraries:
 - [react-loader-spinner](https://github.com/mhnpd/react-loader-spinner)
 - [react-css-spinners](https://github.com/alex996/react-css-spinners)
 
-The majority of spinner names have been retained from the originals, but some have 
-been amended where there were name clashes.
+The majority of spinner names have been retained from the originals, but
+some have been amended where there were name clashes.
 
 ---
 """
@@ -53,7 +53,8 @@ import dash_loading_spinners as dls
 markdown_usage = """
 ## Basic Usage
 
-Once installed, you can make use of the components (in their most basic sense) as follows:
+Once installed, you can make use of the components (in their most
+basic sense) as follows:
 
 ```python
 import dash
@@ -67,13 +68,15 @@ if __name__ == "__main__":
     app.run_server()
 ```
 
-There are a number of attributes which are common across all spinners. These are:
+There are a number of attributes which are common across all spinners.
+These are:
 
 - **`id`** (*string*; optional):
     The ID of this component, used to identify dash components in
     callbacks. The ID needs to be unique across all of the components
-    in an app. 
-- **`children`** (*a list of or a singular dash component, string or number*; optional):
+    in an app.
+- **`children`** (*a list of or a singular dash component, string or \
+    number*; optional):
     The children of this component.
 - **`show_initially`** (*boolean*; default `True`):
     Whether the Spinner should show on app start-up before the loading
@@ -89,14 +92,16 @@ There are a number of attributes which are common across all spinners. These are
 - **`fullscreen_style`** (*dict*; optional):
     Defines CSS styles for the container when in fullscreen.
 
-Many spinners additional have properties that can be customised, including colour and size. You 
-can find these on the individual [component](/examples) pages. 
+Many spinners additional have properties that can be customised,
+including colour and size. You can find these on the individual
+[component](/examples) pages.
 
-Realistically, as part of an application, you will be using them alongside other components and 
-callbacks. Here is an example of what this might look like:
+Realistically, as part of an application, you will be using them
+alongside other components and callbacks. Here is an example of
+what this might look like:
 
-_Note: 
-[`dash-bootstrap-components`](https://github.com/facultyai/dash-bootstrap-components) 
+_Note:
+[`dash-bootstrap-components`](https://github.com/facultyai/dash-bootstrap-components)
 isn't necessary for `dash-loading-spinners` to work, but has been included
 to improve the layout._
 
@@ -244,7 +249,7 @@ def load_output(n):
     Output("loading-output-fullscreen", "figure"),
     [Input("loading-button-fullscreen", "n_clicks")],
 )
-def load_output(n):
+def load_output_fullscreen(n):
     return get_new_graph(n)
 
 
@@ -255,10 +260,9 @@ layout = html.Div(
         dcc.Markdown(markdown_usage),
         example,
         dcc.Markdown(
-            "Using the same example, but setting `fullscreen=True` will display the"
-            "spinner in full screen mode"
+            "Using the same example, but setting `fullscreen=True`"
+            "will display the spinner in full screen mode"
         ),
         example_fullscreen,
     ]
 )
-
