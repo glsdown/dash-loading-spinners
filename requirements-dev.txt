@@ -6,4 +6,7 @@ dash-bootstrap-requirements
 black
 flake8
 isort
+
+# task automation
 nox
+invoke
