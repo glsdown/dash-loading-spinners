@@ -1,10 +1,7 @@
-import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
-import dash_loading_spinners as dls
 
-from helpers import app
+import dash_loading_spinners as dls
 
 svg = """
 <svg
@@ -36,7 +33,7 @@ svg = """
 markdown = f"""
 # Custom Loading Spinners
 
-Making use of the `Custom` spinner allows you to pass in your own animated 
+Making use of the `Custom` spinner allows you to pass in your own animated
 SVG code to use as a spinner.
 
 ```python
@@ -57,8 +54,9 @@ As with other spinners, you are also able to edit the core attributes:
 - **`id`** (*string*; optional):
     The ID of this component, used to identify dash components in
     callbacks. The ID needs to be unique across all of the components
-    in an app. 
-- **`children`** (*a list of or a singular dash component, string or number*; optional):
+    in an app.
+- **`children`** (*a list of or a singular dash component, string or \
+  number*; optional):
     The children of this component.
 - **`show_initially`** (*boolean*; default `True`):
     Whether the Spinner should show on app start-up before the loading
@@ -81,10 +79,12 @@ layout = html.Div(
     [
         dcc.Markdown(markdown),
         html.Div(
-            dls.Custom(svg=svg,),
+            dls.Custom(
+                svg=svg,
+            ),
             style={"height": "200px"},
-            className="container d-flex justify-content-center align-items-center border border-primary rounded my-2",
+            className="container d-flex justify-content-center "
+            "align-items-center border border-primary rounded my-2",
         ),
     ]
 )
-

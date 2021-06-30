@@ -1,18 +1,16 @@
-from dash.dependencies import Input, Output
-from dash_html_components.Content import Content
-import dash_loading_spinners as dls
-import dash_core_components as dcc
-import dash_html_components as html
-import dash_bootstrap_components as dbc
 import re
 
-from main import layout as main_layout
-from examples import layout as examples_layout
+import dash_bootstrap_components as dbc
+import dash_core_components as dcc
+import dash_html_components as html
 from component import components
 from custom import layout as custom_layout
-from not_found import layout as not_found_layout
+from dash.dependencies import Input, Output
 from helpers import app
+from main import layout as main_layout
+from not_found import layout as not_found_layout
 
+from examples import layout as examples_layout
 
 app.layout = html.Div(
     [

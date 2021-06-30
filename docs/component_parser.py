@@ -1,14 +1,11 @@
 import re
-from pathlib import Path
-
-from dash.dependencies import Input, Output
 
 import dash_bootstrap_components as dbc
-import dash_loading_spinners as dls
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output
 
-from helpers import app
+import dash_loading_spinners as dls
 
 __all__ = ["get_component_details"]
 
@@ -100,20 +97,7 @@ PROP_ORDER = [
 ]
 
 
-def color_changer(component_name, attribute_name, default="#000000"):
-
-    global app
-
-    # app.clientside_callback(
-    #     """
-    # function(color) {
-    #     return color
-    # }
-    # """,
-    #     Output(f"example-{component_name}", attribute_name),
-    #     Input(f"colorpicker-{component_name}-{attribute_name}", "value"),
-    # )
-
+def color_changer(app, component_name, attribute_name, default="#000000"):
     @app.callback(
         Output(f"example-{component_name}", attribute_name),
         [Input(f"colorpicker-{component_name}-{attribute_name}", "value")],
@@ -125,7 +109,11 @@ def color_changer(component_name, attribute_name, default="#000000"):
 
     return dbc.FormGroup(
         [
-            dbc.Label([html.Code(f"{attribute_name}"),]),
+            dbc.Label(
+                [
+                    html.Code(f"{attribute_name}"),
+                ]
+            ),
             dbc.Input(
                 type="color",
                 id=f"colorpicker-{component_name}-{attribute_name}",
@@ -137,13 +125,11 @@ def color_changer(component_name, attribute_name, default="#000000"):
     )
 
 
-def number_slider(component_name, attribute_name, default=0):
-
-    global app
+def number_slider(app, component_name, attribute_name, default=0):
 
     app.clientside_callback(
         """
-    function(value) {                                      
+    function(value) {
         return value
     }
     """,
@@ -186,17 +172,17 @@ def number_slider(component_name, attribute_name, default=0):
     )
 
 
-def create_adjustable_component(component, component_name, attributes):
+def create_adjustable_component(app, component, component_name, attributes):
 
     component_name = component_name.lower()
     main_components = []
-    # TODO: Consider how to allow the end user to adjust the attributes
+
     for attribute, value in dict(
         sorted(attributes.items(), key=lambda k: PROP_ORDER.index(k[0]))
     ).items():
         if re.search("[cC]olor", attribute):
             main_components.append(
-                color_changer(component_name, attribute, value)
+                color_changer(app, component_name, attribute, value)
             )
         elif attribute in [
             "width",
@@ -212,7 +198,7 @@ def create_adjustable_component(component, component_name, attributes):
             except TypeError:
                 value = 0
             main_components.append(
-                number_slider(component_name, attribute, value)
+                number_slider(app, component_name, attribute, value)
             )
         else:
             main_components.append(
@@ -232,7 +218,7 @@ def create_adjustable_component(component, component_name, attributes):
     )
 
 
-def get_component_details(component_name):
+def get_component_details(app, component_name):
     component = getattr(dls, component_name)
     component_doc = component.__doc__
 
@@ -284,14 +270,14 @@ def get_component_details(component_name):
 
     # create an example of the component
     return_div.append(
-        create_adjustable_component(component, component_name, attributes)
+        create_adjustable_component(app, component, component_name, attributes)
     )
 
     # display the component specific attributes e.g. size, color
     return_div.append(
         dcc.Markdown(
             """#### Component specific keyword arguments
-        
+
 These are arguments that vary between components."""
         ),
     )
@@ -301,7 +287,7 @@ These are arguments that vary between components."""
     return_div.append(
         dcc.Markdown(
             """#### Core keyword arguments
-        
+
 These are arguments that are consistent between components."""
         ),
     )

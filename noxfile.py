@@ -3,9 +3,10 @@ import nox
 nox.options.sessions = ["lint", "test"]
 
 SOURCES = [
+    "docs",
     "dash_loading_spinners",
     "noxfile.py",
-    "usage.py",
+    "examples/usage.py",
 ]
 
 

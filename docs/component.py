@@ -3,9 +3,9 @@
 # - Example of source code for the component
 # - Props for the component
 
-import dash_loading_spinners as dls
+from component_parser import COMPONENT_NAMES, get_component_details
+from helpers import app
 
-from component_parser import get_component_details, COMPONENT_NAMES
-
-
-components = {name: get_component_details(name) for name in COMPONENT_NAMES}
+components = {
+    name: get_component_details(app, name) for name in COMPONENT_NAMES
+}

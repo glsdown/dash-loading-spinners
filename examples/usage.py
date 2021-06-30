@@ -96,7 +96,8 @@ def getSpinnerBox(title, spinner):
     return dbc.Col(
         html.Div(
             [html.Div(title), spinner(fullscreen=False)],
-            className="d-flex flex-column align-items-center justify-content-center border border-primary rounded h-100",
+            className="d-flex flex-column align-items-center "
+            "justify-content-center border border-primary rounded h-100",
         ),
         className="col-md-3",
         style={"height": "150px"},
@@ -123,7 +124,8 @@ app.layout = html.Div(
                 fullscreenClassName="bg-light",
             ),
             id="loader",
-            className="container d-flex justify-content-center align-items-center border border-primary rounded my-2",
+            className="container d-flex justify-content-center"
+            " align-items-center border border-primary rounded my-2",
         ),
         html.Div(
             [
@@ -171,7 +173,8 @@ app.layout = html.Div(
         ),
         html.Div("Custom loading spinners.", className="h1"),
         html.Div(
-            "If you have animated SVG code, you can use this as a custom spinner.",
+            "If you have animated SVG code, you can use this as a "
+            "custom spinner.",
             className="p",
         ),
         html.Div(
@@ -182,7 +185,8 @@ app.layout = html.Div(
                 svg=svg,
             ),
             style={"height": "200px"},
-            className="container d-flex justify-content-center align-items-center border border-primary rounded my-2",
+            className="container d-flex justify-content-center "
+            "align-items-center border border-primary rounded my-2",
         ),
         html.Div(
             dbc.Row(
