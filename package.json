@@ -14,7 +14,6 @@
   "scripts": {
     "start": "webpack-serve --config ./webpack.serve.config.js --open",
     "validate-init": "python _validate_init.py",
-    "prepublishOnly": "npm run validate-init",
     "build:js": "webpack --mode production",
     "build:backends": "dash-generate-components ./src/lib/components dash_loading_spinners -p package-info.json --r-prefix 'dls' --jl-prefix 'dls'",
     "build:backends-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py_and_r)",
