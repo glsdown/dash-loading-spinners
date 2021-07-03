@@ -8,6 +8,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const RevolvingDot = (props) => {
   const {
+    id,
     children,
     color,
     secondaryColor,
@@ -83,6 +84,7 @@ const RevolvingDot = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}

@@ -9,6 +9,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Pulse = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -52,6 +53,7 @@ const Pulse = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreenClassName={fullscreenClassName}
       fullscreen_style={fullscreen_style}

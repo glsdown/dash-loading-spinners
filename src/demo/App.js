@@ -1,14 +1,10 @@
 /* eslint no-magic-numbers: 0 */
 import React from 'react';
 
-import {Loader} from '../lib';
+import {Hash} from '../lib/';
 
 const App = () => {
-    return (
-        <div>
-            <Loader id={'testing'} />
-        </div>
-    );
+  return <Hash color="red" />;
 };
 
 export default App;

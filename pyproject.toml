@@ -6,3 +6,20 @@ requires = ["setuptools>=42", "wheel"]
 exclude = "node_modules"
 line-length = 79
 
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+known_third_party = [
+    "dash",
+    "dash_bootstrap_components",
+    "dash_core_components",
+    "dash_html_components",
+    "numpy",
+    "plotly",
+]
+
+[tool.pytest.ini_options]
+testpaths = "tests/"
+addopts = "--headless -rsxX -vv"
+log_format = "%(asctime)s | %(levelname)s | %(name)s:%(lineno)d | %(message)s"
+log_cli_level = "ERROR"

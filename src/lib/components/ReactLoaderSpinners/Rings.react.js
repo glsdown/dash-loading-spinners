@@ -10,6 +10,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Rings = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -53,6 +54,7 @@ const Rings = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}

@@ -8,6 +8,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Pacman = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -47,6 +48,7 @@ const Pacman = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreenClassName={fullscreenClassName}
       fullscreen_style={fullscreen_style}
