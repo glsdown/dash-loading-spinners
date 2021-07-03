@@ -20,6 +20,16 @@ app.layout = html.Div(
                 dbc.NavLink("Home", href="/", active="exact"),
                 dbc.NavLink("Examples", href="/examples", active="partial"),
                 dbc.NavLink("Custom", href="/custom", active="exact"),
+                html.A(
+                    "Star",
+                    className="github-button",
+                    href="https://github.com/glsdown/dash-loading-spinners",
+                    **{
+                        "data-size": "large",
+                        "aria-label": "Star glsdown/dash-loading-spinners "
+                        "on GitHub",
+                    },
+                ),
             ],
             brand="Dash Loading Spinners",
         ),
