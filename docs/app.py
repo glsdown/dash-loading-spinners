@@ -19,7 +19,7 @@ app.layout = html.Div(
             [
                 dbc.NavLink("Home", href="/", active="exact"),
                 dbc.NavLink("Examples", href="/examples", active="partial"),
-                dbc.NavLink("Customise", href="/customise", active="exact"),
+                dbc.NavLink("Custom", href="/custom", active="exact"),
             ],
             brand="Dash Loading Spinners",
         ),
@@ -40,7 +40,7 @@ def change_page(pathname):
             return components[m.group(1)]
         except KeyError:
             return not_found_layout
-    elif pathname == "/customise":
+    elif pathname == "/custom":
         return custom_layout
     return not_found_layout
 
