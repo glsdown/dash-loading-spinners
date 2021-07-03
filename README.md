@@ -15,15 +15,15 @@ libraries:
 The majority of spinner names have been retained from the originals, but some have 
 been amended where there were name clashes.
 
-More details on the components and usage can be found in our [documentation](/docs). TODO - update link
+More details on the components and usage can be found in our [documentation](https://github.com/glsdown/dash-loading-spinners).
 
 ---
 ## Installation
 
-TODO - add details for installation
+Dash Loading Spinners is available through PyPI, and can be installed with pip:
 
-```python
-import dash_loading_spinners as dls
+```bash
+pip install dash-loading-spinners
 ```
 
 ---
