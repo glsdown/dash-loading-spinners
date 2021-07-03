@@ -41,7 +41,9 @@ some have been amended where there were name clashes.
 markdown_install = """
 ## Installation
 
-Dash Loading Spinners is available through PyPI, and can be installed with pip:
+Dash Loading Spinners is available through 
+[PyPI](https://pypi.org/project/dash-loading-spinners/), and 
+can be installed with pip:
 
 ```bash
 pip install dash-loading-spinners

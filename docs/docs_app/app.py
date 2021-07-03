@@ -2,15 +2,11 @@ from importlib.resources import files
 
 import dash
 
+# link fontawesome to get icons
+FA = "https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+
 app = dash.Dash(
-    # external_stylesheets=[dbc.themes.UNITED],
-    external_scripts=[
-        {
-            "src": "https://buttons.github.io/buttons.js",
-            "async": True,
-            "defer": True,
-        }
-    ],
+    external_stylesheets=[FA],
     meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"},
     ],
