@@ -1,3 +1,15 @@
+# Generated files
+R
+dash_loading_spinners/*
+!dash_loading_spinners/__init__.py
+deps
+inst
+man
+src/*.jl
+DESCRIPTION
+NAMESPACE
+Project.toml
+
 ### VisualStudioCode template
 .vscode
 
