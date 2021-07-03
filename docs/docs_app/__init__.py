@@ -12,8 +12,6 @@ from docs_app.examples import layout as examples_layout
 from docs_app.main import layout as main_layout
 from docs_app.not_found import layout as not_found_layout
 
-
-
 app.layout = html.Div(
     [
         dcc.Location(id="url"),
