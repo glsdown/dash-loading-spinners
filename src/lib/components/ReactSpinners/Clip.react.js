@@ -8,6 +8,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Clip = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -43,6 +44,7 @@ const Clip = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreenClassName={fullscreenClassName}
       fullscreen_style={fullscreen_style}

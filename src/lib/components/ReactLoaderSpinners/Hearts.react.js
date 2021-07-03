@@ -9,6 +9,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Hearts = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -45,6 +46,7 @@ const Hearts = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}

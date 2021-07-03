@@ -8,6 +8,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Beat = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -51,6 +52,7 @@ const Beat = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}

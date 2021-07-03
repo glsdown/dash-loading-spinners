@@ -7,6 +7,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Custom = (props) => {
   const {
+    id,
     children,
     loading_state,
     fullscreenClassName,
@@ -46,6 +47,7 @@ const Custom = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}

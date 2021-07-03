@@ -10,6 +10,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const ThreeDots = (props) => {
   const {
+    id,
     children,
     color,
     secondaryColor,
@@ -140,6 +141,7 @@ const ThreeDots = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}

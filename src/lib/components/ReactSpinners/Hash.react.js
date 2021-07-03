@@ -8,8 +8,8 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Hash = (props) => {
   const {
-    children,
     id,
+    children,
     color,
     loading_state,
     fullscreenClassName,

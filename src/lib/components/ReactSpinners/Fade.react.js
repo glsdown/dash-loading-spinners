@@ -9,6 +9,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Fade = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -50,6 +51,7 @@ const Fade = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreenClassName={fullscreenClassName}
       fullscreen_style={fullscreen_style}
