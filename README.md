@@ -15,7 +15,7 @@ libraries:
 The majority of spinner names have been retained from the originals, but some have 
 been amended where there were name clashes.
 
-More details on the components and usage can be found in our [documentation](https://github.com/glsdown/dash-loading-spinners).
+More details on the components and usage can be found in our [documentation](https://dash-loading-spinners.herokuapp.com/).
 
 ---
 ## Installation
@@ -66,7 +66,7 @@ There are a number of attributes which are common across all spinners. These are
     Defines CSS styles for the container when in fullscreen.
 
 Many spinners additional have properties that can be customised, including colour and size. You 
-can find these on the individual [component](/examples) pages. 
+can find these on the individual [component](https://dash-loading-spinners.herokuapp.com/examples) pages. 
 
 Realistically, as part of an application, you will be using them alongside other components and 
 callbacks. Here is an example of what this might look like:
