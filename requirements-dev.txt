@@ -7,6 +7,9 @@ black
 flake8
 isort
 
+# testing
+pytest
+
 # task automation
 nox
 invoke

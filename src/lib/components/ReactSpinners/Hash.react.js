@@ -9,6 +9,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
 const Hash = (props) => {
   const {
     children,
+    id,
     color,
     loading_state,
     fullscreenClassName,
@@ -43,6 +44,7 @@ const Hash = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreenClassName={fullscreenClassName}
       fullscreen_style={fullscreen_style}

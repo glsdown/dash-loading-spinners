@@ -17,7 +17,9 @@
     "build:js": "webpack --config ./webpack/config.js --mode production",
     "build:backends": "dash-generate-components ./src/lib/components dash_loading_spinners -p package-info.json --r-prefix 'dls' --jl-prefix 'dls'",
     "build": "npm run build:js && npm run build:backends",
-    "build:activated": "npm run build:js && npm run build:backends-activated"
+    "build:activated": "npm run build:js && npm run build:backends-activated",
+    "format": "prettier src/**/*.js --write",
+    "lint": "prettier src/**/*.js --list-different"
   },
   "author": "Gemma Down <gemmalsdown@icloud.com>",
   "license": "MIT",
@@ -41,6 +43,7 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-react": "^7.14.2",
     "npm": "^6.1.0",
+    "prettier": "^2.3.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-docgen": "^4.1.1",
@@ -49,8 +52,7 @@
     "styled-jsx": "^3.2.1",
     "webpack": "4.36.1",
     "webpack-cli": "3.3.6",
-    "webpack-dev-server": "^3.11.2",
-    "webpack-serve": "3.1.0"
+    "webpack-dev-server": "^3.11.2"
   },
   "engines": {
     "node": ">=8.11.0",

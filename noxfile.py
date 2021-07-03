@@ -27,9 +27,9 @@ def format_(session):
     session.run("isort", *SOURCES)
 
 
-# @nox.session(python=["2.7", "3.5", "3.6", "3.7", "3.8", "3.9"])
-# def test(session):
-#     session.install("pytest")
-#     session.install("dash[testing]")
-#     session.install(".")
-#     session.run("pytest", "--headless", "tests")
+@nox.session(python=["2.7", "3.5", "3.6", "3.7", "3.8", "3.9"])
+def test(session):
+    session.install("pytest")
+    session.install("-r", "tests/requirements.txt")
+    session.install(".")
+    session.run("pytest", "--headless", "tests")
