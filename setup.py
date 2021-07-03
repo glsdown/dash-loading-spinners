@@ -12,6 +12,7 @@ package_name = package["name"].replace(" ", "_").replace("-", "_")
 
 setup(
     name=package_name,
+    description=package.get("description", package_name),
     long_description=description,
     long_description_content_type="text/markdown",
     version=package["version"],
@@ -26,8 +27,12 @@ setup(
             "package-info.json",
         ]
     },
+    url="https://dash-loading-spinners.herokuapp.com/",
+    project_urls={
+        "Bug Reports": package["bugs"]["url"],
+        "Source": "https://github.com/glsdown/dash-loading-spinners",
+    },
     license=package["license"],
-    description=package.get("description", package_name),
     install_requires=["dash"],
     classifiers=[
         "Framework :: Dash",
