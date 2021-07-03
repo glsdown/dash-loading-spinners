@@ -12,11 +12,10 @@
   "homepage": "https://github.com/glsdown/dash-loading-spinners",
   "main": "build/index.js",
   "scripts": {
-    "start": "webpack-serve --config ./webpack.serve.config.js --open",
+    "start": "webpack-dev-server --config ./webpack/demo.config.js --hot",
     "validate-init": "python _validate_init.py",
-    "build:js": "webpack --mode production",
+    "build:js": "webpack --config ./webpack/config.js --mode production",
     "build:backends": "dash-generate-components ./src/lib/components dash_loading_spinners -p package-info.json --r-prefix 'dls' --jl-prefix 'dls'",
-    "build:backends-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py_and_r)",
     "build": "npm run build:js && npm run build:backends",
     "build:activated": "npm run build:js && npm run build:backends-activated"
   },
@@ -50,6 +49,7 @@
     "styled-jsx": "^3.2.1",
     "webpack": "4.36.1",
     "webpack-cli": "3.3.6",
+    "webpack-dev-server": "^3.11.2",
     "webpack-serve": "3.1.0"
   },
   "engines": {
