@@ -9,13 +9,12 @@ import time
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_loading_spinners as dls
 import numpy as np
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
 
-from helpers import COLOURSCALES, app
-
-import dash_loading_spinners as dls
+from docs_app.app import COLOURSCALES, app
 
 markdown_intro = """
 # Dash Loading Spinners
@@ -160,10 +159,10 @@ if __name__ == "__main__":
 """
 
 markdown_fullscreen = """
-Using the same example, but setting `fullscreen=True` will display the 
+Using the same example, but setting `fullscreen=True` will display the
 spinner in full screen mode.
 
-```python 
+```python
 ...
 
                     dls.Hash(
@@ -214,7 +213,9 @@ example = html.Div(
                 ),
                 dbc.Col(
                     dls.Hash(
-                        dcc.Graph(id="loading-output",),
+                        dcc.Graph(
+                            id="loading-output",
+                        ),
                         color="#435278",
                         speed_multiplier=2,
                         size=100,
@@ -243,7 +244,9 @@ example_fullscreen = html.Div(
                 ),
                 dbc.Col(
                     dls.Hash(
-                        dcc.Graph(id="loading-output-fullscreen",),
+                        dcc.Graph(
+                            id="loading-output-fullscreen",
+                        ),
                         color="#435278",
                         fullscreen=True,
                         speed_multiplier=2,
@@ -258,7 +261,8 @@ example_fullscreen = html.Div(
 
 
 @app.callback(
-    Output("loading-output", "figure"), [Input("loading-button", "n_clicks")],
+    Output("loading-output", "figure"),
+    [Input("loading-button", "n_clicks")],
 )
 def load_output(n):
     return get_new_graph(n)
