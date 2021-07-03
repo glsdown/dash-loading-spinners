@@ -9,6 +9,8 @@ HERE = Path(__file__).parent
 
 
 def normalise_version(version):
+    if version.startswith("refs/tags/"):
+        version = version.rsplit("/", 1)[1]
     return str(semver.parse_version_info(version))
 
 
