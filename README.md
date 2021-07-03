@@ -1,5 +1,11 @@
 # Dash Loading Spinners
 
+[![Tests](https://github.com/glsdown/dash-loading-spinners/actions/workflows/test.yml/badge.svg)](https://github.com/glsdown/dash-loading-spinners/actions/workflows/test.yml)
+![PyPI](https://img.shields.io/pypi/v/dash-loading-spinners)
+![PyPI - License](https://img.shields.io/pypi/l/dash-loading-spinners)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dash-loading-spinners)
+
+
 This library is designed for use with [Plotly Dash](https://plotly.com). The components have all been
 designed to provide functionality similar to Dash's core 
 [`Loading` component](https://dash.plotly.com/dash-core-components/loading),
