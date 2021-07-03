@@ -1,3 +1,5 @@
+from importlib.resources import files
+
 import dash
 
 app = dash.Dash(
@@ -6,6 +8,7 @@ app = dash.Dash(
         {"name": "viewport", "content": "width=device-width, initial-scale=1"},
     ],
     suppress_callback_exceptions=True,
+    assets_folder=files("docs_app") / "assets",
 )
 
 

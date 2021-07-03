@@ -1,0 +1,16 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=42", "wheel"]
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+known_third_party = [
+    "dash",
+    "dash_bootstrap_components",
+    "dash_core_components",
+    "dash_html_components",
+    "dash_loading_spinners",
+    "numpy",
+    "plotly",
+]

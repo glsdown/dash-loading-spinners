@@ -3,9 +3,8 @@ import re
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
-
 import dash_loading_spinners as dls
+from dash.dependencies import Input, Output
 
 __all__ = ["get_component_details"]
 

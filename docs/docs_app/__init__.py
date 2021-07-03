@@ -3,14 +3,14 @@ import re
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-from component import components
-from custom import layout as custom_layout
 from dash.dependencies import Input, Output
-from helpers import app
-from main import layout as main_layout
-from not_found import layout as not_found_layout
 
-from examples import layout as examples_layout
+from docs_app.app import app
+from docs_app.component import components
+from docs_app.custom import layout as custom_layout
+from docs_app.examples import layout as examples_layout
+from docs_app.main import layout as main_layout
+from docs_app.not_found import layout as not_found_layout
 
 app.layout = html.Div(
     [
@@ -43,7 +43,3 @@ def change_page(pathname):
     elif pathname == "/custom":
         return custom_layout
     return not_found_layout
-
-
-if __name__ == "__main__":
-    app.run_server(debug=True)
