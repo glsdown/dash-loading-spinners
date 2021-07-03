@@ -12,6 +12,8 @@ from docs_app.examples import layout as examples_layout
 from docs_app.main import layout as main_layout
 from docs_app.not_found import layout as not_found_layout
 
+
+
 app.layout = html.Div(
     [
         dcc.Location(id="url"),
@@ -20,15 +22,9 @@ app.layout = html.Div(
                 dbc.NavLink("Home", href="/", active="exact"),
                 dbc.NavLink("Examples", href="/examples", active="partial"),
                 dbc.NavLink("Custom", href="/custom", active="exact"),
-                html.A(
-                    "Star",
-                    className="github-button",
+                dbc.NavLink(
+                    ["Github", html.I(className="fab fa-github ml-1")],
                     href="https://github.com/glsdown/dash-loading-spinners",
-                    **{
-                        "data-size": "large",
-                        "aria-label": "Star glsdown/dash-loading-spinners "
-                        "on GitHub",
-                    },
                 ),
             ],
             brand="Dash Loading Spinners",
