@@ -4,6 +4,13 @@ import dash
 
 app = dash.Dash(
     # external_stylesheets=[dbc.themes.UNITED],
+    external_scripts=[
+        {
+            "src": "https://buttons.github.io/buttons.js",
+            "async": True,
+            "defer": True,
+        }
+    ],
     meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"},
     ],
