@@ -9,6 +9,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const BallTriangle = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -52,6 +53,7 @@ const BallTriangle = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}

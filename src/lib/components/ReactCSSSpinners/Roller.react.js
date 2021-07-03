@@ -8,6 +8,7 @@ import CoveringContainer from '../../private/CoveringContainer.react';
  */
 const Roller = (props) => {
   const {
+    id,
     children,
     color,
     loading_state,
@@ -40,6 +41,7 @@ const Roller = (props) => {
 
   return (
     <CoveringContainer
+      id={id}
       children={children}
       fullscreen={fullscreen}
       fullscreenClassName={fullscreenClassName}
