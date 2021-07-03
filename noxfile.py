@@ -33,3 +33,13 @@ def test(session):
     session.install("-r", "tests/requirements.txt")
     session.install(".")
     session.run("pytest", "--headless", "tests")
+
+
+@nox.session(name="build")
+def build(session):
+    session.install(".", "build", "dash[dev]", "invoke", "semver")
+    session.run("invoke", "clean")
+    session.run("npm", "run", "build", external=True)
+    session.run(
+        "python", "-m", "build", "--sdist", "--wheel", "--outdir", "dist/"
+    )

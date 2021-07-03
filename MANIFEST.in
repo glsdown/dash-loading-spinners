@@ -1,7 +1,0 @@
-include dash_loading_spinners/dash_loading_spinners.min.js
-include dash_loading_spinners/dash_loading_spinners.min.js.map
-include dash_loading_spinners/metadata.json
-include dash_loading_spinners/package-info.json
-include README.md
-include LICENSE
-include package.json

@@ -13,3 +13,7 @@ pytest
 # task automation
 nox
 invoke
+
+# build
+build
+semver
