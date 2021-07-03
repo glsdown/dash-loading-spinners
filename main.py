@@ -12,6 +12,7 @@ import dash_html_components as html
 import numpy as np
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
+
 from helpers import COLOURSCALES, app
 
 import dash_loading_spinners as dls
@@ -62,6 +63,7 @@ import dash_loading_spinners as dls
 
 app = dash.Dash()
 
+# Add a hash loading spinner
 app.layout = dls.Hash()
 
 if __name__ == "__main__":
@@ -92,7 +94,7 @@ These are:
 - **`fullscreen_style`** (*dict*; optional):
     Defines CSS styles for the container when in fullscreen.
 
-Many spinners additional have properties that can be customised,
+Many spinners additionally have properties that can be customised,
 including colour and size. You can find these on the individual
 [component](/examples) pages.
 
@@ -155,6 +157,23 @@ if __name__ == "__main__":
 
 ```
 
+"""
+
+markdown_fullscreen = """
+Using the same example, but setting `fullscreen=True` will display the 
+spinner in full screen mode.
+
+```python 
+...
+
+                    dls.Hash(
+                        dcc.Graph(id="loading-output",),
+                        color="#435278",
+                        speed_multiplier=2,
+                        size=100,
+                        fullscreen=True,
+                    ),
+...
 """
 
 
@@ -259,10 +278,7 @@ layout = html.Div(
         dcc.Markdown(markdown_install),
         dcc.Markdown(markdown_usage),
         example,
-        dcc.Markdown(
-            "Using the same example, but setting `fullscreen=True`"
-            "will display the spinner in full screen mode"
-        ),
+        dcc.Markdown(markdown_fullscreen),
         example_fullscreen,
     ]
 )
