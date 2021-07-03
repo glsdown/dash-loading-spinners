@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 import semver
+from invoke import run as invoke_run
 from invoke import task
 from termcolor import cprint
 
@@ -61,3 +62,28 @@ def error(text):
 
 def info(text):
     print(text)
+
+
+def run(command, **kwargs):
+    result = invoke_run(command, hide=True, warn=True, **kwargs)
+    if result.exited != 0:
+        error(f"Error running {command}")
+        print(result.stdout)
+        print()
+        print(result.stderr)
+        exit(result.exited)
+
+
+@task
+def documentation(_):
+    """
+    Push documentation to Heroku
+    """
+    print("Deploying docs")
+    # Create a new branch containing just the stuff in docs
+    run("git subtree split --prefix docs -b docs-deploy")
+    # Force pushing to github
+    run("git push -f origin docs-deploy")
+    run("git checkout main")
+    # Delete the local branch
+    run("git branch -D docs-deploy")
