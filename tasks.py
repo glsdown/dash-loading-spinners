@@ -3,7 +3,6 @@ from pathlib import Path
 from invoke import task
 from termcolor import cprint
 
-
 HERE = Path(__file__).parent
 
 

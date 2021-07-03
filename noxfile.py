@@ -1,12 +1,14 @@
 import nox
 
-nox.options.sessions = ["lint", "test"]
+nox.options.sessions = ["lint"]
 
 SOURCES = [
     "docs",
-    "dash_loading_spinners",
-    "noxfile.py",
+    "dash_loading_spinners/__init__.py",
     "examples/usage.py",
+    "noxfile.py",
+    "setup.py",
+    "tasks.py",
 ]
 
 
