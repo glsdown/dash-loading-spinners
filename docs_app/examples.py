@@ -148,6 +148,7 @@ layout = html.Div(
             ],
             className="d-flex justify-content-between align-items-end",
         ),
+        html.Div(html.P("Click any spinner to view detailed usage.")),
         html.Hr(),
         html.Div(allSpinners, id="spinner-display"),
     ],
