@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/glsdown/dash-loading-spinners/issues"
   },
-  "homepage": "https://dash-loading-spinners.herokuapp.com/",
+  "homepage": "https://dash-loading-spinners.sproodlebuzz.co.uk/",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/demo.config.js --hot",
