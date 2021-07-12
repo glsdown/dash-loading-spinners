@@ -1,8 +1,3 @@
-# Main page:
-# - Details on what the package is
-#   - Include details of where components are from
-# - Installation instructions
-# - Simple use case
 import random
 import time
 
@@ -101,7 +96,7 @@ including colour and size. You can find these on the individual
 
 Realistically, as part of an application, you will be using them
 alongside other components and callbacks. Here is an example of
-what this might look like:
+what this might look like.
 
 _Note:
 [`dash-bootstrap-components`](https://github.com/facultyai/dash-bootstrap-components)
@@ -110,10 +105,13 @@ to improve the layout._
 
 ```python
 import dash
-import dash_bootstrap_components as dbs
+import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_loading_spinners as dls
+from dash.dependencies import Input, Output
+
+from helpers import get_new_graph
 
 app = dash.Dash(external_stylesheets=[dbc.themes.UNITED])
 
@@ -151,6 +149,7 @@ app.layout = html.Div(
     Output("loading-output", "figure"), [Input("loading-button", "n_clicks")],
 )
 def load_output(n):
+    # See note below
     return get_new_graph(n)
 
 if __name__ == "__main__":
@@ -175,6 +174,41 @@ spinner in full screen mode.
                         fullscreen=True,
                     ),
 ...
+```
+"""
+
+markdown_get_graph = """
+The function `get_new_graph` in this example is deliberately ambiguous,
+as it simply acts as a placeholder for any slow-loading component. For
+completeness, if you wish to use a similar example to the one shown above,
+you can use the following function:
+
+```python
+# helpers.py
+import numpy as np
+import plotly.graph_objects as go
+import time
+
+def get_new_graph(n):
+    if n:
+        # Simulate slow-loading component
+        time.sleep(2)
+    # Generate a random scatter plot
+    n = (n + 1) * 10
+    return go.Figure(
+        data=go.Scatter(
+            y=np.random.randn(n) * 100,
+            mode="markers",
+            marker=dict(
+                size=16,
+                color=np.random.randn(n) * 100,
+                colorscale="blues",
+                showscale=True,
+            ),
+        ),
+        layout=go.Layout(title="This graph takes ages to re-load"),
+    )
+```
 """
 
 
@@ -286,5 +320,6 @@ layout = html.Div(
         example,
         dcc.Markdown(markdown_fullscreen),
         example_fullscreen,
+        dcc.Markdown(markdown_get_graph),
     ]
 )

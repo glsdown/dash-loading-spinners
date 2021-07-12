@@ -27,7 +27,7 @@ setup(
             "package-info.json",
         ]
     },
-    url="https://dash-loading-spinners.herokuapp.com/",
+    url="https://dash-loading-spinners.sproodlebuzz.co.uk/",
     project_urls={
         "Bug Reports": package["bugs"]["url"],
         "Source": "https://github.com/glsdown/dash-loading-spinners",
