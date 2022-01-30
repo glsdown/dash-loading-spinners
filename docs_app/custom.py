@@ -72,15 +72,11 @@ As with other spinners, you are also able to edit the core attributes:
     Defines CSS styles for the container when in fullscreen.
 """
 
-# TODO: Add in the props
-
 layout = html.Div(
     [
         dcc.Markdown(markdown),
         html.Div(
-            dls.Custom(
-                svg=svg,
-            ),
+            dls.Custom(svg=svg,),
             style={"height": "200px"},
             className="container d-flex justify-content-center "
             "align-items-center border border-primary rounded my-2",
