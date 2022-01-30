@@ -3,10 +3,8 @@
 # - Potentially include ability to change props on the page?
 
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_loading_spinners as dls
-from dash.dependencies import Input, Output
+from dash import Input, Output, dcc, html
 
 from docs_app.app import app
 
@@ -127,7 +125,7 @@ layout = html.Div(
                     [
                         html.Div("View Grouped", className="mr-2"),
                         # FIXME - sort out the mobile view here
-                        dbc.FormGroup(
+                        html.Div(
                             [
                                 dbc.Checklist(
                                     id="alpha-switch",

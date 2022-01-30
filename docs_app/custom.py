@@ -1,6 +1,5 @@
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_loading_spinners as dls
+from dash import dcc, html
 
 svg = """
 <svg
@@ -38,6 +37,7 @@ SVG code to use as a spinner.
 ```python
 import dash
 import dash_loading_spinners as dls
+from dash import html
 
 app = dash.Dash()
 
