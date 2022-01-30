@@ -58,10 +58,7 @@ spinner_options = {
         "Bars": dls.Bars,
         "Wave": dls.Wave,
     },
-    "Triangles": {
-        "BallTriangle": dls.BallTriangle,
-        "Triangle": dls.Triangle,
-    },
+    "Triangles": {"BallTriangle": dls.BallTriangle, "Triangle": dls.Triangle,},
     "Special": {
         "Hash": dls.Hash,
         "Clock": dls.Clock,
@@ -123,22 +120,14 @@ layout = html.Div(
                 html.Div("All loading spinners.", className="h1"),
                 html.Div(
                     [
-                        html.Div("View Grouped", className="mr-2"),
+                        html.Div("View Grouped", className="me-2"),
                         # FIXME - sort out the mobile view here
                         html.Div(
-                            [
-                                dbc.Checklist(
-                                    id="alpha-switch",
-                                    options=[
-                                        {
-                                            "label": "View Alphabetical",
-                                            "value": "alpha",
-                                        }
-                                    ],
-                                    switch=True,
-                                    inline=True,
-                                ),
-                            ],
+                            dbc.Switch(
+                                id="alpha-switch",
+                                label="View Alphabetical",
+                                value=False,
+                            ),
                         ),
                     ],
                     className="d-flex",

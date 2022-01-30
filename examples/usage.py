@@ -135,7 +135,7 @@ app.layout = html.Div(
                                     dbc.Checkbox(
                                         checked=False,
                                         id="fullscreen",
-                                        className="mr-2",
+                                        className="me-2",
                                     ),
                                     dbc.Label("Fullscreen?"),
                                 ]
