@@ -1,9 +1,7 @@
 import re
 
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash import Input, Output, dcc, html
 
 from docs_app.app import app
 from docs_app.component import components
