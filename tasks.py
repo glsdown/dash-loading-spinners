@@ -54,6 +54,7 @@ def clean(_):
     make_and_clean_dir("man")
     make_and_clean_dir("R")
     make_and_clean_dir("src", glob="*.jl")
+    make_and_clean_dir("src/jl", glob="*.jl")
 
 
 def error(text):

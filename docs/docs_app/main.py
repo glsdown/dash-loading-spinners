@@ -2,12 +2,10 @@ import random
 import time
 
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_loading_spinners as dls
 import numpy as np
 import plotly.graph_objects as go
-from dash.dependencies import Input, Output
+from dash import Input, Output, dcc, html
 
 from docs_app.app import COLOURSCALES, app
 
@@ -106,10 +104,8 @@ to improve the layout._
 ```python
 import dash
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_loading_spinners as dls
-from dash.dependencies import Input, Output
+from dash import dcc, html, Input, Output
 
 from helpers import get_new_graph
 
@@ -120,7 +116,7 @@ app.layout = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                    dbc.FormGroup(
+                    html.Div(
                         dbc.Button(
                             "Simulate slow loading component",
                             id="loading-button",
@@ -237,7 +233,7 @@ example = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                    dbc.FormGroup(
+                    html.Div(
                         dbc.Button(
                             "Simulate slow loading component",
                             id="loading-button",
@@ -268,7 +264,7 @@ example_fullscreen = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                    dbc.FormGroup(
+                    html.Div(
                         dbc.Button(
                             "Simulate slow loading component (fullscreen)",
                             id="loading-button-fullscreen",

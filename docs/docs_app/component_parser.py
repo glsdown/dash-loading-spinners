@@ -1,10 +1,8 @@
 import re
 
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_loading_spinners as dls
-from dash.dependencies import Input, Output
+from dash import Input, Output, dcc, html
 
 __all__ = ["get_component_details"]
 
@@ -106,7 +104,7 @@ def color_changer(app, component_name, attribute_name, default="#000000"):
             color = "#000000"
         return color.strip("'")
 
-    return dbc.FormGroup(
+    return html.Div(
         [
             dbc.Label(
                 [
@@ -137,34 +135,38 @@ def number_slider(app, component_name, attribute_name, default=0):
     )
 
     if attribute_name in ["width", "size"]:
-        max = 250
+        maximum_value = 250
         step = 10
     elif attribute_name in ["height"]:
-        max = 100
+        maximum_value = 100
         step = 10
     elif attribute_name in ["speed_multiplier"]:
-        max = 5
+        maximum_value = 5
         step = 0.1
     elif attribute_name in ["radius"]:
-        max = 16
+        maximum_value = 16
         step = 2
     elif attribute_name in ["thickness"]:
-        max = 20
+        maximum_value = 20
         step = 1
     else:
-        max = 10
+        maximum_value = 10
         step = 1
 
-    return dbc.FormGroup(
+    return html.Div(
         [
             dbc.Label([html.Code(f"{attribute_name}")]),
             dcc.Slider(
                 id=f"slider-{component_name}-{attribute_name}",
                 value=default,
                 min=0,
-                max=max,
+                max=maximum_value,
                 step=step,
-                marks={0: "0", max / 2: str(max / 2), max: str(max)},
+                marks={
+                    0: "0",
+                    maximum_value / 2: str(maximum_value / 2),
+                    maximum_value: str(maximum_value),
+                },
                 tooltip={"always_visible": True, "placement": "bottom"},
             ),
         ]
