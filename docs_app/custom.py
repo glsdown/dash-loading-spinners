@@ -76,7 +76,9 @@ layout = html.Div(
     [
         dcc.Markdown(markdown),
         html.Div(
-            dls.Custom(svg=svg,),
+            dls.Custom(
+                svg=svg,
+            ),
             style={"height": "200px"},
             className="container d-flex justify-content-center "
             "align-items-center border border-primary rounded my-2",
