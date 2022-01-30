@@ -58,7 +58,10 @@ spinner_options = {
         "Bars": dls.Bars,
         "Wave": dls.Wave,
     },
-    "Triangles": {"BallTriangle": dls.BallTriangle, "Triangle": dls.Triangle,},
+    "Triangles": {
+        "BallTriangle": dls.BallTriangle,
+        "Triangle": dls.Triangle,
+    },
     "Special": {
         "Hash": dls.Hash,
         "Clock": dls.Clock,
