@@ -84,10 +84,13 @@ isn't necessary for `dash-loading-spinners` to work, but has been included
 to improve the layout._
 
 ```python
+# app.py
 import dash
-from dash import dcc, html
 import dash_bootstrap_components as dbc
 import dash_loading_spinners as dls
+from dash import dcc, html, Input, Output
+
+from helpers import get_new_graph
 
 app = dash.Dash(external_stylesheets=[dbc.themes.UNITED])
 
@@ -125,9 +128,39 @@ app.layout = html.Div(
     Output("loading-output", "figure"), [Input("loading-button", "n_clicks")],
 )
 def load_output(n):
+    # See note below
     return get_new_graph(n)
 
 if __name__ == "__main__":
     app.run_server()
 
+```
+
+The function `get_new_graph` in this example is deliberately ambiguous, as it simply acts as a placeholder for any slow-loading component. For completeness, if you wish to use a similar example to the one shown above, you can use the following function:
+
+```python
+# helpers.py
+import numpy as np
+import plotly.graph_objects as go
+import time
+
+def get_new_graph(n):
+    if n:
+        # Simulate slow-loading component
+        time.sleep(2)
+    # Generate a random scatter plot
+    n = (n + 1) * 10
+    return go.Figure(
+        data=go.Scatter(
+            y=np.random.randn(n) * 100,
+            mode="markers",
+            marker=dict(
+                size=16,
+                color=np.random.randn(n) * 100,
+                colorscale="blues",
+                showscale=True,
+            ),
+        ),
+        layout=go.Layout(title="This graph takes ages to re-load"),
+    )
 ```
