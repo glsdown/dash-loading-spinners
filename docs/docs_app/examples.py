@@ -117,23 +117,22 @@ layout = html.Div(
     [
         html.Div(
             [
-                html.Div("All loading spinners.", className="h1"),
+                html.Div(
+                    "All loading spinners.", className="h1 col-12 col-sm"
+                ),
                 html.Div(
                     [
                         html.Div("View Grouped", className="me-2"),
-                        # FIXME - sort out the mobile view here
-                        html.Div(
-                            dbc.Switch(
-                                id="alpha-switch",
-                                label="View Alphabetical",
-                                value=False,
-                            ),
+                        dbc.Switch(
+                            id="alpha-switch",
+                            label="View Alphabetical",
+                            value=False,
                         ),
                     ],
-                    className="d-flex",
+                    className="d-flex  col-12 col-sm-auto",
                 ),
             ],
-            className="d-flex justify-content-between align-items-end",
+            className="row justify-content-between align-items-end",
         ),
         html.Div(html.P("Click any spinner to view detailed usage.")),
         html.Hr(),
