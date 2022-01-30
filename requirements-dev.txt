@@ -1,6 +1,6 @@
 # dash is required to call `build:py`
-dash[dev]>=1.15.0
-dash-bootstrap-components
+dash[dev]>=2.0.0
+dash-bootstrap-components>=1.0.0
 
 # formatting tools
 black

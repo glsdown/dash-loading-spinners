@@ -85,9 +85,8 @@ to improve the layout._
 
 ```python
 import dash
-import dash_bootstrap_components as dbs
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
+import dash_bootstrap_components as dbc
 import dash_loading_spinners as dls
 
 app = dash.Dash(external_stylesheets=[dbc.themes.UNITED])
@@ -97,7 +96,7 @@ app.layout = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                    dbc.FormGroup(
+                    html.Div(
                         dbc.Button(
                             "Simulate slow loading component",
                             id="loading-button",

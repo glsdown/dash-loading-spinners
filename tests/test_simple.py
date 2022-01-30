@@ -66,5 +66,4 @@ def test_simple(dash_duo, spinner_name, spinner):
     app.layout = spinner(id=spinner_name)
 
     dash_duo.start_server(app)
-    # breakpoint()
     dash_duo.wait_for_element(f"#{spinner_name}", timeout=2)
