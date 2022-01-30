@@ -2,9 +2,8 @@ import time
 
 import dash
 import dash_bootstrap_components as dbc
-import dash_html_components as html
 import dash_loading_spinners as dls
-from dash.dependencies import Input, Output
+from dash import Input, Output, html
 
 app = dash.Dash(external_stylesheets=[dbc.themes.UNITED])
 
@@ -131,7 +130,7 @@ app.layout = html.Div(
                 dbc.Row(
                     [
                         dbc.Col(
-                            dbc.FormGroup(
+                            html.Div(
                                 [
                                     dbc.Checkbox(
                                         checked=False,
@@ -144,7 +143,7 @@ app.layout = html.Div(
                             className="col-md-4",
                         ),
                         dbc.Col(
-                            dbc.FormGroup(
+                            html.Div(
                                 dbc.Button(
                                     "View",
                                     id="loading-button",
