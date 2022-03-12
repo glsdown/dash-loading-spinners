@@ -4,7 +4,7 @@
 ![PyPI](https://img.shields.io/pypi/v/dash-loading-spinners)
 ![PyPI - License](https://img.shields.io/pypi/l/dash-loading-spinners)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dash-loading-spinners)
-
+[![Downloads](https://static.pepy.tech/personalized-badge/dash-loading-spinners?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/dash-loading-spinners)
 
 This library is designed for use with [Plotly Dash](https://plotly.com). The components have all been
 designed to provide functionality similar to Dash's core 
