@@ -31,7 +31,7 @@ _current_path = _os.path.dirname(_os.path.abspath(__file__))
 
 _this_module = _sys.modules[__name__]
 
-_unpkg = f'https://unpkg.com/dash-loading-spinners@{__version__}/dash_loading_spinners/'
+_unpkg = f'https://unpkg.com/dash_loading_spinners@{__version__}/dash_loading_spinners/'
 
 
 _js_dist = [
