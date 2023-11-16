@@ -31,14 +31,18 @@ _current_path = _os.path.dirname(_os.path.abspath(__file__))
 
 _this_module = _sys.modules[__name__]
 
+_unpkg = f'https://unpkg.com/dash-loading-spinners@{__version__}/dash_loading_spinners/'
+
 
 _js_dist = [
     {
         "relative_package_path": "dash_loading_spinners.min.js",
+        'external_url': f'{_unpkg}dash_loading_spinners.min.js',
         "namespace": package_name,
     },
     {
         "relative_package_path": "dash_loading_spinners.min.js.map",
+        'external_url': f'{_unpkg}dash_loading_spinners.min.js.map',
         "namespace": package_name,
         "dynamic": True,
     },

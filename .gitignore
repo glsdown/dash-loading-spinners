@@ -6,6 +6,7 @@ deps
 inst
 man
 src/*.jl
+lib/
 DESCRIPTION
 NAMESPACE
 Project.toml
