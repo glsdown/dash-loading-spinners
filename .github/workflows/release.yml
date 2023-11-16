@@ -109,6 +109,11 @@ jobs:
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
 
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
       - name: Publish package on NPM
         run: |
           npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
