@@ -109,7 +109,6 @@ jobs:
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
 
-      - uses: actions/checkout@v1
       - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
