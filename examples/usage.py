@@ -229,7 +229,6 @@ def change_fullscreen(checked):
     [Input("loading-button", "n_clicks")],
 )
 def load_output(n):
-
     if n:
         time.sleep(3)
         return f"Output loaded {n} times"

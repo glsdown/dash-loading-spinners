@@ -123,7 +123,6 @@ def color_changer(app, component_name, attribute_name, default="#000000"):
 
 
 def number_slider(app, component_name, attribute_name, default=0):
-
     app.clientside_callback(
         """
     function(value) {
@@ -174,7 +173,6 @@ def number_slider(app, component_name, attribute_name, default=0):
 
 
 def create_adjustable_component(app, component, component_name, attributes):
-
     component_name = component_name.lower()
     main_components = []
 
