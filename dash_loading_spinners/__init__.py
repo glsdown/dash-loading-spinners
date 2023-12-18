@@ -35,15 +35,15 @@ _this_module = _sys.modules[__name__]
 _js_dist = [
     {
         "relative_package_path": "dash_loading_spinners.min.js",
-        "external_url": "https://unpkg.com/{0}@{2}/{1}/{1}.js".format(
-            package_name, __name__, __version__
+        "external_url": "https://unpkg.com/{0}@{1}/{0}/{2}".format(
+            package_name, __version__, "dash_loading_spinners.min.js"
         ),
         "namespace": package_name,
     },
     {
         "relative_package_path": "dash_loading_spinners.min.js.map",
-        "external_url": "https://unpkg.com/{0}@{2}/{1}/{1}.js.map".format(
-            package_name, __name__, __version__
+        "external_url": "https://unpkg.com/{0}@{1}/{0}/{2}".format(
+            package_name, __version__, "dash_loading_spinners.min.js.map"
         ),
         "namespace": package_name,
         "dynamic": True,
